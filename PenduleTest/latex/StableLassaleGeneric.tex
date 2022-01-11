@@ -1,0 +1,87 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage{bsymb,b2latex}
+\begin{document}
+\SingleHeader{StableLassaleGeneric}
+\MACHINE{StableLassaleGeneric}{Generic}{StableLassaleCtx}{}
+\VARIABLES{
+	\Variable{t}{}
+	\Variable{x\_p}{}
+	\Variable{x\_s}{}
+}
+\INVARIANTS{
+	\Invariant{V\_o\_Sol\_Deriv}{false}{$x\_p(Rzero) \in{} K \limp{} x\_p;V \in{} D1(Closed2Closed(Rzero,t),RReal)$}{}
+}
+\EVENTS{
+\INITIALISATION{false}{}{
+	\ACTIONS{false}{
+		\Action{act1}{$t \bcmeq{} Rzero$}{true}{}
+		\Action{act3}{$x\_s \bcmin{} STATES$}{true}{}
+		\Action{act2}{$x\_p \bcmin{} D1(\{Rzero\},K)$}{true}{}
+	}
+}
+\EVT{Transition}{true}{ordinary}{Transition}{}{
+	\ANY{
+		\Param{s}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$s \in{} \pown{}(STATES)$}{false}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$x\_s \bcmin{} s$}{false}{}
+	}
+}
+\EVT{Sense}{true}{ordinary}{Sense}{}{
+	\ANY{
+		\Param{s}{false}{}
+		\Param{p}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$s \in{} \pown{}(STATES)$}{false}{}
+		\Guard{grd2}{false}{$p \in{} \pow{}(STATES\cprod{}RReal\cprod{}S)$}{false}{}
+		\Guard{grd3}{false}{$(x\_s \mapsto{} t \mapsto{} x\_p(t)) \in{} p$}{false}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$x\_s \bcmin{} s$}{false}{}
+	}
+}
+\EVT{Behave}{true}{ordinary}{Behave}{}{
+	\ANY{
+		\Param{tp}{false}{}
+		\Param{e}{false}{}
+		\Param{Inv}{false}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd0}{false}{$tp \in{} RRealPlus \land{} t \mapsto{} tp \in{} lt$}{false}{}
+		\Guard{grd1}{false}{$e \in{} DE(S)$}{false}{}
+		\Guard{grd2}{false}{$Solvable(Closed2Closed(t,tp),e)$}{false}{}
+		\Guard{grd3}{false}{$Inv \subseteq{} RRealPlus\cprod{}S$}{false}{}
+		\Guard{grd4}{false}{$(t\mapsto{}x\_p(t)) \in{} Inv$}{false}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$\\t,x\_p \bcmsuch{} x\_p' \in{} RReal \pfun{} S \land{} t' = tp \land{} Closed2Closed(Rzero,t') \subseteq{} dom(x\_p') \land{} \\CBAPsolutionOf(t,t',x\_p,x\_p',e,Inv)$}{false}{}
+	}
+}
+\EVT{Actuate}{false}{ordinary}{Actuate}{}{
+	\ANY{
+		\Param{tp}{true}{}
+		\Param{e}{true}{}
+		\Param{s}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd0}{false}{$tp \in{} RRealPlus \land{} t \mapsto{} tp \in{} lt$}{true}{}
+		\Guard{grd1}{false}{$e = ode(F,x\_p(Rzero),Rzero)$}{true}{}
+		\Guard{grd3}{false}{$s \subseteq{} STATES$}{true}{}
+		\Guard{grd4}{false}{$x\_s \in{} s$}{true}{}
+		\Guard{grd2}{false}{$Solvable(Closed2Closed(t,tp),ode(F,x\_p(Rzero),Rzero))$}{true}{}
+		\Guard{grd6}{false}{$(t\mapsto{}x\_p(t)) \in{} Closed2Closed(t,tp)\cprod{}S$}{true}{}
+	}
+	\WITNESSES{
+		\Witness{Inv}{$Inv = Closed2Closed(t,tp)\cprod{}S$}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$\\t,x\_p \bcmsuch{} x\_p' \in{} RReal \pfun{} S \land{} t' = tp \land{} Closed2Closed(Rzero,t') \subseteq{} dom(x\_p') \land{}\\CBAPsolutionOf(t,t',x\_p,x\_p',ode(F,x\_p(Rzero),Rzero),Closed2Closed(t,tp)\cprod{}S) $}{true}{\\Der($\{$t$\}$,S,x$\_$p)=Der($\{$t$\}$,S,x$\_$p')}
+	}
+}
+}
+\END
+\end{document}

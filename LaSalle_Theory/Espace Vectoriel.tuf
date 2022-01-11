@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.comment="Very minimal" org.eventb.core.configuration="org.eventb.theory.core.thy">
+    <org.eventb.theory.core.importTheoryProject name="'" org.eventb.theory.core.importTheoryProject="/SimpleDEq">
+        <org.eventb.theory.core.importTheory name="'" org.eventb.theory.core.importTheory="/SimpleDEq/Reals.dtf|org.eventb.theory.core.deployedTheoryRoot#Reals"/>
+    </org.eventb.theory.core.importTheoryProject>
+    <org.eventb.theory.core.typeParameter name="(" org.eventb.core.comment="Vector Space" org.eventb.core.identifier="E"/>
+    <org.eventb.theory.core.newOperatorDefinition name=")" org.eventb.core.label="VectorSpace" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.comment="Somme vectorielle" org.eventb.core.expression="(E × E) → E" org.eventb.core.identifier="vec_plus"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.comment="Multiplication scalaire" org.eventb.core.expression="(K × E) → E" org.eventb.core.identifier="scal_times"/>
+        <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.comment="vector 0" org.eventb.core.expression="E" org.eventb.core.identifier="vec_zero"/>
+        <org.eventb.theory.core.directOperatorDefinition name="-" org.eventb.theory.core.formula="AbelianGroup(vec_plus,vec_zero) ∧ Field(k_plus,k_times,k_zero,k_unit) ∧&#10;(∀ x,y,a,b · x∈E ∧ y∈E ∧ a∈K ∧ b∈K ⇒ &#10;&#9;scal_times(a↦scal_times(b↦x)) = (scal_times(k_times(a↦b)↦x)) ∧ &#10;&#9;scal_times(k_unit↦x) = x ∧&#10;&#9;scal_times(k_plus(a↦b)↦x) = vec_plus(scal_times(a↦x)↦scal_times(b↦x)) ∧&#10;&#9;scal_times(a↦vec_plus(x↦y)) = vec_plus(scal_times(a↦x)↦scal_times(a↦y))&#10;)"/>
+        <org.eventb.theory.core.operatorArgument name="." org.eventb.core.comment="Plus pour le corps" org.eventb.core.expression="(K × K) → K" org.eventb.core.identifier="k_plus"/>
+        <org.eventb.theory.core.operatorArgument name="/" org.eventb.core.comment="Multiplication pour le corps" org.eventb.core.expression="(K × K) → K" org.eventb.core.identifier="k_times"/>
+        <org.eventb.theory.core.operatorArgument name="0" org.eventb.core.comment="Zero du corps" org.eventb.core.expression="K" org.eventb.core.identifier="k_zero"/>
+        <org.eventb.theory.core.operatorArgument name="1" org.eventb.core.comment="Un du corps" org.eventb.core.expression="K" org.eventb.core.identifier="k_unit"/>
+        <org.eventb.theory.core.operatorWDcondition name="2" org.eventb.core.predicate="Field(k_plus,k_times,k_zero,k_unit)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.typeParameter name="*" org.eventb.core.comment="Field" org.eventb.core.identifier="K"/>
+    <org.eventb.theory.core.theorem name="+" org.eventb.core.label="absorbing_k_zero" org.eventb.core.predicate="∀ vec_plus, scal_times, vec_zero, k_plus, k_times, k_zero, k_unit ·&#10;&#9;vec_plus ∈ (E × E) → E ∧ scal_times ∈ (K × E) → E ∧ k_plus ∈ (K × K) → K ∧ k_times ∈ (K × K) → K ∧ vec_zero∈E ∧ k_zero∈K ∧ k_unit∈K ∧ Field(k_plus,k_times,k_zero,k_unit) ∧ VectorSpace(vec_plus,scal_times,vec_zero,k_plus,k_times,k_zero,k_unit) ⇒ (&#10;&#9;∀x · x∈E ⇒ scal_times(k_zero↦x) = vec_zero&#10;)"/>
+    <org.eventb.theory.core.theorem name="," org.eventb.core.label="absorbing_vec_zero" org.eventb.core.predicate="∀ vec_plus, scal_times, vec_zero, k_plus, k_times, k_zero, k_unit ·&#10;&#9;vec_plus ∈ (E × E) → E ∧ scal_times ∈ (K × E) → E ∧ k_plus ∈ (K × K) → K ∧ k_times ∈ (K × K) → K ∧ vec_zero∈E ∧ k_zero∈K ∧ k_unit∈K ∧ Field(k_plus,k_times,k_zero,k_unit) ∧ VectorSpace(vec_plus,scal_times,vec_zero,k_plus,k_times,k_zero,k_unit) ⇒ (&#10;&#9;∀a · a∈K ⇒ scal_times(a↦vec_zero) = vec_zero&#10;)"/>
+    <org.eventb.theory.core.theorem name="-" org.eventb.core.label="zero_decidability" org.eventb.core.predicate="∀ vec_plus, scal_times, vec_zero, k_plus, k_times, k_zero, k_unit ·&#10;&#9;vec_plus ∈ (E × E) → E ∧ scal_times ∈ (K × E) → E ∧ k_plus ∈ (K × K) → K ∧ k_times ∈ (K × K) → K ∧ vec_zero∈E ∧ k_zero∈K ∧ k_unit∈K ∧ Field(k_plus,k_times,k_zero,k_unit) ∧ VectorSpace(vec_plus,scal_times,vec_zero,k_plus,k_times,k_zero,k_unit) ⇒ (&#10;&#9;∀a,x · a∈K ∧ x∈E ∧ scal_times(a↦x) = vec_zero ⇒ (a = k_zero) ∨ (x=vec_zero)&#10;)"/>
+</org.eventb.theory.core.theoryRoot>

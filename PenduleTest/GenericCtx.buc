@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.core.generated="false" org.eventb.texttools.text_lastmodified="1594822856839" org.eventb.texttools.text_representation="context GenericCtx&#10;&#10;sets STATES&#10;&#10;constants S&#10;&#10;axioms&#10;  @axm1 S = RReal×RReal×RReal×RReal×RReal&#10;end&#10;" version="3">
+    <org.eventb.core.constant name="(" org.eventb.core.generated="false" org.eventb.core.identifier="S"/>
+    <org.eventb.core.axiom name=")" org.eventb.core.generated="false" org.eventb.core.label="axm1" org.eventb.core.predicate="S = RReal×RReal×RReal×RReal×RReal"/>
+    <org.eventb.core.carrierSet name="axm2" org.eventb.core.generated="false" org.eventb.core.identifier="STATES"/>
+</org.eventb.core.contextFile>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.configuration="org.eventb.theory.core.thy">
+    <org.eventb.theory.core.importTheoryProject name="'" org.eventb.theory.core.importTheoryProject="/SimpleDEq">
+        <org.eventb.theory.core.importTheory name="'" org.eventb.theory.core.importTheory="/SimpleDEq/Piecewise.dtf|org.eventb.theory.core.deployedTheoryRoot#Piecewise"/>
+    </org.eventb.theory.core.importTheoryProject>
+    <org.eventb.theory.core.datatypeDefinition name="(" org.eventb.core.identifier="DE">
+        <org.eventb.theory.core.datatypeConstructor name="'" org.eventb.core.comment="Ordinary Differential Equation: \dot\eta(t) = fun(\eta(t),t) \wedge \eta(initArg) = init" org.eventb.core.identifier="ode">
+            <org.eventb.theory.core.constructorArgument name="'" org.eventb.core.identifier="fun" org.eventb.theory.core.type="ℙ(RReal×F×F)"/>
+            <org.eventb.theory.core.constructorArgument name="(" org.eventb.core.identifier="initial" org.eventb.theory.core.type="F"/>
+            <org.eventb.theory.core.constructorArgument name=")" org.eventb.core.identifier="initialArg" org.eventb.theory.core.type="RReal"/>
+        </org.eventb.theory.core.datatypeConstructor>
+        <org.eventb.theory.core.typeArgument name="(" org.eventb.theory.core.givenType="F"/>
+        <org.eventb.theory.core.datatypeConstructor name=")" org.eventb.core.comment="Autonomous ODE" org.eventb.core.identifier="aode">
+            <org.eventb.theory.core.constructorArgument name="'" org.eventb.core.identifier="afun" org.eventb.theory.core.type="ℙ(F×F)"/>
+            <org.eventb.theory.core.constructorArgument name="(" org.eventb.core.identifier="ainit" org.eventb.theory.core.type="F"/>
+            <org.eventb.theory.core.constructorArgument name=")" org.eventb.core.identifier="ainitArg" org.eventb.theory.core.type="RReal"/>
+        </org.eventb.theory.core.datatypeConstructor>
+    </org.eventb.theory.core.datatypeDefinition>
+    <org.eventb.theory.core.typeParameter name=")" org.eventb.core.identifier="E"/>
+    <org.eventb.theory.core.typeParameter name="*" org.eventb.core.identifier="F"/>
+    <org.eventb.theory.core.theorem name="." org.eventb.core.label="solutionDer" org.eventb.core.predicate="∀ fu,DR,DF,init,initArg,eta,k ·&#10;&#9;DR ⊆ RReal ∧ DF ⊆ F ∧&#10;&#9;fu ∈ (DR×DF→F) ∧ k ∈ ℕ ∧ k &gt; 0 ∧ (∀ x0 · x0 ∈ DF ⇒ partial1(fu,x0) ∈ Dn(k,DR,F)) ∧&#10;&#9;init ∈ DF ∧ initArg ∈ DR ∧&#10;&#9;eta ∈ DR → F ∧&#10;&#9;solutionOf(DR,eta,ode(fu,init,initArg)) ⇒&#10;&#9;&#9;eta ∈ Dn(k+1,DR,F)"/>
+    <org.eventb.theory.core.theorem name="-" org.eventb.core.label="CauchyLipschitz" org.eventb.core.predicate="∀ eq,DR,DF ·&#10;&#9;DR ⊆ RReal ∧ DF ⊆ F ∧ eq ∈ DE(F) ∧&#10;&#9;CauchyLipschitzCondition(DR,DF,eq)&#10;&#9;&#9;⇒ &#10;&#9;&#9;&#9;Solvable(DR,eq)"/>
+    <org.eventb.theory.core.theorem name="3" org.eventb.core.label="concatSolutions" org.eventb.core.predicate="∀ DR1,DR2,eta1,eta2,eq ·&#10;&#9;DR1 ⊆ RReal ∧ DR2 ⊆ RReal ∧ DR1 ∩ DR2 = ∅ ∧&#10;&#9;eta1 ∈ DR1 → F ∧ eta2 ∈ DR2 → F ∧&#10;&#9;eq ∈ DE(F) ∧&#10;&#9;solutionOf(DR1,eta1,eq) ∧ solutionOf(DR2,eta2,eq) ⇒&#10;&#9;&#9;solutionOf(DR1 ∪ DR2,eta1 ∪ eta2, eq)"/>
+    <org.eventb.theory.core.theorem name="5" org.eventb.core.label="appendSolutionExistence" org.eventb.core.predicate="∀ DR, A, B, eq, eta ·&#10;&#9;DR ⊆ RReal ∧&#10;&#9;A ⊆ DR ∧ B ⊆ DR ∧ A ∩ B = ∅ ∧ A ∪ B = DR ∧&#10;&#9;eq ∈ DE(F) ∧ Solvable(B,eq) ∧&#10;&#9;eta ∈ DR → F ⇒&#10;&#9;&#9;(∃ etap · etap ∈ DR → F ∧ AppendSolutionBAP(eq,DR,A,B,eta,etap))"/>
+    <org.eventb.theory.core.theorem name="6" org.eventb.core.label="concatSolvable" org.eventb.core.predicate="∀ DR1,DR2,eq ·&#10;&#9;DR1 ⊆ RReal ∧ DR2 ⊆ RReal ∧ DR1 ∩ DR2 = ∅ ∧&#10;&#9;eq ∈ DE(F) ∧ Solvable(DR1,eq) ∧ Solvable(DR2,eq) ⇒&#10;&#9;&#9;Solvable(DR1 ∪ DR2,eq)"/>
+    <org.eventb.theory.core.theorem name="8" org.eventb.core.label="PiecewiseCauchyLipschitz" org.eventb.core.predicate="∀ eq,DRs,DF ·&#10;&#9;DRs ⊆ ℙ(RReal) ∧ DRs ≠ ∅ ∧ (∀ DR1,DR2 · DR1 ∈ DRs ∧ DR2 ∈ DRs ∧ DR1 ≠ DR2 ⇒ DR1 ∩ DR2 = ∅) ∧&#10;&#9;DF ⊆ F ∧ eq ∈ DE(F) ∧&#10;&#9;PiecewiseCauchyLipschitzCondition(DRs,DF,eq) ⇒&#10;&#9;&#9;Solvable(union(DRs),eq)"/>
+    <org.eventb.theory.core.theorem name="?" org.eventb.core.label="solution_restriction" org.eventb.core.predicate="∀ DR1,DR2,eq,eta ·&#10;&#9;DR1 ⊆ RReal ∧ DR2 ⊆ DR1 ∧ eq ∈ DE(F) ∧&#10;&#9;eta ∈ RReal ⇸ F ∧ solutionOf(DR1,eta,eq)&#10;&#9;&#9;⇒&#10;&#9;&#9;&#9;solutionOf(DR2,eta,eq)"/>
+    <org.eventb.theory.core.theorem name="A" org.eventb.core.label="solvable_restriction" org.eventb.core.predicate="∀ DR1,DR2,eq ·&#10;&#9;DR1 ⊆ RReal ∧ DR2 ⊆ DR1 ∧ eq ∈ DE(F) ∧&#10;&#9;Solvable(DR1,eq)&#10;&#9;&#9;⇒&#10;&#9;&#9;&#9;Solvable(DR2,eq)"/>
+    <org.eventb.theory.core.theorem name="@" org.eventb.core.label="CBAPsolutionOf_FIS" org.eventb.core.predicate="∀ t,eta,eq,Inv,tp0 ·&#10;&#9;t ∈ RRealPlus ∧ eta ∈ RReal ⇸ F ∧ Closed2Closed(Rzero,t) ⊆ dom(eta) ∧&#10;&#9;tp0 ∈ RRealPlus ∧ t ↦ tp0 ∈ lt ∧&#10;&#9;eq ∈ DE(F) ∧ Inv ∈ ℙ(RRealPlus×F) ∧&#10;&#9;Solvable(Closed2Infinity(t),eq) ∧&#10;&#9;(∃ x ·&#10;&#9;&#9;x ∈ RReal ⇸ F ∧ Closed2Closed(t,tp0) ⊆ dom(x) ∧&#10;&#9;&#9;solutionOf(Closed2Closed(t,tp0),x,eq) ∧&#10;&#9;&#9;(∀ t_ · t_ ∈ Closed2Closed(t,tp0) ⇒ t_↦x(t_) ∈ Inv)&#10;&#9;) ⇒ (&#10;&#9;&#9;∃ tp,etap ·&#10;&#9;&#9;&#9;tp ∈ RRealPlus ∧ t ↦ tp ∈ lt ∧ tp ↦ tp0 ∈ leq ∧&#10;&#9;&#9;&#9;etap ∈ RReal ⇸ F ∧ Closed2Closed(Rzero,tp) ⊆ dom(etap) ∧&#10;&#9;&#9;&#9;Solvable(Closed2Closed(t,tp),eq) ∧&#10;&#9;&#9;&#9;CBAPsolutionOf(t,tp,eta,etap,eq,Inv)&#10;&#9;)"/>
+    <org.eventb.theory.core.datatypeDefinition name="C" org.eventb.core.comment="Controlled Differential Equation" org.eventb.core.identifier="CDE">
+        <org.eventb.theory.core.typeArgument name="'" org.eventb.theory.core.givenType="F"/>
+        <org.eventb.theory.core.datatypeConstructor name="(" org.eventb.core.comment="Controlled ODE" org.eventb.core.identifier="code">
+            <org.eventb.theory.core.constructorArgument name="'" org.eventb.core.identifier="cfun" org.eventb.theory.core.type="ℙ((RReal×F×UF)×F)"/>
+            <org.eventb.theory.core.constructorArgument name="(" org.eventb.core.identifier="cinit" org.eventb.theory.core.type="F"/>
+            <org.eventb.theory.core.constructorArgument name=")" org.eventb.core.identifier="cinitArg" org.eventb.theory.core.type="RReal"/>
+        </org.eventb.theory.core.datatypeConstructor>
+        <org.eventb.theory.core.typeArgument name=")" org.eventb.theory.core.givenType="UF"/>
+        <org.eventb.theory.core.datatypeConstructor name="*" org.eventb.core.comment="Controlled Autonomous ODE (ie: the defining function does not depend directly from time)" org.eventb.core.identifier="caode">
+            <org.eventb.theory.core.constructorArgument name="'" org.eventb.core.identifier="cafun" org.eventb.theory.core.type="ℙ((F×UF)×F)"/>
+            <org.eventb.theory.core.constructorArgument name="(" org.eventb.core.identifier="cainit" org.eventb.theory.core.type="F"/>
+            <org.eventb.theory.core.constructorArgument name=")" org.eventb.core.identifier="cainitArg" org.eventb.theory.core.type="RReal"/>
+        </org.eventb.theory.core.datatypeConstructor>
+    </org.eventb.theory.core.datatypeDefinition>
+    <org.eventb.theory.core.typeParameter name="D" org.eventb.core.identifier="UF"/>
+    <org.eventb.theory.core.typeParameter name=":" org.eventb.core.identifier="STATES"/>
+    <org.eventb.theory.core.newOperatorDefinition name="G" org.eventb.core.label="autonomousToODE" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="DE(F)" org.eventb.core.identifier="e"/>
+        <org.eventb.theory.core.operatorWDcondition name="(" org.eventb.core.predicate="∃ f,i,ia · f ∈ F ⇸ F ∧ i ∈ F ∧ ia ∈ RReal ∧ e = aode(f,i,ia)"/>
+        <org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="ode((λ t_↦eta_ · t_ ∈ RReal ∧ eta_ ∈ F ∧ eta_ ∈ dom(afun(e)) ∣ afun(e)(eta_)),initial(e),initialArg(e))"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="+" org.eventb.core.label="solutionOf" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.recursiveOperatorDefinition name="*" org.eventb.theory.core.inductiveArgument="eq">
+            <org.eventb.theory.core.recursiveDefinitionCase name="'" org.eventb.core.expression="ode(fu,init,initArg)" org.eventb.theory.core.formula="init ∈ F ∧ initArg ∈ DR ∧&#10;eta ∈ D1(DR,F) ∧&#10;Der(DR,F,eta) = partialComp(fu,eta) ∧&#10;eta(initArg) = init"/>
+            <org.eventb.theory.core.recursiveDefinitionCase name="(" org.eventb.core.expression="aode(fu,init,initArg)" org.eventb.theory.core.formula="init ∈ F ∧ initArg ∈ DR ∧&#10;eta ∈ D1(DR,F) ∧&#10;Der(DR,F,eta) = fu ∘ eta ∧&#10;eta(initArg) = init"/>
+        </org.eventb.theory.core.recursiveOperatorDefinition>
+        <org.eventb.theory.core.operatorArgument name="+" org.eventb.core.expression="ℙ(RReal)" org.eventb.core.identifier="DR"/>
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="RReal ⇸ F" org.eventb.core.identifier="eta"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="DE(F)" org.eventb.core.identifier="eq"/>
+        <org.eventb.theory.core.operatorWDcondition name="," org.eventb.core.predicate="DR ⊆ dom(eta)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="1" org.eventb.core.label="CauchyLipschitzCondition" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.recursiveOperatorDefinition name="(" org.eventb.theory.core.inductiveArgument="eq">
+            <org.eventb.theory.core.recursiveDefinitionCase name="'" org.eventb.core.expression="ode(fu,init,initArg)" org.eventb.theory.core.formula="init ∈ DF ∧ initArg ∈ DR ∧&#10;fu ∈ C0(DR×DF,F) ∧&#10;(∀ t0 · t0 ∈ DR ⇒ lipschitzContinuous(DF,F,partial2(fu,t0)))"/>
+            <org.eventb.theory.core.recursiveDefinitionCase name="(" org.eventb.core.expression="aode(fu,init,initArg)" org.eventb.theory.core.formula="init ∈ DF ∧ initArg ∈ DR ∧&#10;fu ∈ C0(F,F)"/>
+        </org.eventb.theory.core.recursiveOperatorDefinition>
+        <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="ℙ(RReal)" org.eventb.core.identifier="DR"/>
+        <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="ℙ(F)" org.eventb.core.identifier="DF"/>
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="DE(F)" org.eventb.core.identifier="eq"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="7" org.eventb.core.label="PiecewiseCauchyLipschitzCondition" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(ℙ(RReal))" org.eventb.core.identifier="DRs"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(F)" org.eventb.core.identifier="DF"/>
+        <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="DE(F)" org.eventb.core.identifier="eq"/>
+        <org.eventb.theory.core.operatorWDcondition name="*" org.eventb.core.predicate="DRs ≠ ∅"/>
+        <org.eventb.theory.core.operatorWDcondition name="+" org.eventb.core.predicate="∀ DR1,DR2 · DR1 ∈ DRs ∧ DR2 ∈ DRs ∧ DR1 ≠ DR2 ⇒ DR1 ∩ DR2 = ∅"/>
+        <org.eventb.theory.core.recursiveOperatorDefinition name="," org.eventb.theory.core.inductiveArgument="eq">
+            <org.eventb.theory.core.recursiveDefinitionCase name="'" org.eventb.core.expression="ode(fu,init,initArg)" org.eventb.theory.core.formula="init ∈ DF ∧ initArg ∈ union(DRs) ∧&#10;partialPiecewiseContinuous(DRs,DF,DF,fu) ∧&#10;(∀ t0 · t0 ∈ union(DRs) ⇒&#10;&#9;lipschitzContinuous(DF,F,partial2(fu,t0)))"/>
+            <org.eventb.theory.core.recursiveDefinitionCase name="(" org.eventb.core.expression="aode(fu,init,initArg)" org.eventb.theory.core.formula="init ∈ DF ∧ initArg ∈ union(DRs) ∧&#10;fu ∈ C0(F,F)"/>
+        </org.eventb.theory.core.recursiveOperatorDefinition>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="2" org.eventb.core.label="Solvable" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="∃ x · x ∈ RReal ⇸ F ∧ DR ⊆ dom(x) ∧ solutionOf(DR,x,eq)"/>
+        <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="ℙ(RReal)" org.eventb.core.identifier="DR"/>
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="DE(F)" org.eventb.core.identifier="eq"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="4" org.eventb.core.label="AppendSolutionBAP" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="DE(F)" org.eventb.core.identifier="eq"/>
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(RReal)" org.eventb.core.identifier="DR"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(DR)" org.eventb.core.identifier="A"/>
+        <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="ℙ(DR)" org.eventb.core.identifier="B"/>
+        <org.eventb.theory.core.operatorWDcondition name="-" org.eventb.core.predicate="A ∩ B = ∅"/>
+        <org.eventb.theory.core.directOperatorDefinition name="." org.eventb.theory.core.formula="DR ⊆ dom(etap) ∧&#10;(A ◁ etap = A ◁ eta) ∧&#10;solutionOf(B,B ◁ etap, eq)"/>
+        <org.eventb.theory.core.operatorWDcondition name="/" org.eventb.core.predicate="Solvable(B,eq)"/>
+        <org.eventb.theory.core.operatorArgument name="+" org.eventb.core.expression="RReal ⇸ F" org.eventb.core.identifier="eta"/>
+        <org.eventb.theory.core.operatorArgument name="," org.eventb.core.expression="RReal ⇸ F" org.eventb.core.identifier="etap"/>
+        <org.eventb.theory.core.operatorWDcondition name="0" org.eventb.core.predicate="DR ⊆ dom(eta)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="9" org.eventb.core.label="CBAP" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="RRealPlus" org.eventb.core.identifier="t"/>
+        <org.eventb.theory.core.directOperatorDefinition name="." org.eventb.theory.core.formula="t ↦ tp ∈ lt ∧&#10;Closed2Open(Rzero,t) ◁ eta = Closed2Open(Rzero,t) ◁ etap ∧&#10;((Closed2Closed(t,tp) ◁ eta) ↦ (Closed2Closed(t,tp) ◁ etap)) ∈ Pred ∧&#10;eta(t) = etap(t) ∧&#10;(∀ t_ · t_ ∈ Closed2Closed(t,tp) ⇒ (t_↦etap(t_)) ∈ Inv)"/>
+        <org.eventb.theory.core.operatorArgument name="/" org.eventb.core.expression="RRealPlus" org.eventb.core.identifier="tp"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="RReal ⇸ F" org.eventb.core.identifier="eta"/>
+        <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="RReal ⇸ F" org.eventb.core.identifier="etap"/>
+        <org.eventb.theory.core.operatorArgument name="+" org.eventb.core.expression="ℙ((RRealPlus⇸F)×(RRealPlus⇸F))" org.eventb.core.identifier="Pred"/>
+        <org.eventb.theory.core.operatorArgument name="0" org.eventb.core.expression="ℙ(RRealPlus×F)" org.eventb.core.identifier="Inv"/>
+        <org.eventb.theory.core.operatorWDcondition name="1" org.eventb.core.predicate="Closed2Closed(Rzero,t) ⊆ dom(eta)"/>
+        <org.eventb.theory.core.operatorWDcondition name="2" org.eventb.core.predicate="Closed2Closed(Rzero,tp) ⊆ dom(etap)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name=";" org.eventb.core.label="CBAPsolutionOf" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="RRealPlus" org.eventb.core.identifier="t"/>
+        <org.eventb.theory.core.operatorArgument name="element1" org.eventb.core.expression="RRealPlus" org.eventb.core.identifier="tp"/>
+        <org.eventb.theory.core.operatorArgument name="element2" org.eventb.core.expression="RReal ⇸ F" org.eventb.core.identifier="eta"/>
+        <org.eventb.theory.core.operatorArgument name="element3" org.eventb.core.expression="RReal ⇸ F" org.eventb.core.identifier="etap"/>
+        <org.eventb.theory.core.operatorArgument name="element4" org.eventb.core.expression="DE(F)" org.eventb.core.identifier="eq"/>
+        <org.eventb.theory.core.operatorArgument name="element5" org.eventb.core.expression="ℙ(RRealPlus×F)" org.eventb.core.identifier="Inv"/>
+        <org.eventb.theory.core.operatorWDcondition name="element7" org.eventb.core.predicate="Closed2Closed(Rzero,t) ⊆ dom(eta)"/>
+        <org.eventb.theory.core.directOperatorDefinition name="element7" org.eventb.theory.core.formula="Closed2Open(Rzero,t) ◁ eta = Closed2Open(Rzero,t) ◁ etap ∧&#10;solutionOf(Closed2Closed(t,tp),Closed2Closed(t,tp) ◁ etap,eq) ∧&#10;eta(t) = etap(t) ∧&#10;(∀ t_ · t_ ∈ Closed2Closed(t,tp) ⇒ (t_↦etap(t_)) ∈ Inv)"/>
+        <org.eventb.theory.core.operatorWDcondition name="element8" org.eventb.core.predicate="Closed2Closed(Rzero,tp) ⊆ dom(etap)"/>
+        <org.eventb.theory.core.operatorWDcondition name="element6" org.eventb.core.predicate="Solvable(Closed2Closed(t,tp),eq)"/>
+        <org.eventb.theory.core.operatorWDcondition name="element9" org.eventb.core.predicate="t ↦ tp ∈ lt"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="&gt;" org.eventb.core.label="VerifiesOn" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(RReal)" org.eventb.core.identifier="DR"/>
+        <org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="∀ t_ · t_ ∈ DR ⇒ t_↦eta(t_) ∈ Inv"/>
+        <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="RReal → F" org.eventb.core.identifier="eta"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(RReal×F)" org.eventb.core.identifier="Inv"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="E" org.eventb.core.label="withControl" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="ℙ(RReal)" org.eventb.core.identifier="DR"/>
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="CDE(F,UF)" org.eventb.core.identifier="ce"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="RReal ⇸ UF" org.eventb.core.identifier="u"/>
+        <org.eventb.theory.core.operatorWDcondition name="*" org.eventb.core.predicate="DR ⊆ dom(u)"/>
+        <org.eventb.theory.core.recursiveOperatorDefinition name="+" org.eventb.theory.core.inductiveArgument="ce">
+            <org.eventb.theory.core.recursiveDefinitionCase name="'" org.eventb.core.expression="code(fu,init,initArg)" org.eventb.theory.core.formula="ode((λ t_↦eta_ · t_ ∈ dom(u) ∧ (t_↦eta_↦u(t_)) ∈ dom(fu) ∣ fu(t_↦eta_↦u(t_))),init,initArg)"/>
+            <org.eventb.theory.core.recursiveDefinitionCase name="(" org.eventb.core.expression="caode(fu,init,initArg)" org.eventb.theory.core.formula="ode((λ t_↦eta_ · t_ ∈ dom(u) ∧ (eta_↦u(t_)) ∈ dom(fu) ∣ fu(eta_↦u(t_))),init,initArg)"/>
+        </org.eventb.theory.core.recursiveOperatorDefinition>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="F" org.eventb.core.label="Controllable" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(RReal)" org.eventb.core.identifier="DR"/>
+        <org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="∃ u · u ∈ RReal ⇸ UF ∧ DR ⊆ dom(u) ∧ Solvable(DR,withControl(DR,ce,u))"/>
+        <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="CDE(F,UF)" org.eventb.core.identifier="ce"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="H" org.eventb.core.label="ControllableOn" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(RReal)" org.eventb.core.identifier="DR"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(UF)" org.eventb.core.identifier="DU"/>
+        <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="CDE(F,UF)" org.eventb.core.identifier="ce"/>
+        <org.eventb.theory.core.directOperatorDefinition name="*" org.eventb.theory.core.formula="∃ u · u ∈ RReal ⇸ UF ∧ DR ⊆ dom(u) ∧ Solvable(DR,withControl(DR,ce,u)) ∧ (∀ t_ · t_ ∈ DR ⇒ u(t_) ∈ DU)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="I" org.eventb.core.label="SolvableWith" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(RReal)" org.eventb.core.identifier="DR"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="CDE(F,UF)" org.eventb.core.identifier="ce"/>
+        <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="RReal ⇸ UF" org.eventb.core.identifier="u"/>
+        <org.eventb.theory.core.operatorWDcondition name="*" org.eventb.core.predicate="DR ⊆ dom(u)"/>
+        <org.eventb.theory.core.directOperatorDefinition name="+" org.eventb.theory.core.formula="Solvable(DR,withControl(DR,ce,u))"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.theorem name="J" org.eventb.core.label="CBAPsolutionOf_INV" org.eventb.core.predicate="∀ t,tp,eta,etap,eq,Inv ·&#10;&#9;t ∈ RRealPlus ∧ tp ∈ RRealPlus ∧ t ↦ tp ∈ lt ∧&#10;&#9;eta ∈ RReal ⇸ F ∧ Closed2Closed(Rzero,t) ⊆ dom(eta) ∧&#10;&#9;etap ∈ RReal ⇸ F ∧ Closed2Closed(Rzero,tp) ⊆ dom(etap) ∧&#10;&#9;eq ∈ DE(F) ∧ Inv ⊆ RRealPlus×F ∧ Solvable(Closed2Closed(t,tp),eq) ∧&#10;&#9;(∀ t_ · t_ ∈ Closed2Closed(Rzero,t) ⇒ t_↦eta(t_) ∈ Inv) ∧&#10;&#9;CBAPsolutionOf(t,tp,eta,etap,eq,Inv)&#10;&#9;&#9;⇒&#10;&#9;&#9;&#9;(∀ t_ · t_ ∈ Closed2Closed(Rzero,tp) ⇒ t_↦etap(t_) ∈ Inv)"/>
+</org.eventb.theory.core.theoryRoot>

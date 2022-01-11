@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.configuration="org.eventb.theory.core.thy">
+    <org.eventb.theory.core.axiomaticDefinitionsBlock name="'" org.eventb.core.label="continuity">
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="'" org.eventb.core.label="d_restriction" org.eventb.core.predicate="∀ A,C,B,k,f ·&#10;&#9;A ⊆ RReal ∧ C ⊆ A ∧ B ⊆ F ∧ k ∈ ℕ ∧ k &gt; 0 ∧&#10;&#9;f ∈ RReal ⇸ B ∧ A ⊆ dom(f) ∧ f ∈ Dn(k,A,B) ⇒&#10;&#9;&#9;(C ◁ f) ∈ Dn(k,C,B)"/>
+    </org.eventb.theory.core.axiomaticDefinitionsBlock>
+    <org.eventb.theory.core.importTheoryProject name="(" org.eventb.theory.core.importTheoryProject="/SimpleDEq">
+        <org.eventb.theory.core.importTheory name="'" org.eventb.theory.core.importTheory="/SimpleDEq/Functions.dtf|org.eventb.theory.core.deployedTheoryRoot#Functions"/>
+    </org.eventb.theory.core.importTheoryProject>
+    <org.eventb.theory.core.typeParameter name=")" org.eventb.core.identifier="F"/>
+</org.eventb.theory.core.theoryRoot>

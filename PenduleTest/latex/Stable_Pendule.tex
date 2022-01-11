@@ -1,0 +1,97 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage{bsymb,b2latex}
+\begin{document}
+\SingleHeader{Stable\_Pendule}
+\MACHINE{Stable\_Pendule}{StableLassaleGeneric}{PenduleCtx}{}
+\VARIABLES{
+	\Variable{t}{}
+	\Variable{x}{}
+	\Variable{dx}{}
+	\Variable{cos\_th}{}
+	\Variable{sin\_th}{}
+	\Variable{dtheta}{}
+	\Variable{x\_s}{}
+}
+\INVARIANTS{
+	\Invariant{inv1}{false}{$x \in{} RReal \pfun{} RReal$}{}
+	\Invariant{inv2}{false}{$dx \in{} RReal \pfun{} RReal$}{}
+	\Invariant{inv3}{false}{$cos\_th \in{} RReal \pfun{} RReal$}{}
+	\Invariant{inv4}{false}{$sin\_th \in{} RReal \pfun{} RReal$}{}
+	\Invariant{inv5}{false}{$dtheta \in{} RReal \pfun{} RReal$}{}
+	\Invariant{inv11}{false}{$Closed2Closed(Rzero,t) \subseteq{} dom(x)$}{}
+	\Invariant{inv21}{false}{$dom(x) = dom(dx)$}{}
+	\Invariant{inv31}{false}{$dom(x) = dom(cos\_th)$}{}
+	\Invariant{inv41}{false}{$dom(x) = dom(sin\_th)$}{}
+	\Invariant{inv51}{false}{$dom(x) = dom(dtheta)$}{}
+	\Invariant{inv7}{false}{$x\_p = bind(bind(bind(bind(x,dx),cos\_th),sin\_th),dtheta)$}{}
+}
+\EVENTS{
+\INITIALISATION{false}{}{
+	\WITNESSES{
+		\Witness{x\_p'}{$x\_p' = bind(bind(bind(bind(x',dx'),cos\_th'),sin\_th'),dtheta')$}{}
+	}
+	\ACTIONS{false}{
+		\Action{act1}{$t \bcmeq{} Rzero$}{true}{}
+		\Action{act2}{$\\x,dx,cos\_th, sin\_th ,dtheta \bcmeq{}\\~           Rfcste(Rzero),\\~           Rfcste(Rzero),\\~           Rfcste(cos(angle\_init)),\\~           Rfcste(sin(angle\_init)),\\~           Rfcste(Rzero)$}{true}{}
+		\Action{act3}{$x\_s \bcmeq{} etat$}{true}{}
+	}
+}
+\EVT{Transition}{false}{ordinary}{Transition}{}{
+	\ANY{
+		\Param{s}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd2}{false}{$s = \{etat\}$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$x\_s\bcmeq{} etat$}{true}{}
+	}
+}
+\EVT{Sense}{false}{ordinary}{Sense}{}{
+	\WITNESSES{
+		\Witness{s}{$s = \{etat\}$}{}
+		\Witness{p}{$p = STATES\cprod{}RReal\cprod{}\{ x\_ \mapsto{} dx\_ \mapsto{} cos\_ \mapsto{} sin\_ \mapsto{} dth\_ | (x\_ \mapsto{} dx\_ \mapsto{} cos\_ \mapsto{} sin\_ \mapsto{} dth\_) \in{} S \}$}{}
+	}
+	\ACTIONS{false}{
+		\Action{act1}{$x\_s \bcmeq{} etat$}{true}{}
+	}
+}
+\EVT{Actuate}{false}{ordinary}{Actuate}{}{
+	\ANY{
+		\Param{tp}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd0}{false}{$tp \in{} RRealPlus \land{} t \mapsto{} tp \in{} lt$}{true}{}
+		\Guard{grd2}{false}{$\\Solvable(Closed2Closed(t,tp),ode(F,\\~ bind(bind(bind(bind(x,dx),cos\_th),sin\_th),dtheta)(Rzero),Rzero))$}{true}{}
+		\Guard{grd4}{false}{$x\_s = etat$}{true}{}
+		\Guard{grd7}{false}{$tp \in{} RRealPlus \land{} t \mapsto{} tp \in{} lt$}{true}{}
+	}
+	\WITNESSES{
+		\Witness{e}{$e = ode(F,x\_p(Rzero),Rzero)$}{}
+		\Witness{s}{$s = \{etat\}$}{}
+		\Witness{x\_p'}{$x\_p' = bind(bind(bind(bind(x',dx'),cos\_th'),sin\_th'),dtheta')$}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$\\t,x,dx,cos\_th,sin\_th,dtheta \bcmsuch{}\\~ (t' = tp \land{} \\~ x' \in{} RReal \pfun{} RReal  \land{} Closed2Closed(Rzero,t') = dom(x') \land{} x'(t) = x(t) \land{}\\~ dx' \in{} RReal \pfun{} RReal  \land{} Closed2Closed(Rzero,t') = dom(dx') \land{} dx'(t) = dx(t) \land{}\\~ cos\_th' \in{} RReal \pfun{} RReal  \land{} Closed2Closed(Rzero,t') = dom(cos\_th') \land{} cos\_th'(t) = cos\_th(t) \land{}\\~ sin\_th' \in{} RReal \pfun{} RReal  \land{} Closed2Closed(Rzero,t') = dom(sin\_th') \land{} sin\_th'(t) = sin\_th(t) \land{}\\~ dtheta' \in{} RReal \pfun{} RReal  \land{} Closed2Closed(Rzero,t') = dom(dtheta') \land{} dtheta'(t) = dtheta(t) \land{}\\~ CBAPsolutionOf(t,t',\\~                bind(bind(bind(bind(x,dx),cos\_th),sin\_th),dtheta),bind(bind(bind(bind(x',dx'),cos\_th'),sin\_th'),dtheta'),\\~                ode(F,bind(bind(bind(bind(x,dx),cos\_th),sin\_th),dtheta)(Rzero),Rzero),\\~                Closed2Closed(t,t')\cprod{}S)\\)$}{true}{}
+	}
+}
+\EVT{Behave}{false}{ordinary}{Behave}{\\Refining Behave exactly as Actuate}{
+	\ANY{
+		\Param{tp}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd0}{false}{$tp \in{} RRealPlus \land{} t \mapsto{} tp \in{} lt$}{true}{}
+		\Guard{grd2}{false}{$\\Solvable(Closed2Closed(t,tp),ode(F,\\~ bind(bind(bind(bind(x,dx),cos\_th),sin\_th),dtheta)(Rzero),Rzero))$}{true}{}
+	}
+	\WITNESSES{
+		\Witness{e}{$e = ode(F,x\_p(Rzero),Rzero)$}{}
+		\Witness{Inv}{$Inv = Closed2Closed(t,t')\cprod{}S$}{}
+		\Witness{x\_p'}{$x\_p' = bind(bind(bind(bind(x',dx'),cos\_th'),sin\_th'),dtheta')$}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$\\t,x,dx,cos\_th,sin\_th,dtheta \bcmsuch{}\\~ (t' = tp \land{} \\~ x' \in{} RReal \pfun{} RReal  \land{} Closed2Closed(Rzero,t') = dom(x') \land{} x'(t) = x(t) \land{}\\~ dx' \in{} RReal \pfun{} RReal  \land{} Closed2Closed(Rzero,t') = dom(dx') \land{} dx'(t) = dx(t) \land{}\\~ cos\_th' \in{} RReal \pfun{} RReal  \land{} Closed2Closed(Rzero,t') = dom(cos\_th') \land{} cos\_th'(t) = cos\_th(t) \land{}\\~ sin\_th' \in{} RReal \pfun{} RReal  \land{} Closed2Closed(Rzero,t') = dom(sin\_th') \land{} sin\_th'(t) = sin\_th(t) \land{}\\~ dtheta' \in{} RReal \pfun{} RReal  \land{} Closed2Closed(Rzero,t') = dom(dtheta') \land{} dtheta'(t) = dtheta(t) \land{}\\~ CBAPsolutionOf(t,t',\\~                bind(bind(bind(bind(x,dx),cos\_th),sin\_th),dtheta),bind(bind(bind(bind(x',dx'),cos\_th'),sin\_th'),dtheta'),\\~                ode(F,bind(bind(bind(bind(x,dx),cos\_th),sin\_th),dtheta)(Rzero),Rzero),\\~                Closed2Closed(t,t')\cprod{}S)\\)$}{true}{}
+	}
+}
+}
+\END
+\end{document}

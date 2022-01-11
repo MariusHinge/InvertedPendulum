@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="M" org.eventb.core.type="ℙ(M)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="isOpen/Op-WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Operator Well-Definedness Preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/LaSalle_Theory/Topologie.bpo|org.eventb.core.poFile#Topologie|org.eventb.core.poPredicateSet#ABSHYP"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀X⦂ℙ(M),d⦂ℙ(M×M×RReal)·X∈ℙ(M)∧d∈ℙ(M × M × (RReal ⦂ ℙ(RReal)))⇒(d∈M × M → (RReal ⦂ ℙ(RReal))∧(d∈M × M → (RReal ⦂ ℙ(RReal))∧isDistance(d))⇒(∀u0⦂M·u0∈X⇒(∀h⦂RReal·h∈(RRealPlusStar ⦂ ℙ(RReal))⇒d∈M × M → (RReal ⦂ ℙ(RReal)))))" org.eventb.core.source="/LaSalle_Theory/Topologie.tuf|org.eventb.theory.core.theoryRoot#Topologie|org.eventb.theory.core.newOperatorDefinition#)"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/LaSalle_Theory/Topologie.tcf|org.eventb.theory.core.scTheoryRoot#Topologie|org.eventb.theory.core.scNewOperatorDefinition#N"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/LaSalle_Theory/Topologie.tuf|org.eventb.theory.core.theoryRoot#Topologie|org.eventb.theory.core.newOperatorDefinition#)"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/LaSalle_Theory/Topologie.bpo|org.eventb.core.poFile#Topologie|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/LaSalle_Theory/Topologie.bpo|org.eventb.core.poFile#Topologie|org.eventb.core.poSequent#isOpen\/Op-WD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="isClosed/Op-WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Operator Well-Definedness Preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/LaSalle_Theory/Topologie.bpo|org.eventb.core.poFile#Topologie|org.eventb.core.poPredicateSet#ABSHYP"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀X⦂ℙ(M),d⦂ℙ(M×M×RReal)·X∈ℙ(M)∧d∈ℙ(M × M × (RReal ⦂ ℙ(RReal)))⇒(d∈M × M → (RReal ⦂ ℙ(RReal))∧(d∈M × M → (RReal ⦂ ℙ(RReal))∧isDistance(d))⇒d∈M × M → (RReal ⦂ ℙ(RReal))∧isDistance(d))" org.eventb.core.source="/LaSalle_Theory/Topologie.tuf|org.eventb.theory.core.theoryRoot#Topologie|org.eventb.theory.core.newOperatorDefinition#*"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/LaSalle_Theory/Topologie.tcf|org.eventb.theory.core.scTheoryRoot#Topologie|org.eventb.theory.core.scNewOperatorDefinition#O"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/LaSalle_Theory/Topologie.tuf|org.eventb.theory.core.theoryRoot#Topologie|org.eventb.theory.core.newOperatorDefinition#*"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/LaSalle_Theory/Topologie.bpo|org.eventb.core.poFile#Topologie|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/LaSalle_Theory/Topologie.bpo|org.eventb.core.poFile#Topologie|org.eventb.core.poSequent#isClosed\/Op-WD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="isBounded/Op-WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Operator Well-Definedness Preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/LaSalle_Theory/Topologie.bpo|org.eventb.core.poFile#Topologie|org.eventb.core.poPredicateSet#ABSHYP"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀X⦂ℙ(M),d⦂ℙ(M×M×RReal)·X∈ℙ(M)∧d∈ℙ(M × M × (RReal ⦂ ℙ(RReal)))⇒(d∈M × M → (RReal ⦂ ℙ(RReal))∧(d∈M × M → (RReal ⦂ ℙ(RReal))∧isDistance(d))⇒(∀e⦂M,r⦂RReal·e∈M∧r∈(RReal ⦂ ℙ(RReal))⇒d∈M × M → (RReal ⦂ ℙ(RReal))))" org.eventb.core.source="/LaSalle_Theory/Topologie.tuf|org.eventb.theory.core.theoryRoot#Topologie|org.eventb.theory.core.newOperatorDefinition#,"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/LaSalle_Theory/Topologie.tcf|org.eventb.theory.core.scTheoryRoot#Topologie|org.eventb.theory.core.scNewOperatorDefinition#P"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/LaSalle_Theory/Topologie.tuf|org.eventb.theory.core.theoryRoot#Topologie|org.eventb.theory.core.newOperatorDefinition#,"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/LaSalle_Theory/Topologie.bpo|org.eventb.core.poFile#Topologie|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/LaSalle_Theory/Topologie.bpo|org.eventb.core.poFile#Topologie|org.eventb.core.poSequent#isBounded\/Op-WD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="isCompact/Op-WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Operator Well-Definedness Preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/LaSalle_Theory/Topologie.bpo|org.eventb.core.poFile#Topologie|org.eventb.core.poPredicateSet#ABSHYP"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀X⦂ℙ(M),d⦂ℙ(M×M×RReal)·X∈ℙ(M)∧d∈ℙ(M × M × (RReal ⦂ ℙ(RReal)))⇒(d∈M × M → (RReal ⦂ ℙ(RReal))∧(d∈M × M → (RReal ⦂ ℙ(RReal))∧isDistance(d))⇒d∈M × M → (RReal ⦂ ℙ(RReal))∧isDistance(d))" org.eventb.core.source="/LaSalle_Theory/Topologie.tuf|org.eventb.theory.core.theoryRoot#Topologie|org.eventb.theory.core.newOperatorDefinition#-"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/LaSalle_Theory/Topologie.tcf|org.eventb.theory.core.scTheoryRoot#Topologie|org.eventb.theory.core.scNewOperatorDefinition#Q"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/LaSalle_Theory/Topologie.tuf|org.eventb.theory.core.theoryRoot#Topologie|org.eventb.theory.core.newOperatorDefinition#-"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/LaSalle_Theory/Topologie.bpo|org.eventb.core.poFile#Topologie|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/LaSalle_Theory/Topologie.bpo|org.eventb.core.poFile#Topologie|org.eventb.core.poSequent#isCompact\/Op-WD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+</org.eventb.core.poFile>

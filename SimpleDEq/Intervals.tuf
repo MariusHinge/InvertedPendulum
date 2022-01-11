@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.configuration="org.eventb.theory.core.thy">
+<org.eventb.theory.core.importTheoryProject name="'" org.eventb.theory.core.importTheoryProject="/SimpleDEq">
+<org.eventb.theory.core.importTheory name="'" org.eventb.theory.core.importTheory="/SimpleDEq/Reals.dtf|org.eventb.theory.core.deployedTheoryRoot#Reals"/>
+</org.eventb.theory.core.importTheoryProject>
+<org.eventb.theory.core.newOperatorDefinition name="(" org.eventb.core.label="Infinity2Open" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="RReal" org.eventb.core.identifier="b"/>
+<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="{ t ∣ t ↦ b ∈ lt }"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name=")" org.eventb.core.label="Infinity2Closed" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="RReal" org.eventb.core.identifier="b"/>
+<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="{ t ∣ t ↦ b ∈ leq }"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="*" org.eventb.core.label="Open2Infinity" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="RReal" org.eventb.core.identifier="a"/>
+<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="{ t ∣ a ↦ t ∈ lt }"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="+" org.eventb.core.label="Closed2Infinity" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="RReal" org.eventb.core.identifier="a"/>
+<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="{ t ∣ a ↦ t ∈ leq }"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="," org.eventb.core.label="Open2Open" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="RReal" org.eventb.core.identifier="a"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="RReal" org.eventb.core.identifier="b"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="{ t ∣ a ↦ t ∈ lt ∧ t ↦ b ∈ lt }"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="-" org.eventb.core.label="Open2Closed" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="RReal" org.eventb.core.identifier="a"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="RReal" org.eventb.core.identifier="b"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="{ t ∣ a ↦ t ∈ lt ∧ t ↦ b ∈ leq }"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="." org.eventb.core.label="Closed2Open" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="RReal" org.eventb.core.identifier="a"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="RReal" org.eventb.core.identifier="b"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="{ t ∣ a ↦ t ∈ leq ∧ t ↦ b ∈ lt }"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="/" org.eventb.core.label="Closed2Closed" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="RReal" org.eventb.core.identifier="a"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="RReal" org.eventb.core.identifier="b"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="{ t ∣ a ↦ t ∈ leq ∧ t ↦ b ∈ leq }"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.theorem name="0" org.eventb.core.label="realPlusIsZero2Infinity" org.eventb.core.predicate="RRealPlus = Closed2Infinity(Rzero)"/>
+<org.eventb.theory.core.theorem name="1" org.eventb.core.label="realMinusIsInfinity2Zero" org.eventb.core.predicate="RRealMinus = Infinity2Closed(Rzero)"/>
+<org.eventb.theory.core.proofRulesBlock name="element49" org.eventb.core.label="minimumRew">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="a" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="b" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.rewriteRule name=")" org.eventb.core.label="minClosed2Closed" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="min([a,b])" org.eventb.theory.core.formula="Rmin(Closed2Closed(a,b))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="a ↦ b ∈ leq" org.eventb.theory.core.formula="a"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="*" org.eventb.core.label="minClosed2Open" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="min([a,b[)" org.eventb.theory.core.formula="Rmin(Closed2Open(a,b))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="a ↦ b ∈ lt" org.eventb.theory.core.formula="a"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="+" org.eventb.core.label="minClosed2Infinity" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="min([a,+∞[)" org.eventb.theory.core.formula="Rmin(Closed2Infinity(a))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a"/>
+</org.eventb.theory.core.rewriteRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.proofRulesBlock name="element4:" org.eventb.core.label="maximumRew">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="a" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="b" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.rewriteRule name=")" org.eventb.core.label="maxClosed2Closed" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="max([a,b])" org.eventb.theory.core.formula="Rmax(Closed2Closed(a,b))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="a ↦ b ∈ leq" org.eventb.theory.core.formula="b"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="*" org.eventb.core.label="maxOpen2Closed" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="max(]a,b])" org.eventb.theory.core.formula="Rmax(Open2Closed(a,b))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="a ↦ b ∈ lt" org.eventb.theory.core.formula="b"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="+" org.eventb.core.label="maxInfinity2Closed" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="max(]-∞,b])" org.eventb.theory.core.formula="Rmax(Infinity2Closed(b))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="b"/>
+</org.eventb.theory.core.rewriteRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.proofRulesBlock name="element50" org.eventb.core.label="infimumRew">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="a" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="b" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.rewriteRule name=")" org.eventb.core.label="infClosed2Closed" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="inf([a,b])" org.eventb.theory.core.formula="Rinf(Closed2Closed(a,b))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="a ↦ b ∈ leq" org.eventb.theory.core.formula="a"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="*" org.eventb.core.label="infClosed2Open" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="inf([a,b[)" org.eventb.theory.core.formula="Rinf(Closed2Open(a,b))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="a ↦ b ∈ lt" org.eventb.theory.core.formula="a"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element2" org.eventb.core.label="infOpen2Closed" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="inf(]a,b])" org.eventb.theory.core.formula="Rinf(Open2Closed(a,b))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="a ↦ b ∈ lt" org.eventb.theory.core.formula="a"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element1" org.eventb.core.label="infOpen2Open" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="inf(]a,b[)" org.eventb.theory.core.formula="Rinf(Open2Open(a,b))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="a ↦ b ∈ lt" org.eventb.theory.core.formula="a"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="+" org.eventb.core.label="infClosed2Infinity" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="inf([a,+∞[)" org.eventb.theory.core.formula="Rinf(Closed2Infinity(a))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element3" org.eventb.core.label="infOpen2Infinity" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="inf(]a,+∞[)" org.eventb.theory.core.formula="Rinf(Open2Infinity(a))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a"/>
+</org.eventb.theory.core.rewriteRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.proofRulesBlock name="element51" org.eventb.core.label="supremumRew">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="a" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="b" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.rewriteRule name=")" org.eventb.core.label="supClosed2Closed" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="sup([a,b])" org.eventb.theory.core.formula="Rsup(Closed2Closed(a,b))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="a ↦ b ∈ leq" org.eventb.theory.core.formula="b"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element1" org.eventb.core.label="supClosed2Open" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="sup([a,b[)" org.eventb.theory.core.formula="Rsup(Closed2Open(a,b))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="a ↦ b ∈ lt" org.eventb.theory.core.formula="b"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="*" org.eventb.core.label="supOpen2Closed" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="sup(]a,b])" org.eventb.theory.core.formula="Rsup(Open2Closed(a,b))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="a ↦ b ∈ lt" org.eventb.theory.core.formula="b"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element2" org.eventb.core.label="supOpen2Open" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="sup(]a,b[)" org.eventb.theory.core.formula="Rsup(Open2Open(a,b))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="a ↦ b ∈ lt" org.eventb.theory.core.formula="b"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="+" org.eventb.core.label="supInfinity2Closed" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="sup(]-∞,b])" org.eventb.theory.core.formula="Rsup(Infinity2Closed(b))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="b"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element3" org.eventb.core.label="supInfinity2Open" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="sup(]-∞,b[)" org.eventb.theory.core.formula="Rsup(Infinity2Open(b))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="b"/>
+</org.eventb.theory.core.rewriteRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.proofRulesBlock name="element64" org.eventb.core.label="intervalURew">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="a" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="b" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name=")" org.eventb.core.identifier="c" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.rewriteRule name="*" org.eventb.core.label="c2cUc2c_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="[a,b] ∪ [b,c] = [a,c]" org.eventb.theory.core.formula="Closed2Closed(a,b) ∪ Closed2Closed(b,c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Closed2Closed(a,c)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element1" org.eventb.core.label="o2cUc2c_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]a,b] ∪ [b,c] = ]a,c]" org.eventb.theory.core.formula="Open2Closed(a,b) ∪ Closed2Closed(b,c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Open2Closed(a,c)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element2" org.eventb.core.label="c2cUc2o_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="[a,b] ∪ [b,c[ = [a,c[" org.eventb.theory.core.formula="Closed2Closed(a,b) ∪ Closed2Open(b,c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Closed2Open(a,c)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element3" org.eventb.core.label="o2cUc2o_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]a,b] ∪ [b,c[ = ]a,c[" org.eventb.theory.core.formula="Open2Closed(a,b) ∪ Closed2Open(b,c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Open2Open(a,c)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element4" org.eventb.core.label="inf2cUc2c_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]-∞,b] ∪ [b,c] = ]-∞,c]" org.eventb.theory.core.formula="Infinity2Closed(b) ∪ Closed2Closed(b,c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Infinity2Closed(c)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element5" org.eventb.core.label="inf2cUc2o_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]-∞,b] ∪ [b,c[ = ]-∞,c[" org.eventb.theory.core.formula="Infinity2Closed(b) ∪ Closed2Open(b,c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Infinity2Open(c)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element6" org.eventb.core.label="c2cUc2inf_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="[a,b] ∪ [b,+∞[ = [a,+∞[" org.eventb.theory.core.formula="Closed2Closed(a,b) ∪ Closed2Infinity(b)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Closed2Infinity(a)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element7" org.eventb.core.label="o2cUc2inf_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]a,b] ∪ [b,+∞[ = ]a,+∞[" org.eventb.theory.core.formula="Open2Closed(a,b) ∪ Closed2Infinity(b)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Open2Infinity(a)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element8" org.eventb.core.label="c2oUc2c_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="[a,b[ ∪ [b,c] = [a,c]" org.eventb.theory.core.formula="Closed2Open(a,b) ∪ Closed2Closed(b,c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Closed2Closed(a,c)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element9" org.eventb.core.label="o2oUc2c_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]a,b[ ∪ [b,c] = ]a,c]" org.eventb.theory.core.formula="Open2Open(a,b) ∪ Closed2Closed(b,c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Open2Closed(a,c)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element10" org.eventb.core.label="c2oUc2o_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="[a,b[ ∪ [b,c[ = [a,c[" org.eventb.theory.core.formula="Closed2Open(a,b) ∪ Closed2Open(b,c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Closed2Open(a,c)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element11" org.eventb.core.label="o2oUc2o_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]a,b[ ∪ [b,c[ = ]a,c[" org.eventb.theory.core.formula="Open2Open(a,b) ∪ Closed2Open(b,c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Open2Open(a,c)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element12" org.eventb.core.label="inf2oUc2c_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]-∞,b[ ∪ [b,c] = ]-∞,c]" org.eventb.theory.core.formula="Infinity2Open(b) ∪ Closed2Closed(b,c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Infinity2Closed(c)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element13" org.eventb.core.label="inf2oUc2o_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]-∞,b[ ∪ [b,c[ = ]-∞,c[" org.eventb.theory.core.formula="Infinity2Open(b) ∪ Closed2Open(b,c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Infinity2Open(c)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element14" org.eventb.core.label="c2oUc2inf_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="[a,b[ ∪ [b,+∞[ = [a,+∞[" org.eventb.theory.core.formula="Closed2Open(a,b) ∪ Closed2Infinity(b)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Closed2Infinity(a)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element15" org.eventb.core.label="o2oUc2inf_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]a,b[ ∪ [b,+∞[ = ]a,+∞[" org.eventb.theory.core.formula="Open2Open(a,b) ∪ Closed2Infinity(b)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Open2Infinity(a)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element16" org.eventb.core.label="c2cUo2c_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="[a,b] ∪ ]b,c] = [a,c]" org.eventb.theory.core.formula="Closed2Closed(a,b) ∪ Open2Closed(b,c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Closed2Closed(a,c)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element17" org.eventb.core.label="o2cUo2c_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]a,b] ∪ ]b,c] = ]a,c]" org.eventb.theory.core.formula="Open2Closed(a,b) ∪ Open2Closed(b,c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Open2Closed(a,c)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element18" org.eventb.core.label="c2cUo2o_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="[a,b] ∪ ]b,c[ = [a,c[" org.eventb.theory.core.formula="Closed2Closed(a,b) ∪ Open2Open(b,c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Closed2Open(a,c)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element19" org.eventb.core.label="o2cUo2o_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]a,b] ∪ ]b,c[ = ]a,c[" org.eventb.theory.core.formula="Open2Closed(a,b) ∪ Open2Open(b,c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Open2Open(a,c)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element20" org.eventb.core.label="inf2cUo2c_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]-∞,b] ∪ ]b,c] = ]-∞,c]" org.eventb.theory.core.formula="Infinity2Closed(b) ∪ Open2Closed(b,c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Infinity2Closed(c)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element21" org.eventb.core.label="inf2cUo2o_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]-∞,b] ∪ ]b,c[ = ]-∞,c[" org.eventb.theory.core.formula="Infinity2Closed(b) ∪ Open2Open(b,c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Infinity2Open(c)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element22" org.eventb.core.label="c2cUo2inf_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="[a,b] ∪ ]b,+∞[ = [a,+∞[" org.eventb.theory.core.formula="Closed2Closed(a,b) ∪ Open2Infinity(b)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Closed2Infinity(a)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element23" org.eventb.core.label="o2cUo2inf_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]a,b] ∪ ]b,+∞[ = ]a,+∞[" org.eventb.theory.core.formula="Open2Closed(a,b) ∪ Open2Infinity(b)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Open2Infinity(a)"/>
+</org.eventb.theory.core.rewriteRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.proofRulesBlock name="element121" org.eventb.core.label="intervalCRew">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="a" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="b" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name=")" org.eventb.core.identifier="c" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.rewriteRule name="*" org.eventb.core.label="c2cCc2c_rew" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="[a,b] ∩ [b,c] = {b}" org.eventb.theory.core.formula="Closed2Closed(a,b) ∩ Closed2Closed(b,c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="{b}"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element1" org.eventb.core.label="o2cCc2c_rew" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]a,b] ∩ [b,c] = {b}" org.eventb.theory.core.formula="Open2Closed(a,b) ∩ Closed2Closed(b,c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="{b}"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element2" org.eventb.core.label="c2cCc2o_rew" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="[a,b] ∩ [b,c[ = {b}" org.eventb.theory.core.formula="Closed2Closed(a,b) ∩ Closed2Open(b,c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="{b}"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element3" org.eventb.core.label="o2cCc2o_rew" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]a,b] ∩ [b,c[ = {b}" org.eventb.theory.core.formula="Open2Closed(a,b) ∩ Closed2Open(b,c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="{b}"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element4" org.eventb.core.label="inf2cCc2c_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]-∞,b] ∩ [b,c] = {b}" org.eventb.theory.core.formula="Infinity2Closed(b) ∩ Closed2Closed(b,c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="{b}"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element5" org.eventb.core.label="inf2cCc2o_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]-∞,b] ∩ [b,c[ = {b}" org.eventb.theory.core.formula="Infinity2Closed(b) ∩ Closed2Open(b,c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="{b}"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element6" org.eventb.core.label="c2cCc2inf_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="[a,b] ∩ [b,+∞[ = {b}" org.eventb.theory.core.formula="Closed2Closed(a,b) ∩ Closed2Infinity(b)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="{b}"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element7" org.eventb.core.label="o2cCc2inf_rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]a,b] ∩ [b,+∞[ = {b}" org.eventb.theory.core.formula="Open2Closed(a,b) ∩ Closed2Infinity(b)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="{b}"/>
+</org.eventb.theory.core.rewriteRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.proofRulesBlock name="element65" org.eventb.core.label="intervalRealParts">
+<org.eventb.theory.core.rewriteRule name="'" org.eventb.core.label="RPlus2Int" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="ℝ+ =&gt; [0,+∞[" org.eventb.theory.core.formula="RRealPlus">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Closed2Infinity(Rzero)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="(" org.eventb.core.label="Int2RPlus" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="[0,+∞[ =&gt; ℝ+" org.eventb.theory.core.formula="Closed2Infinity(Rzero)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="RRealPlus"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name=")" org.eventb.core.label="RMinus2Int" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="ℝ- =&gt; ]-∞,0]" org.eventb.theory.core.formula="RRealMinus">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Infinity2Closed(Rzero)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="*" org.eventb.core.label="Int2RMinus" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]-∞,0] =&gt; ℝ-" org.eventb.theory.core.formula="Infinity2Closed(Rzero)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="RRealMinus"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element1" org.eventb.core.label="RPlusStar2Int" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="ℝ+* =&gt; ]0,+∞[" org.eventb.theory.core.formula="RRealPlusStar">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Open2Infinity(Rzero)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element2" org.eventb.core.label="Int2RPlusStar" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]0,+∞[ =&gt; ℝ+*" org.eventb.theory.core.formula="Open2Infinity(Rzero)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="RRealPlusStar"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element3" org.eventb.core.label="RMinusStar2Int" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="ℝ-* =&gt; ]-∞,0[" org.eventb.theory.core.formula="RRealMinusStar">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Infinity2Open(Rzero)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element4" org.eventb.core.label="Int2RMinusStar" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]-∞,0[ =&gt; ℝ-*" org.eventb.theory.core.formula="Infinity2Open(Rzero)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="RRealMinusStar"/>
+</org.eventb.theory.core.rewriteRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.proofRulesBlock name="element122" org.eventb.core.label="intervalInclusion">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="a1" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="b1" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name=")" org.eventb.core.identifier="a2" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name="*" org.eventb.core.identifier="b2" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.rewriteRule name="+" org.eventb.core.label="c2InfIncc2Inf" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="[a1,+∞[ ⊆ [a2,+∞[" org.eventb.theory.core.formula="Closed2Infinity(a1) ⊆ Closed2Infinity(a2)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a2 ↦ a1 ∈ leq"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="," org.eventb.core.label="o2InfIncc2Inf" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]a1,+∞[ ⊆ [a2,+∞[" org.eventb.theory.core.formula="Open2Infinity(a1) ⊆ Closed2Infinity(a2)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a2 ↦ a1 ∈ leq"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element1" org.eventb.core.label="c2InfInco2Inf" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="[a1,+∞[ ⊆ ]a2,+∞[" org.eventb.theory.core.formula="Closed2Infinity(a1) ⊆ Open2Infinity(a2)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a2 ↦ a1 ∈ lt"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element2" org.eventb.core.label="o2InfInco2Inf" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]a1,+∞[ ⊆ ]a2,+∞[" org.eventb.theory.core.formula="Open2Infinity(a1) ⊆ Open2Infinity(a2)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a2 ↦ a1 ∈ leq"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element3" org.eventb.core.label="inf2cIncinf2c" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]-∞,b1] ⊆ ]-∞,b2]" org.eventb.theory.core.formula="Infinity2Closed(b1) ⊆ Infinity2Closed(b2)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="b1 ↦ b2 ∈ leq"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element4" org.eventb.core.label="inf2oIncinf2c" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]-∞,b1[ ⊆ ]-∞,b2]" org.eventb.theory.core.formula="Infinity2Open(b1) ⊆ Infinity2Closed(b2)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="b1 ↦ b2 ∈ leq"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element5" org.eventb.core.label="inf2cIncinf2o" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]-∞,b1] ⊆ ]-∞,b2[" org.eventb.theory.core.formula="Infinity2Closed(b1) ⊆ Infinity2Open(b2)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="b1 ↦ b2 ∈ lt"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element6" org.eventb.core.label="inf2oIncinf2o" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]-∞,b1[ ⊆ ]-∞,b2[" org.eventb.theory.core.formula="Infinity2Open(b1) ⊆ Infinity2Open(b2)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="b1 ↦ b2 ∈ leq"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element7" org.eventb.core.label="o2oIno2o" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]a1,b1[ ⊆ ]a2,b2[" org.eventb.theory.core.formula="Open2Open(a1,b1) ⊆ Open2Open(a2,b2)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a1 ↦ a2 ∈ lt ∧ b1 ↦ b2 ∈ gt"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element8" org.eventb.core.label="c2oInc2c" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="[a1,b1[ ⊆ [a2,b2]" org.eventb.theory.core.formula="Closed2Open(a1,b1) ⊆ Closed2Closed(a2,b2)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a1 ↦ a2 ∈ leq ∧ b1 ↦ b2 ∈ geq"/>
+</org.eventb.theory.core.rewriteRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.theorem name="element123" org.eventb.core.label="c2c_existence" org.eventb.core.predicate="∀ a,b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ leq ⇒ (∃ x · x ∈ Closed2Closed(a,b))"/>
+<org.eventb.theory.core.theorem name="element124" org.eventb.core.label="c2o_existence" org.eventb.core.predicate="∀ a,b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ⇒ (∃ x · x ∈ Closed2Open(a,b))"/>
+<org.eventb.theory.core.theorem name="element125" org.eventb.core.label="o2c_existence" org.eventb.core.predicate="∀ a,b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ⇒ (∃ x · x ∈ Open2Closed(a,b))"/>
+<org.eventb.theory.core.theorem name="element126" org.eventb.core.label="o2o_existence" org.eventb.core.predicate="∀ a,b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ⇒ (∃ x · x ∈ Open2Open(a,b))"/>
+<org.eventb.theory.core.theorem name="2" org.eventb.core.label="boundaryInClosed2Closed" org.eventb.core.predicate="∀ a, b · a ∈ RReal ∧ b ∈ RReal ⇒ (a ∈ Closed2Closed(a,b) ∧ b ∈ Closed2Closed(a,b))"/>
+<org.eventb.theory.core.theorem name="element1" org.eventb.core.label="boundaryInClosed2Open" org.eventb.core.predicate="∀ a, b · a ∈ RReal ∧ b ∈ RReal ⇒ (a ∈ Closed2Open(a,b))"/>
+<org.eventb.theory.core.theorem name="element2" org.eventb.core.label="boundaryInOpen2Closed" org.eventb.core.predicate="∀ a, b · a ∈ RReal ∧ b ∈ RReal ⇒ (b ∈ Open2Closed(a,b))"/>
+<org.eventb.theory.core.theorem name="element3" org.eventb.core.label="boundaryInInfinity2Closed" org.eventb.core.predicate="∀ b · b ∈ RReal ⇒ (b ∈ Infinity2Closed(b))"/>
+<org.eventb.theory.core.theorem name="element4" org.eventb.core.label="boundaryInClosed2Infinity" org.eventb.core.predicate="∀ a · a ∈ RReal ⇒ (a ∈ Closed2Infinity(a))"/>
+<org.eventb.theory.core.theorem name="element5" org.eventb.core.label="closed2ClosedLowerBound" org.eventb.core.predicate="∀ a, b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ leq ⇒&#10;&#9;lowerBound(leq, Closed2Closed(a,b), a)"/>
+<org.eventb.theory.core.theorem name="element6" org.eventb.core.label="closed2OpenLowerBound" org.eventb.core.predicate="∀ a, b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ⇒&#10;&#9;lowerBound(leq, Closed2Open(a,b), a)"/>
+<org.eventb.theory.core.theorem name="element15" org.eventb.core.label="open2ClosedLowerBound" org.eventb.core.predicate="∀ a, b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ⇒&#10;&#9;lowerBound(leq, Open2Closed(a,b), a)"/>
+<org.eventb.theory.core.theorem name="element13" org.eventb.core.label="open2OpenLowerBound" org.eventb.core.predicate="∀ a, b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ⇒&#10;&#9;lowerBound(leq, Open2Open(a,b), a)"/>
+<org.eventb.theory.core.theorem name="element7" org.eventb.core.label="closed2InfinityLowerBound" org.eventb.core.predicate="∀ a · a ∈ RReal ⇒&#10;&#9;lowerBound(leq, Closed2Infinity(a), a)"/>
+<org.eventb.theory.core.theorem name="element14" org.eventb.core.label="open2InfinityLowerBound" org.eventb.core.predicate="∀ a · a ∈ RReal ⇒&#10;&#9;lowerBound(leq, Open2Infinity(a), a)"/>
+<org.eventb.theory.core.theorem name="element17" org.eventb.core.label="infinity2ClosedLowerBound" org.eventb.core.predicate="∀ b · b ∈ RReal ⇒&#10;&#9;¬ lowerBounded(leq, Infinity2Closed(b))"/>
+<org.eventb.theory.core.theorem name="element16" org.eventb.core.label="infinity2OpenLowerBound" org.eventb.core.predicate="∀ b · b ∈ RReal ⇒&#10;&#9;¬ lowerBounded(leq, Infinity2Open(b))"/>
+<org.eventb.theory.core.theorem name="element8" org.eventb.core.label="closed2ClosedInfimum" org.eventb.core.predicate="∀ a, b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ leq ⇒&#10;&#9;infimum(leq, Closed2Closed(a,b), a)"/>
+<org.eventb.theory.core.theorem name="element10" org.eventb.core.label="closed2OpenInfimum" org.eventb.core.predicate="∀ a, b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ⇒&#10;&#9;infimum(leq, Closed2Open(a,b), a)"/>
+<org.eventb.theory.core.theorem name="element18" org.eventb.core.label="open2ClosedInfimum" org.eventb.core.predicate="∀ a, b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ⇒&#10;&#9;infimum(leq, Open2Closed(a,b), a)"/>
+<org.eventb.theory.core.theorem name="element11" org.eventb.core.label="open2OpenInfimum" org.eventb.core.predicate="∀ a, b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ⇒&#10;&#9;infimum(leq, Open2Open(a,b), a)"/>
+<org.eventb.theory.core.theorem name="element9" org.eventb.core.label="closed2InfinityInfimum" org.eventb.core.predicate="∀ a · a ∈ RReal ⇒&#10;&#9;infimum(leq, Closed2Infinity(a), a)"/>
+<org.eventb.theory.core.theorem name="element12" org.eventb.core.label="open2InfinityInfimum" org.eventb.core.predicate="∀ a · a ∈ RReal ⇒&#10;&#9;infimum(leq, Open2Infinity(a), a)"/>
+<org.eventb.theory.core.theorem name="element19" org.eventb.core.label="closed2ClosedMinimum" org.eventb.core.predicate="∀ a, b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ leq ⇒&#10;&#9;minimum(leq, Closed2Closed(a,b), a)"/>
+<org.eventb.theory.core.theorem name="element20" org.eventb.core.label="closed2OpenMinimum" org.eventb.core.predicate="∀ a, b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ⇒&#10;&#9;minimum(leq, Closed2Open(a,b), a)"/>
+<org.eventb.theory.core.theorem name="element21" org.eventb.core.label="open2ClosedMinimum" org.eventb.core.predicate="∀ a, b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ⇒&#10;&#9;¬ hasMinimum(leq, Open2Closed(a,b))"/>
+<org.eventb.theory.core.theorem name="element22" org.eventb.core.label="open2OpenMinimum" org.eventb.core.predicate="∀ a, b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ⇒&#10;&#9;¬ hasMinimum(leq, Open2Open(a,b))"/>
+<org.eventb.theory.core.theorem name="element23" org.eventb.core.label="closed2InfinityMinimum" org.eventb.core.predicate="∀ a · a ∈ RReal ⇒&#10;&#9;minimum(leq, Closed2Infinity(a), a)"/>
+<org.eventb.theory.core.theorem name="element24" org.eventb.core.label="open2InfinityMinimum" org.eventb.core.predicate="∀ a · a ∈ RReal ⇒&#10;&#9;¬ hasMinimum(leq, Open2Infinity(a))"/>
+<org.eventb.theory.core.theorem name="element25" org.eventb.core.label="infinity2ClosedMinimum" org.eventb.core.predicate="∀ b · b ∈ RReal ⇒&#10;&#9;¬ hasMinimum(leq, Infinity2Closed(b))"/>
+<org.eventb.theory.core.theorem name="element26" org.eventb.core.label="infinity2OpenMinimum" org.eventb.core.predicate="∀ b · b ∈ RReal ⇒&#10;&#9;¬ hasMinimum(leq, Infinity2Open(b))"/>
+<org.eventb.theory.core.theorem name="element27" org.eventb.core.label="closed2ClosedUpperBound" org.eventb.core.predicate="∀ a, b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ leq ⇒&#10;&#9;upperBound(leq, Closed2Closed(a,b), b)"/>
+<org.eventb.theory.core.theorem name="element28" org.eventb.core.label="closed2OpenUpperBound" org.eventb.core.predicate="∀ a, b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ⇒&#10;&#9;upperBound(leq, Closed2Open(a,b), b)"/>
+<org.eventb.theory.core.theorem name="element29" org.eventb.core.label="open2ClosedUpperBound" org.eventb.core.predicate="∀ a, b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ⇒&#10;&#9;upperBound(leq, Open2Closed(a,b), b)"/>
+<org.eventb.theory.core.theorem name="element30" org.eventb.core.label="open2OpenUpperBound" org.eventb.core.predicate="∀ a, b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ⇒&#10;&#9;upperBound(leq, Open2Open(a,b), b)"/>
+<org.eventb.theory.core.theorem name="element31" org.eventb.core.label="closed2InfinityUpperBound" org.eventb.core.predicate="∀ a · a ∈ RReal ⇒&#10;&#9;¬ upperBounded(leq, Closed2Infinity(a))"/>
+<org.eventb.theory.core.theorem name="element32" org.eventb.core.label="open2InfinityUpperBound" org.eventb.core.predicate="∀ a · a ∈ RReal ⇒&#10;&#9;¬ upperBounded(leq, Open2Infinity(a))"/>
+<org.eventb.theory.core.theorem name="element33" org.eventb.core.label="infinity2ClosedUpperBound" org.eventb.core.predicate="∀ b · b ∈ RReal ⇒&#10;&#9;upperBound(leq, Infinity2Closed(b), b)"/>
+<org.eventb.theory.core.theorem name="element34" org.eventb.core.label="infinity2OpenUpperBound" org.eventb.core.predicate="∀ b · b ∈ RReal ⇒&#10;&#9;upperBound(leq, Infinity2Open(b), b)"/>
+<org.eventb.theory.core.theorem name="element35" org.eventb.core.label="closed2ClosedSupremum" org.eventb.core.predicate="∀ a, b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ leq ⇒&#10;&#9;supremum(leq, Closed2Closed(a,b), b)"/>
+<org.eventb.theory.core.theorem name="element36" org.eventb.core.label="closed2OpenSupremum" org.eventb.core.predicate="∀ a, b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ⇒&#10;&#9;supremum(leq, Closed2Open(a,b), b)"/>
+<org.eventb.theory.core.theorem name="element37" org.eventb.core.label="open2ClosedSupremum" org.eventb.core.predicate="∀ a, b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ⇒&#10;&#9;supremum(leq, Open2Closed(a,b), b)"/>
+<org.eventb.theory.core.theorem name="element38" org.eventb.core.label="open2OpenSupremum" org.eventb.core.predicate="∀ a, b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ⇒&#10;&#9;supremum(leq, Open2Open(a,b), b)"/>
+<org.eventb.theory.core.theorem name="element39" org.eventb.core.label="infinity2ClosedSupremum" org.eventb.core.predicate="∀ b · b ∈ RReal ⇒&#10;&#9;supremum(leq, Infinity2Closed(b), b)"/>
+<org.eventb.theory.core.theorem name="element40" org.eventb.core.label="infinity2OpenSupremum" org.eventb.core.predicate="∀ b · b ∈ RReal ⇒&#10;&#9;supremum(leq, Open2Infinity(b), b)"/>
+<org.eventb.theory.core.theorem name="element41" org.eventb.core.label="closed2ClosedMaximum" org.eventb.core.predicate="∀ a, b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ leq ⇒&#10;&#9;maximum(leq, Closed2Closed(a,b), b)"/>
+<org.eventb.theory.core.theorem name="element42" org.eventb.core.label="closed2OpenMaximum" org.eventb.core.predicate="∀ a, b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ⇒&#10;&#9;¬ hasMaximum(leq, Closed2Open(a,b))"/>
+<org.eventb.theory.core.theorem name="element43" org.eventb.core.label="open2ClosedMaximum" org.eventb.core.predicate="∀ a, b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ⇒&#10;&#9;maximum(leq, Open2Closed(a,b), b)"/>
+<org.eventb.theory.core.theorem name="element44" org.eventb.core.label="open2OpenMaximum" org.eventb.core.predicate="∀ a, b · a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ⇒&#10;&#9;¬ hasMaximum(leq, Open2Open(a,b))"/>
+<org.eventb.theory.core.theorem name="element45" org.eventb.core.label="closed2InfinityMaximum" org.eventb.core.predicate="∀ a · a ∈ RReal ⇒&#10;&#9;¬ hasMaximum(leq, Closed2Infinity(a))"/>
+<org.eventb.theory.core.theorem name="element46" org.eventb.core.label="open2InfinityMaximum" org.eventb.core.predicate="∀ a · a ∈ RReal ⇒&#10;&#9;¬ hasMaximum(leq, Open2Infinity(a))"/>
+<org.eventb.theory.core.theorem name="element47" org.eventb.core.label="infinity2ClosedMaximum" org.eventb.core.predicate="∀ b · b ∈ RReal ⇒&#10;&#9;maximum(leq, Infinity2Closed(b), b)"/>
+<org.eventb.theory.core.theorem name="element48" org.eventb.core.label="infinity2OpenMaximum" org.eventb.core.predicate="∀ b · b ∈ RReal ⇒&#10;&#9;¬ hasMaximum(leq, Infinity2Open(b))"/>
+<org.eventb.theory.core.theorem name="element52" org.eventb.core.label="c2cUc2c" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ leq ∧ b ↦ c ∈ leq ⇒&#10;&#9;&#9;Closed2Closed(a,b) ∪ Closed2Closed(b,c) = Closed2Closed(a,c)"/>
+<org.eventb.theory.core.theorem name="element53" org.eventb.core.label="c2cUc2o" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ leq ∧ b ↦ c ∈ lt ⇒&#10;&#9;&#9;Closed2Closed(a,b) ∪ Closed2Open(b,c) = Closed2Open(a,c)"/>
+<org.eventb.theory.core.theorem name="element61" org.eventb.core.label="o2cUc2c" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ∧ b ↦ c ∈ leq ⇒&#10;&#9;&#9;Open2Closed(a,b) ∪ Closed2Closed(b,c) = Open2Closed(a,c)"/>
+<org.eventb.theory.core.theorem name="element60" org.eventb.core.label="o2cUc2o" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ∧ b ↦ c ∈ lt ⇒&#10;&#9;&#9;Open2Closed(a,b) ∪ Closed2Open(b,c) = Open2Open(a,c)"/>
+<org.eventb.theory.core.theorem name="element54" org.eventb.core.label="inf2cUc2c" org.eventb.core.predicate="∀ b, c ·&#10;&#9;b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;b ↦ c ∈ leq ⇒&#10;&#9;&#9;Infinity2Closed(b) ∪ Closed2Closed(b,c) = Infinity2Closed(c)"/>
+<org.eventb.theory.core.theorem name="element62" org.eventb.core.label="inf2cUc2o" org.eventb.core.predicate="∀ b, c ·&#10;&#9;b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;b ↦ c ∈ lt ⇒&#10;&#9;&#9;Infinity2Closed(b) ∪ Closed2Open(b,c) = Infinity2Open(c)"/>
+<org.eventb.theory.core.theorem name="element55" org.eventb.core.label="c2cUc2inf" org.eventb.core.predicate="∀ a, b ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧&#10;&#9;a ↦ b ∈ leq ⇒&#10;&#9;&#9;Closed2Closed(a,b) ∪ Closed2Infinity(b) = Closed2Infinity(a)"/>
+<org.eventb.theory.core.theorem name="element63" org.eventb.core.label="o2cUc2inf" org.eventb.core.predicate="∀ a, b ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ⇒&#10;&#9;&#9;Open2Closed(a,b) ∪ Closed2Infinity(b) = Open2Infinity(a)"/>
+<org.eventb.theory.core.theorem name="element66" org.eventb.core.label="inf2cUc2inf" org.eventb.core.predicate="∀ a ·&#10;&#9;a ∈ RReal ⇒&#10;&#9;&#9;Infinity2Closed(a) ∪ Closed2Infinity(a) = RReal"/>
+<org.eventb.theory.core.theorem name="element76" org.eventb.core.label="c2cUo2c" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ leq ∧ b ↦ c ∈ lt ⇒&#10;&#9;&#9;Closed2Closed(a,b) ∪ Open2Closed(b,c) = Closed2Closed(a,c)"/>
+<org.eventb.theory.core.theorem name="element77" org.eventb.core.label="c2cUo2o" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ leq ∧ b ↦ c ∈ lt ⇒&#10;&#9;&#9;Closed2Closed(a,b) ∪ Open2Open(b,c) = Closed2Open(a,c)"/>
+<org.eventb.theory.core.theorem name="element78" org.eventb.core.label="o2cUo2c" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ∧ b ↦ c ∈ lt ⇒&#10;&#9;&#9;Open2Closed(a,b) ∪ Open2Closed(b,c) = Open2Closed(a,c)"/>
+<org.eventb.theory.core.theorem name="element79" org.eventb.core.label="o2cUo2o" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ∧ b ↦ c ∈ lt ⇒&#10;&#9;&#9;Open2Closed(a,b) ∪ Open2Open(b,c) = Open2Open(a,c)"/>
+<org.eventb.theory.core.theorem name="element80" org.eventb.core.label="inf2cUo2c" org.eventb.core.predicate="∀ b, c ·&#10;&#9;b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;b ↦ c ∈ lt ⇒&#10;&#9;&#9;Infinity2Closed(b) ∪ Open2Closed(b,c) = Infinity2Closed(c)"/>
+<org.eventb.theory.core.theorem name="element81" org.eventb.core.label="inf2cUo2o" org.eventb.core.predicate="∀ b, c ·&#10;&#9;b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;b ↦ c ∈ lt ⇒&#10;&#9;&#9;Infinity2Closed(b) ∪ Open2Open(b,c) = Infinity2Open(c)"/>
+<org.eventb.theory.core.theorem name="element82" org.eventb.core.label="c2cUo2inf" org.eventb.core.predicate="∀ a, b ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧&#10;&#9;a ↦ b ∈ leq ⇒&#10;&#9;&#9;Closed2Closed(a,b) ∪ Open2Infinity(b) = Closed2Infinity(a)"/>
+<org.eventb.theory.core.theorem name="element83" org.eventb.core.label="o2cUo2inf" org.eventb.core.predicate="∀ a, b ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ⇒&#10;&#9;&#9;Open2Closed(a,b) ∪ Open2Infinity(b) = Open2Infinity(a)"/>
+<org.eventb.theory.core.theorem name="element84" org.eventb.core.label="inf2cUo2inf" org.eventb.core.predicate="∀ a ·&#10;&#9;a ∈ RReal ⇒&#10;&#9;&#9;Infinity2Closed(a) ∪ Open2Infinity(a) = RReal"/>
+<org.eventb.theory.core.theorem name="element85" org.eventb.core.label="c2oUc2c" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ∧ b ↦ c ∈ leq ⇒&#10;&#9;&#9;Closed2Open(a,b) ∪ Closed2Closed(b,c) = Closed2Closed(a,c)"/>
+<org.eventb.theory.core.theorem name="element86" org.eventb.core.label="c2oUc2o" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ∧ b ↦ c ∈ lt ⇒&#10;&#9;&#9;Closed2Open(a,b) ∪ Closed2Open(b,c) = Closed2Open(a,c)"/>
+<org.eventb.theory.core.theorem name="element87" org.eventb.core.label="o2oUc2c" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ∧ b ↦ c ∈ leq ⇒&#10;&#9;&#9;Open2Open(a,b) ∪ Closed2Closed(b,c) = Open2Closed(a,c)"/>
+<org.eventb.theory.core.theorem name="element88" org.eventb.core.label="o2oUc2o" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ∧ b ↦ c ∈ lt ⇒&#10;&#9;&#9;Open2Open(a,b) ∪ Closed2Open(b,c) = Open2Open(a,c)"/>
+<org.eventb.theory.core.theorem name="element89" org.eventb.core.label="inf2oUc2c" org.eventb.core.predicate="∀ b, c ·&#10;&#9;b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;b ↦ c ∈ leq ⇒&#10;&#9;&#9;Infinity2Open(b) ∪ Closed2Closed(b,c) = Infinity2Closed(c)"/>
+<org.eventb.theory.core.theorem name="element90" org.eventb.core.label="inf2oUc2o" org.eventb.core.predicate="∀ b, c ·&#10;&#9;b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;b ↦ c ∈ lt ⇒&#10;&#9;&#9;Infinity2Open(b) ∪ Closed2Open(b,c) = Infinity2Open(c)"/>
+<org.eventb.theory.core.theorem name="element91" org.eventb.core.label="c2oUc2inf" org.eventb.core.predicate="∀ a, b ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ⇒&#10;&#9;&#9;Closed2Open(a,b) ∪ Closed2Infinity(b) = Closed2Infinity(a)"/>
+<org.eventb.theory.core.theorem name="element92" org.eventb.core.label="o2oUc2inf" org.eventb.core.predicate="∀ a, b ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ⇒&#10;&#9;&#9;Open2Open(a,b) ∪ Closed2Infinity(b) = Open2Infinity(a)"/>
+<org.eventb.theory.core.theorem name="element93" org.eventb.core.label="inf2oUc2inf" org.eventb.core.predicate="∀ a ·&#10;&#9;a ∈ RReal ⇒&#10;&#9;&#9;Infinity2Open(a) ∪ Closed2Infinity(a) = RReal"/>
+<org.eventb.theory.core.theorem name="element67" org.eventb.core.label="c2cCc2c" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ leq ∧ b ↦ c ∈ leq ⇒&#10;&#9;&#9;Closed2Closed(a,b) ∩ Closed2Closed(b,c) = {b}"/>
+<org.eventb.theory.core.theorem name="element68" org.eventb.core.label="o2cCc2c" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ∧ b ↦ c ∈ leq ⇒&#10;&#9;&#9;Open2Closed(a,b) ∩ Closed2Closed(b,c) = {b}"/>
+<org.eventb.theory.core.theorem name="element69" org.eventb.core.label="c2cCc2o" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ leq ∧ b ↦ c ∈ lt ⇒&#10;&#9;&#9;Closed2Closed(a,b) ∩ Closed2Open(b,c) = {b}"/>
+<org.eventb.theory.core.theorem name="element70" org.eventb.core.label="o2cCc2o" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ∧ b ↦ c ∈ lt ⇒&#10;&#9;&#9;Open2Closed(a,b) ∩ Closed2Open(b,c) = {b}"/>
+<org.eventb.theory.core.theorem name="element71" org.eventb.core.label="inf2cCc2c" org.eventb.core.predicate="∀ b, c ·&#10;&#9;b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;b ↦ c ∈ leq ⇒&#10;&#9;&#9;Infinity2Closed(b) ∩ Closed2Closed(b,c) = {b}"/>
+<org.eventb.theory.core.theorem name="element72" org.eventb.core.label="inf2cCc2o" org.eventb.core.predicate="∀ b, c ·&#10;&#9;b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;b ↦ c ∈ lt ⇒&#10;&#9;&#9;Infinity2Closed(b) ∩ Closed2Open(b,c) = {b}"/>
+<org.eventb.theory.core.theorem name="element73" org.eventb.core.label="c2cCc2inf" org.eventb.core.predicate="∀ a, b ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧&#10;&#9;a ↦ b ∈ leq ⇒&#10;&#9;&#9;Closed2Closed(a,b) ∩ Closed2Infinity(b) = {b}"/>
+<org.eventb.theory.core.theorem name="element74" org.eventb.core.label="o2cCc2inf" org.eventb.core.predicate="∀ a, b ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ⇒&#10;&#9;&#9;Open2Closed(a,b) ∩ Closed2Infinity(b) = {b}"/>
+<org.eventb.theory.core.theorem name="element75" org.eventb.core.label="inf2cCc2inf" org.eventb.core.predicate="∀ a ·&#10;&#9;a ∈ RReal ⇒&#10;&#9;&#9;Infinity2Closed(a) ∩ Closed2Infinity(a) = {a}"/>
+<org.eventb.theory.core.theorem name="element94" org.eventb.core.label="c2oCc2c" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ∧ b ↦ c ∈ leq ⇒&#10;&#9;&#9;Closed2Open(a,b) ∩ Closed2Closed(b,c) = ∅"/>
+<org.eventb.theory.core.theorem name="element95" org.eventb.core.label="o2oCc2c" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ∧ b ↦ c ∈ leq ⇒&#10;&#9;&#9;Open2Open(a,b) ∩ Closed2Closed(b,c) = ∅"/>
+<org.eventb.theory.core.theorem name="element96" org.eventb.core.label="c2oCc2o" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ∧ b ↦ c ∈ lt ⇒&#10;&#9;&#9;Closed2Open(a,b) ∩ Closed2Open(b,c) = ∅"/>
+<org.eventb.theory.core.theorem name="element97" org.eventb.core.label="o2oCc2o" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ∧ b ↦ c ∈ lt ⇒&#10;&#9;&#9;Open2Open(a,b) ∩ Closed2Open(b,c) = ∅"/>
+<org.eventb.theory.core.theorem name="element98" org.eventb.core.label="inf2oCc2c" org.eventb.core.predicate="∀ b, c ·&#10;&#9;b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;b ↦ c ∈ leq ⇒&#10;&#9;&#9;Infinity2Open(b) ∩ Closed2Closed(b,c) = ∅"/>
+<org.eventb.theory.core.theorem name="element99" org.eventb.core.label="inf2oCc2o" org.eventb.core.predicate="∀ b, c ·&#10;&#9;b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;b ↦ c ∈ lt ⇒&#10;&#9;&#9;Infinity2Open(b) ∩ Closed2Open(b,c) = ∅"/>
+<org.eventb.theory.core.theorem name="element100" org.eventb.core.label="c2oCc2inf" org.eventb.core.predicate="∀ a, b ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ⇒&#10;&#9;&#9;Closed2Open(a,b) ∩ Closed2Infinity(b) = ∅"/>
+<org.eventb.theory.core.theorem name="element101" org.eventb.core.label="o2oCc2inf" org.eventb.core.predicate="∀ a, b ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ⇒&#10;&#9;&#9;Open2Open(a,b) ∩ Closed2Infinity(b) = ∅"/>
+<org.eventb.theory.core.theorem name="element102" org.eventb.core.label="inf2oCc2inf" org.eventb.core.predicate="∀ a ·&#10;&#9;a ∈ RReal ⇒&#10;&#9;&#9;Infinity2Closed(a) ∩ Closed2Infinity(a) = ∅"/>
+<org.eventb.theory.core.theorem name="element103" org.eventb.core.label="c2cCo2c" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ leq ∧ b ↦ c ∈ lt ⇒&#10;&#9;&#9;Closed2Closed(a,b) ∩ Open2Closed(b,c) = ∅"/>
+<org.eventb.theory.core.theorem name="element104" org.eventb.core.label="o2cCo2c" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ∧ b ↦ c ∈ lt ⇒&#10;&#9;&#9;Open2Closed(a,b) ∩ Open2Closed(b,c) = ∅"/>
+<org.eventb.theory.core.theorem name="element105" org.eventb.core.label="c2cCo2o" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ leq ∧ b ↦ c ∈ lt ⇒&#10;&#9;&#9;Closed2Closed(a,b) ∩ Open2Open(b,c) = ∅"/>
+<org.eventb.theory.core.theorem name="element106" org.eventb.core.label="o2cCo2o" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ∧ b ↦ c ∈ lt ⇒&#10;&#9;&#9;Open2Closed(a,b) ∩ Open2Open(b,c) = ∅"/>
+<org.eventb.theory.core.theorem name="element107" org.eventb.core.label="inf2cCo2c" org.eventb.core.predicate="∀ b, c ·&#10;&#9;b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;b ↦ c ∈ lt ⇒&#10;&#9;&#9;Infinity2Closed(b) ∩ Open2Closed(b,c) = ∅"/>
+<org.eventb.theory.core.theorem name="element108" org.eventb.core.label="inf2cCo2o" org.eventb.core.predicate="∀ b, c ·&#10;&#9;b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;b ↦ c ∈ lt ⇒&#10;&#9;&#9;Infinity2Closed(b) ∩ Open2Open(b,c) = ∅"/>
+<org.eventb.theory.core.theorem name="element109" org.eventb.core.label="c2cCo2inf" org.eventb.core.predicate="∀ a, b ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧&#10;&#9;a ↦ b ∈ leq ⇒&#10;&#9;&#9;Closed2Closed(a,b) ∩ Open2Infinity(b) = ∅"/>
+<org.eventb.theory.core.theorem name="element110" org.eventb.core.label="o2cCo2inf" org.eventb.core.predicate="∀ a, b ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ⇒&#10;&#9;&#9;Open2Closed(a,b) ∩ Open2Infinity(b) = ∅"/>
+<org.eventb.theory.core.theorem name="element111" org.eventb.core.label="inf2cCo2inf" org.eventb.core.predicate="∀ a ·&#10;&#9;a ∈ RReal ⇒&#10;&#9;&#9;Infinity2Closed(a) ∩ Open2Infinity(a) = ∅"/>
+<org.eventb.theory.core.theorem name="element112" org.eventb.core.label="c2oCo2c" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ∧ b ↦ c ∈ lt ⇒&#10;&#9;&#9;Closed2Open(a,b) ∩ Open2Closed(b,c) = ∅"/>
+<org.eventb.theory.core.theorem name="element113" org.eventb.core.label="o2oCo2c" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ∧ b ↦ c ∈ lt ⇒&#10;&#9;&#9;Open2Open(a,b) ∩ Open2Closed(b,c) = ∅"/>
+<org.eventb.theory.core.theorem name="element114" org.eventb.core.label="c2oCo2o" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ∧ b ↦ c ∈ lt ⇒&#10;&#9;&#9;Closed2Open(a,b) ∩ Open2Open(b,c) = ∅"/>
+<org.eventb.theory.core.theorem name="element115" org.eventb.core.label="o2oCo2o" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ∧ b ↦ c ∈ lt ⇒&#10;&#9;&#9;Open2Open(a,b) ∩ Open2Open(b,c) = ∅"/>
+<org.eventb.theory.core.theorem name="element116" org.eventb.core.label="inf2oCo2c" org.eventb.core.predicate="∀ b, c ·&#10;&#9;b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;b ↦ c ∈ lt ⇒&#10;&#9;&#9;Infinity2Open(b) ∩ Open2Closed(b,c) = ∅"/>
+<org.eventb.theory.core.theorem name="element117" org.eventb.core.label="inf2oCo2o" org.eventb.core.predicate="∀ b, c ·&#10;&#9;b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;b ↦ c ∈ lt ⇒&#10;&#9;&#9;Infinity2Open(b) ∩ Open2Open(b,c) = ∅"/>
+<org.eventb.theory.core.theorem name="element118" org.eventb.core.label="c2oCo2inf" org.eventb.core.predicate="∀ a, b ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ⇒&#10;&#9;&#9;Closed2Open(a,b) ∩ Open2Infinity(b) = ∅"/>
+<org.eventb.theory.core.theorem name="element119" org.eventb.core.label="o2oCo2inf" org.eventb.core.predicate="∀ a, b ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ⇒&#10;&#9;&#9;Open2Open(a,b) ∩ Open2Infinity(b) = ∅"/>
+<org.eventb.theory.core.theorem name="element120" org.eventb.core.label="inf2oCo2inf" org.eventb.core.predicate="∀ a ·&#10;&#9;a ∈ RReal ⇒&#10;&#9;&#9;Infinity2Open(a) ∩ Open2Infinity(a) = ∅"/>
+<org.eventb.theory.core.proofRulesBlock name="element127" org.eventb.core.label="intervalInclusion2">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="a" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="b" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.rewriteRule name=")" org.eventb.core.label="s_o2oIno2Inf" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]a,b[ ⊆ ]a,+∞[" org.eventb.theory.core.formula="Open2Open(a,b) ⊆ Open2Infinity(a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="⊤"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element1" org.eventb.core.label="s_o2cIno2Inf" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]a,b] ⊆ ]a,+∞[" org.eventb.theory.core.formula="Open2Closed(a,b) ⊆ Open2Infinity(a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="⊤"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element2" org.eventb.core.label="s_o2oInc2Inf" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]a,b[ ⊆ [a,+∞[" org.eventb.theory.core.formula="Open2Open(a,b) ⊆ Closed2Infinity(a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="⊤"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element3" org.eventb.core.label="s_o2cInc2Inf" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]a,b] ⊆ [a,+∞[" org.eventb.theory.core.formula="Open2Closed(a,b) ⊆ Closed2Infinity(a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="⊤"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element4" org.eventb.core.label="s_c2oInc2Inf" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="[a,b[ ⊆ [a,+∞[" org.eventb.theory.core.formula="Closed2Open(a,b) ⊆ Closed2Infinity(a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="⊤"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element5" org.eventb.core.label="s_c2cInc2Inf" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="[a,b] ⊆ [a,+∞[" org.eventb.theory.core.formula="Closed2Closed(a,b) ⊆ Closed2Infinity(a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="⊤"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element6" org.eventb.core.label="s_o2oIno2c" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]a,b[ ⊆ ]a,b]" org.eventb.theory.core.formula="Open2Open(a,b) ⊆ Open2Closed(a,b)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="⊤"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element7" org.eventb.core.label="s_o2oInc2o" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]a,b[ ⊆ [a,b[" org.eventb.theory.core.formula="Open2Open(a,b) ⊆ Closed2Open(a,b)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="⊤"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element8" org.eventb.core.label="s_o2oInc2c" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]a,b[ ⊆ [a,b]" org.eventb.theory.core.formula="Open2Open(a,b) ⊆ Closed2Closed(a,b)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="⊤"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element9" org.eventb.core.label="s_c2oInc2c" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="[a,b[ ⊆ [a,b]" org.eventb.theory.core.formula="Closed2Open(a,b) ⊆ Closed2Closed(a,b)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="⊤"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element:" org.eventb.core.label="s_o2cInc2c" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]a,b] ⊆ [a,b]" org.eventb.theory.core.formula="Open2Closed(a,b) ⊆ Closed2Closed(a,b)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="⊤"/>
+</org.eventb.theory.core.rewriteRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.proofRulesBlock name="element128" org.eventb.core.label="degenerated_intervals">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="a" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.rewriteRule name="(" org.eventb.core.label="c2c_single" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="[a,a] = {a}" org.eventb.theory.core.formula="Closed2Closed(a,a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="{a}"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name=")" org.eventb.core.label="o2c_empty" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]a,a] = {}" org.eventb.theory.core.formula="Open2Closed(a,a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="∅ ⦂ ℙ(RReal)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element1" org.eventb.core.label="c2o_empty" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="[a,a[ = {}" org.eventb.theory.core.formula="Closed2Open(a,a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="∅ ⦂ ℙ(RReal)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element2" org.eventb.core.label="o2o_empty" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="]a,a[ = {}" org.eventb.theory.core.formula="Open2Open(a,a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="∅ ⦂ ℙ(RReal)"/>
+</org.eventb.theory.core.rewriteRule>
+</org.eventb.theory.core.proofRulesBlock>
+</org.eventb.theory.core.theoryRoot>

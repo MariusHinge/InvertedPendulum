@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.configuration="org.eventb.theory.core.thy">
+    <org.eventb.theory.core.newOperatorDefinition name="(" org.eventb.core.label="isC_inf" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.directOperatorDefinition name="'" org.eventb.theory.core.formula="∀ n,A,B · n∈ℕ ⇒ f∈Cn(n,A,B)"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="E→F" org.eventb.core.identifier="f"/>
+        <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="ℙ(E)" org.eventb.core.identifier="A"/>
+        <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="ℙ(F)" org.eventb.core.identifier="B"/>
+        <org.eventb.theory.core.operatorWDcondition name="+" org.eventb.core.predicate="A⊆E"/>
+        <org.eventb.theory.core.operatorWDcondition name="," org.eventb.core.predicate="B⊆F"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.typeParameter name=")" org.eventb.core.identifier="E"/>
+    <org.eventb.theory.core.typeParameter name="*" org.eventb.core.identifier="F"/>
+    <org.eventb.theory.core.importTheoryProject name="+" org.eventb.theory.core.importTheoryProject="/SimpleDEq">
+        <org.eventb.theory.core.importTheory name="'" org.eventb.theory.core.importTheory="/SimpleDEq/Functions.dtf|org.eventb.theory.core.deployedTheoryRoot#Functions"/>
+    </org.eventb.theory.core.importTheoryProject>
+    <org.eventb.theory.core.axiomaticDefinitionsBlock name="," org.eventb.core.label="Operations">
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="'" org.eventb.core.label="Cinf_plusStable" org.eventb.core.predicate="∀ f,g · f∈(RReal→RReal) ∧ isC_inf(f,RReal,RReal) ∧ g∈(RReal→RReal) ∧ isC_inf(g,RReal,RReal) &#10;&#9;⇒ isC_inf(Rfplus(f↦g),RReal,RReal)"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="(" org.eventb.core.label="Cinf_timesStable" org.eventb.core.predicate="∀ f,g · f∈(RReal→RReal) ∧ isC_inf(f,RReal,RReal) ∧ g∈(RReal→RReal) ∧ isC_inf(g,RReal,RReal) &#10;&#9;⇒ isC_inf(Rftimes(f↦g),RReal,RReal)"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name=")" org.eventb.core.label="Cinf_scalStable" org.eventb.core.predicate="∀ f,a · f∈(RReal→RReal) ∧ isC_inf(f,RReal,RReal) ∧ a∈RReal &#10;&#9;⇒ isC_inf(Rfscal(a↦f),RReal,RReal)"/>
+    </org.eventb.theory.core.axiomaticDefinitionsBlock>
+    <org.eventb.theory.core.axiomaticDefinitionsBlock name="-" org.eventb.core.label="Functions">
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="'" org.eventb.core.label="Cinf_Cste" org.eventb.core.predicate="∀ a · a∈RReal ⇒ isC_inf(Rfcste(a),RReal,RReal)"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="(" org.eventb.core.label="Cinf_Id" org.eventb.core.predicate="isC_inf((λ x · x∈RReal ∣ x),RReal,RReal)"/>
+    </org.eventb.theory.core.axiomaticDefinitionsBlock>
+</org.eventb.theory.core.theoryRoot>

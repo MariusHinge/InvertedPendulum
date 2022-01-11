@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.configuration="org.eventb.theory.core.thy">
+<org.eventb.theory.core.importTheoryProject name="'" org.eventb.theory.core.importTheoryProject="/SimpleDEq">
+<org.eventb.theory.core.importTheory name="'" org.eventb.theory.core.importTheory="/SimpleDEq/DiffEq.dtf|org.eventb.theory.core.deployedTheoryRoot#DiffEq"/>
+</org.eventb.theory.core.importTheoryProject>
+<org.eventb.theory.core.newOperatorDefinition name="*" org.eventb.core.label="fadd" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="true" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="E ⇸ RReal" org.eventb.core.identifier="f"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="E ⇸ RReal" org.eventb.core.identifier="g"/>
+<org.eventb.theory.core.operatorWDcondition name=")" org.eventb.core.predicate="dom(f) = dom(g)"/>
+<org.eventb.theory.core.directOperatorDefinition name="*" org.eventb.theory.core.formula="(λ x_ · x_ ∈ dom(f) ∣ plus(f(x_) ↦ g(x_)))"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name=")" org.eventb.core.label="LinComb1" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="RReal" org.eventb.core.identifier="l"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="E ⇸ RReal" org.eventb.core.identifier="f"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="(λ x_ · x_ ∈ dom(f) ∣ times(l ↦ f(x_)))"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="(" org.eventb.core.label="LinComb2" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="RReal" org.eventb.core.identifier="l"/>
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="E ⇸ RReal" org.eventb.core.identifier="f"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="RReal" org.eventb.core.identifier="m"/>
+<org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="E ⇸ RReal" org.eventb.core.identifier="g"/>
+<org.eventb.theory.core.operatorWDcondition name="+" org.eventb.core.predicate="dom(f) = dom(g)"/>
+<org.eventb.theory.core.directOperatorDefinition name="," org.eventb.theory.core.formula="fadd(LinComb1(l, f), LinComb1(m, g))"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.theorem name="+" org.eventb.core.label="fadd_dom_f" org.eventb.core.predicate="∀ f, g · f ∈ RReal ⇸ RReal ∧ g ∈ RReal ⇸ RReal ∧ dom(f) = dom(g) ⇒&#10;&#9;dom(fadd(f,g)) = dom(f)"/>
+<org.eventb.theory.core.theorem name="," org.eventb.core.label="fadd_dom_g" org.eventb.core.predicate="∀ f, g · f ∈ RReal ⇸ RReal ∧ g ∈ RReal ⇸ RReal ∧ dom(f) = dom(g) ⇒&#10;&#9;dom(fadd(f,g)) = dom(g)"/>
+<org.eventb.theory.core.theorem name="-" org.eventb.core.label="LC1_dom" org.eventb.core.predicate="∀ l, f · f ∈ RReal ⇸ RReal ∧ l ∈ RReal ⇒&#10;&#9;dom(LinComb1(l,f)) = dom(f)"/>
+<org.eventb.theory.core.theorem name="." org.eventb.core.label="LC2_dom" org.eventb.core.predicate="∀ l, f, m, g ·&#10;&#9;l ∈ RReal ∧ f ∈ RReal ⇸ RReal ∧&#10;&#9;m ∈ RReal ∧ g ∈ RReal ⇸ RReal ∧&#10;&#9;dom(f) = dom(g) ⇒ (&#10;&#9;&#9;dom(LinComb2(l,f,m,g)) = dom(f) ∧&#10;&#9;&#9;dom(LinComb2(l,f,m,g)) = dom(g)&#10;&#9;)"/>
+<org.eventb.theory.core.theorem name="/" org.eventb.core.label="LC2_comm" org.eventb.core.predicate="∀ l, f, m, g ·&#10;&#9;l ∈ RReal ∧ f ∈ RReal ⇸ RReal ∧&#10;&#9;m ∈ RReal ∧ g ∈ RReal ⇸ RReal ∧&#10;&#9;dom(f) = dom(g) ⇒ (&#10;&#9;&#9;LinComb2(l,f,m,g) = LinComb2(m,g,l,f)&#10;&#9;)"/>
+<org.eventb.theory.core.proofRulesBlock name="0" org.eventb.core.label="LC_typing">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="l" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="m" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name=")" org.eventb.core.identifier="f" org.eventb.theory.core.type="ℙ(RReal×RReal)"/>
+<org.eventb.theory.core.metaVariable name="*" org.eventb.core.identifier="g" org.eventb.theory.core.type="ℙ(RReal×RReal)"/>
+<org.eventb.theory.core.rewriteRule name="+" org.eventb.core.label="rw_fadd_dom_f" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="dom(f+g)=dom(f)" org.eventb.theory.core.formula="dom(fadd(f,g))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="dom(f)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="," org.eventb.core.label="rw_fadd_dom_g" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="dom(f+g)=dom(g)" org.eventb.theory.core.formula="dom(fadd(f,g))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="dom(g)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="-" org.eventb.core.label="rw_LC1_dom" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="dom(l*f)=dom(f)" org.eventb.theory.core.formula="dom(LinComb1(l,f))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="dom(f)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="." org.eventb.core.label="rw_LC2_dom_f" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="dom(l*f+m*g)=dom(f)" org.eventb.theory.core.formula="dom(LinComb2(l,f,m,g))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="dom(f)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element1" org.eventb.core.label="rw_LC2_dom_g" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="dom(l*f+m*g)=dom(g)" org.eventb.theory.core.formula="dom(LinComb2(l,f,m,g))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="dom(g)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.metaVariable name="element3" org.eventb.core.identifier="A" org.eventb.theory.core.type="ℙ(RReal)"/>
+<org.eventb.theory.core.metaVariable name="element4" org.eventb.core.identifier="B" org.eventb.theory.core.type="ℙ(RReal)"/>
+<org.eventb.theory.core.rewriteRule name="element5" org.eventb.core.label="rw_fadd_type" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Type f+g" org.eventb.theory.core.formula="fadd(f,g) ∈ A → B">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="f ∈ A → B ∧ g ∈ A → B"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element6" org.eventb.core.label="rw_LC1_type" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Type l*f" org.eventb.theory.core.formula="LinComb1(l,f) ∈ A → B">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="f ∈ A → B"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element2" org.eventb.core.label="rw_LC2_type" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Type l*f+m*g" org.eventb.theory.core.formula="LinComb2(l,f,m,g) ∈ A → B">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="f ∈ A → B ∧ g ∈ A → B"/>
+</org.eventb.theory.core.rewriteRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.proofRulesBlock name="1" org.eventb.core.label="LC_reduce">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="l" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="m" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name=")" org.eventb.core.identifier="f" org.eventb.theory.core.type="ℙ(RReal×RReal)"/>
+<org.eventb.theory.core.metaVariable name="*" org.eventb.core.identifier="g" org.eventb.theory.core.type="ℙ(RReal×RReal)"/>
+<org.eventb.theory.core.rewriteRule name="+" org.eventb.core.label="rw_LC1_neutral" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="1*f = f" org.eventb.theory.core.formula="LinComb1(Rone,f)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="f"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="," org.eventb.core.label="rw_LC1_absorbing" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="0*f = 0" org.eventb.theory.core.formula="LinComb1(Rzero,f)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="fcste(dom(f),Rzero)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="-" org.eventb.core.label="rw_LC2_comm" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="l*f+m*g=m*g+l*f" org.eventb.theory.core.formula="LinComb2(l,f,m,g)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="LinComb2(m,g,l,f)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="." org.eventb.core.label="rw_LC2_abs_1" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="0*f+m*g=m*g" org.eventb.theory.core.formula="LinComb2(Rzero,f,m,g)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="LinComb1(m,g)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="/" org.eventb.core.label="rw_LC2_abs_2" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="l*f+0*g=l*f" org.eventb.theory.core.formula="LinComb2(l,f,Rzero,g)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="LinComb1(l,f)"/>
+</org.eventb.theory.core.rewriteRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.proofRulesBlock name="2" org.eventb.core.label="LC_evaluation">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="x" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="l" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name=")" org.eventb.core.identifier="m" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name="*" org.eventb.core.identifier="f" org.eventb.theory.core.type="ℙ(RReal×RReal)"/>
+<org.eventb.theory.core.metaVariable name="+" org.eventb.core.identifier="g" org.eventb.theory.core.type="ℙ(RReal×RReal)"/>
+<org.eventb.theory.core.rewriteRule name="," org.eventb.core.label="rw_LC1_eval" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Eval (l*f)(t)" org.eventb.theory.core.formula="LinComb1(l,f)(x)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="x ∈ dom(f)" org.eventb.theory.core.formula="times(l ↦ f(x))"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="-" org.eventb.core.label="rw_LC2_eval" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Eval (l*f+m*g)(x)" org.eventb.theory.core.formula="LinComb2(l,f,m,g)(x)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="x ∈ dom(f)" org.eventb.theory.core.formula="plus(times(l ↦ f(x)) ↦ times(m ↦ g(x)))"/>
+</org.eventb.theory.core.rewriteRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.newOperatorDefinition name="3" org.eventb.core.label="sLinComb2" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="RReal" org.eventb.core.identifier="l"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="RReal" org.eventb.core.identifier="x"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="RReal" org.eventb.core.identifier="m"/>
+<org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="RReal" org.eventb.core.identifier="y"/>
+<org.eventb.theory.core.directOperatorDefinition name="+" org.eventb.theory.core.formula="plus(times(l ↦ x) ↦ times(m ↦ y))"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.typeParameter name="4" org.eventb.core.identifier="E"/>
+</org.eventb.theory.core.theoryRoot>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="G" org.eventb.core.type="ℙ(G)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="invertible/Op-WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Operator Well-Definedness Preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀op⦂ℙ(G×G×G),e⦂G·op∈ℙ(G × G × G)∧e∈G⇒(op∈G × G → G∧G≠(∅ ⦂ ℙ(G))⇒(∀x⦂G·x∈G⇒(∀y⦂G·y∈G⇒x ↦ y∈dom(op)∧op∈G × G ⇸ G∧(op(x ↦ y)=e⇒y ↦ x∈dom(op)))))" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.newOperatorDefinition#)"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tcf|org.eventb.theory.core.scTheoryRoot#Group|org.eventb.theory.core.scNewOperatorDefinition#H"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.newOperatorDefinition#)"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poSequent#invertible\/Op-WD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="commutative/Op-WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Operator Well-Definedness Preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀op⦂ℙ(G×G×G)·op∈ℙ(G × G × G)⇒(op∈G × G → G∧G≠(∅ ⦂ ℙ(G))⇒(∀x⦂G,y⦂G·x∈G∧y∈G⇒x ↦ y∈dom(op)∧op∈G × G ⇸ G∧y ↦ x∈dom(op)))" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.newOperatorDefinition#*"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tcf|org.eventb.theory.core.scTheoryRoot#Group|org.eventb.theory.core.scNewOperatorDefinition#I"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.newOperatorDefinition#*"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poSequent#commutative\/Op-WD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="inverses/Op-WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Operator Well-Definedness Preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀op⦂ℙ(G×G×G),e⦂G,x⦂G,y⦂G·op∈ℙ(G × G × G)∧e∈G∧x∈G∧y∈G⇒(op∈G × G → G∧G≠(∅ ⦂ ℙ(G))⇒op∈G × G → G∧G≠(∅ ⦂ ℙ(G))∧(invertible(op,e)⇒x ↦ y∈dom(op)∧op∈G × G ⇸ G∧(op(x ↦ y)=e⇒y ↦ x∈dom(op))))" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.newOperatorDefinition#."/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tcf|org.eventb.theory.core.scTheoryRoot#Group|org.eventb.theory.core.scNewOperatorDefinition#L"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.newOperatorDefinition#."/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poSequent#inverses\/Op-WD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="inversesCommutative/S-THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Therorem Soundness" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀op⦂ℙ(G×G×G),e⦂G,x⦂G,y⦂G·op∈G × G → G∧e∈G∧x∈G∧y∈G∧Group(op,e)⇒(inverses(op,e,x,y)⇔inverses(op,e,y,x))" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.theorem#\/"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tcf|org.eventb.theory.core.scTheoryRoot#Group|org.eventb.theory.core.scTheorem#generatedBlocl"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.theorem#\/"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poSequent#inversesCommutative\/S-THM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="inversesCommutative/WD-THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-Definedness of Theorem" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀op⦂ℙ(G×G×G),e⦂G,x⦂G,y⦂G·op∈G × G → G∧e∈G∧x∈G∧y∈G⇒G≠(∅ ⦂ ℙ(G))" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.theorem#\/"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tcf|org.eventb.theory.core.scTheoryRoot#Group|org.eventb.theory.core.scTheorem#generatedBlocl"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.theorem#\/"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poSequent#inversesCommutative\/WD-THM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="latinSquare/S-THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Therorem Soundness" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀op⦂ℙ(G×G×G),e⦂G,x⦂G,y⦂G·op∈G × G → G∧e∈G∧x∈G∧y∈G∧Group(op,e)⇒(∃g⦂G·g∈G⇒op(x ↦ g)=y∧(∀g2⦂G·g2∈G∧op(x ↦ g2)=y⇒g=g2))" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.theorem#0"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tcf|org.eventb.theory.core.scTheoryRoot#Group|org.eventb.theory.core.scTheorem#generatedBlocm"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.theorem#0"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poSequent#latinSquare\/S-THM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="latinSquare/WD-THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-Definedness of Theorem" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀op⦂ℙ(G×G×G),e⦂G,x⦂G,y⦂G·(op∈G × G → G∧e∈G∧x∈G∧y∈G⇒G≠(∅ ⦂ ℙ(G)))∧(op∈G × G → G∧e∈G∧x∈G∧y∈G∧Group(op,e)⇒(∀g⦂G·g∈G⇒x ↦ g∈dom(op)∧op∈G × G ⇸ G∧(op(x ↦ g)=y⇒(∀g2⦂G·g2∈G⇒x ↦ g2∈dom(op)))))" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.theorem#0"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tcf|org.eventb.theory.core.scTheoryRoot#Group|org.eventb.theory.core.scTheorem#generatedBlocm"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.theorem#0"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poSequent#latinSquare\/WD-THM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="leftCancellation/S-THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Therorem Soundness" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀op⦂ℙ(G×G×G),e⦂G·op∈G × G → G∧e∈G∧Group(op,e)⇒(∀a⦂G,b⦂G,c⦂G·a∈G∧b∈G∧c∈G⇒(op(a ↦ b)=op(a ↦ c)⇔b=c))" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.theorem#3"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tcf|org.eventb.theory.core.scTheoryRoot#Group|org.eventb.theory.core.scTheorem#generatedBlocn"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.theorem#3"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poSequent#leftCancellation\/S-THM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="leftCancellation/WD-THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-Definedness of Theorem" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀op⦂ℙ(G×G×G),e⦂G·(op∈G × G → G∧e∈G⇒G≠(∅ ⦂ ℙ(G)))∧(op∈G × G → G∧e∈G∧Group(op,e)⇒(∀a⦂G,b⦂G,c⦂G·a∈G∧b∈G∧c∈G⇒a ↦ b∈dom(op)∧op∈G × G ⇸ G∧a ↦ c∈dom(op)))" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.theorem#3"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tcf|org.eventb.theory.core.scTheoryRoot#Group|org.eventb.theory.core.scTheorem#generatedBlocn"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.theorem#3"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poSequent#leftCancellation\/WD-THM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="rightCancellation/S-THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Therorem Soundness" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀op⦂ℙ(G×G×G),e⦂G·op∈G × G → G∧e∈G∧Group(op,e)⇒(∀a⦂G,b⦂G,c⦂G·a∈G∧b∈G∧c∈G⇒(op(b ↦ a)=op(c ↦ a)⇔b=c))" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.theorem#4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tcf|org.eventb.theory.core.scTheoryRoot#Group|org.eventb.theory.core.scTheorem#generatedBloco"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.theorem#4"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poSequent#rightCancellation\/S-THM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="rightCancellation/WD-THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-Definedness of Theorem" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀op⦂ℙ(G×G×G),e⦂G·(op∈G × G → G∧e∈G⇒G≠(∅ ⦂ ℙ(G)))∧(op∈G × G → G∧e∈G∧Group(op,e)⇒(∀a⦂G,b⦂G,c⦂G·a∈G∧b∈G∧c∈G⇒b ↦ a∈dom(op)∧op∈G × G ⇸ G∧c ↦ a∈dom(op)))" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.theorem#4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tcf|org.eventb.theory.core.scTheoryRoot#Group|org.eventb.theory.core.scTheorem#generatedBloco"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.theorem#4"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poSequent#rightCancellation\/WD-THM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="inverseEqn/S-THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Therorem Soundness" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀op⦂ℙ(G×G×G),e⦂G·op∈G × G → G∧e∈G∧Group(op,e)⇒(∀x⦂G,y⦂G·x∈G∧y∈G⇒(op(x ↦ y)=e⇔inverses(op,e,x,y)))" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.theorem#5"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tcf|org.eventb.theory.core.scTheoryRoot#Group|org.eventb.theory.core.scTheorem#generatedBlocp"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.theorem#5"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poSequent#inverseEqn\/S-THM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="inverseEqn/WD-THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-Definedness of Theorem" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀op⦂ℙ(G×G×G),e⦂G·(op∈G × G → G∧e∈G⇒G≠(∅ ⦂ ℙ(G)))∧(op∈G × G → G∧e∈G∧Group(op,e)⇒(∀x⦂G,y⦂G·x∈G∧y∈G⇒x ↦ y∈dom(op)∧op∈G × G ⇸ G))" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.theorem#5"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tcf|org.eventb.theory.core.scTheoryRoot#Group|org.eventb.theory.core.scTheorem#generatedBlocp"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.theorem#5"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poSequent#inverseEqn\/WD-THM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="zeroInverse/S-THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Therorem Soundness" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀op⦂ℙ(G×G×G),e⦂G·op∈G × G → G∧e∈G∧invertible(op,e)∧neutral(op,e)⇒inverses(op,e,e,e)" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.theorem#7"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tcf|org.eventb.theory.core.scTheoryRoot#Group|org.eventb.theory.core.scTheorem#generatedBlocq"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.theorem#7"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poSequent#zeroInverse\/S-THM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="zeroInverse/WD-THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-Definedness of Theorem" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀op⦂ℙ(G×G×G),e⦂G·op∈G × G → G∧e∈G⇒G≠(∅ ⦂ ℙ(G))" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.theorem#7"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tcf|org.eventb.theory.core.scTheoryRoot#Group|org.eventb.theory.core.scTheorem#generatedBlocq"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/SimpleDEq/Group.tuf|org.eventb.theory.core.theoryRoot#Group|org.eventb.theory.core.theorem#7"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/SimpleDEq/Group.bpo|org.eventb.core.poFile#Group|org.eventb.core.poSequent#zeroInverse\/WD-THM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+</org.eventb.core.poFile>

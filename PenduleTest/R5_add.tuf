@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.configuration="org.eventb.theory.core.thy">
+    <org.eventb.theory.core.importTheoryProject name="(" org.eventb.theory.core.importTheoryProject="/LaSalle_Theory">
+        <org.eventb.theory.core.importTheory name="'" org.eventb.theory.core.importTheory="/LaSalle_Theory/R5.dtf|org.eventb.theory.core.deployedTheoryRoot#R5"/>
+    </org.eventb.theory.core.importTheoryProject>
+    <org.eventb.theory.core.importTheoryProject name="1" org.eventb.theory.core.importTheoryProject="/SimpleDEq">
+        <org.eventb.theory.core.importTheory name="'" org.eventb.theory.core.importTheory="/SimpleDEq/Functions.dtf|org.eventb.theory.core.deployedTheoryRoot#Functions"/>
+    </org.eventb.theory.core.importTheoryProject>
+    <org.eventb.theory.core.axiomaticDefinitionsBlock name="2" org.eventb.core.label="projectors">
+        <org.eventb.theory.core.axiomaticOperatorDefinition name="'" org.eventb.core.label="R5_fproj1" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(RReal×RReal)">
+            <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="RReal ⇸ RReal×RReal×RReal×RReal×RReal" org.eventb.core.identifier="f"/>
+        </org.eventb.theory.core.axiomaticOperatorDefinition>
+        <org.eventb.theory.core.axiomaticOperatorDefinition name="(" org.eventb.core.label="R5_fproj2" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(RReal×RReal)">
+            <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="RReal ⇸ RReal×RReal×RReal×RReal×RReal" org.eventb.core.identifier="f"/>
+        </org.eventb.theory.core.axiomaticOperatorDefinition>
+        <org.eventb.theory.core.axiomaticOperatorDefinition name=")" org.eventb.core.label="R5_fproj3" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(RReal×RReal)">
+            <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="RReal ⇸ RReal×RReal×RReal×RReal×RReal" org.eventb.core.identifier="f"/>
+        </org.eventb.theory.core.axiomaticOperatorDefinition>
+        <org.eventb.theory.core.axiomaticOperatorDefinition name="*" org.eventb.core.label="R5_fproj4" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(RReal×RReal)">
+            <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="RReal ⇸ RReal×RReal×RReal×RReal×RReal" org.eventb.core.identifier="f"/>
+        </org.eventb.theory.core.axiomaticOperatorDefinition>
+        <org.eventb.theory.core.axiomaticOperatorDefinition name="+" org.eventb.core.label="R5_fproj5" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(RReal×RReal)">
+            <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="RReal ⇸ RReal×RReal×RReal×RReal×RReal" org.eventb.core.identifier="f"/>
+        </org.eventb.theory.core.axiomaticOperatorDefinition>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="," org.eventb.core.label="proj_type" org.eventb.core.predicate="∀ f · f ∈ (RReal ⇸ RReal×RReal×RReal×RReal×RReal) ⇒ (&#10;&#9;R5_fproj1(f) ∈ RReal ⇸ RReal ∧ dom(f) = dom(R5_fproj1(f)) ∧&#10;    R5_fproj2(f) ∈ RReal ⇸ RReal ∧ dom(f) = dom(R5_fproj2(f)) ∧&#10;&#9;R5_fproj3(f) ∈ RReal ⇸ RReal ∧ dom(f) = dom(R5_fproj3(f)) ∧&#10;&#9;R5_fproj4(f) ∈ RReal ⇸ RReal ∧ dom(f) = dom(R5_fproj4(f)) ∧&#10;&#9;R5_fproj5(f) ∈ RReal ⇸ RReal ∧ dom(f) = dom(R5_fproj5(f))&#10;)"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="-" org.eventb.core.label="bind_projR5" org.eventb.core.predicate="∀ f · f ∈ (RReal ⇸ RReal×RReal×RReal×RReal×RReal) ⇒ (&#10;&#9;bind(bind(bind(bind(R5_fproj1(f),R5_fproj2(f)),R5_fproj3(f)),R5_fproj4(f)),R5_fproj5(f)) = f&#10;)"/>
+    </org.eventb.theory.core.axiomaticDefinitionsBlock>
+</org.eventb.theory.core.theoryRoot>

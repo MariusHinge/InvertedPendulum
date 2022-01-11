@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.configuration="org.eventb.theory.core.thy">
+    <org.eventb.theory.core.importTheoryProject name="'" org.eventb.theory.core.importTheoryProject="/SimpleDEq">
+        <org.eventb.theory.core.importTheory name="'" org.eventb.theory.core.importTheory="/SimpleDEq/Reals.dtf|org.eventb.theory.core.deployedTheoryRoot#Reals"/>
+    </org.eventb.theory.core.importTheoryProject>
+    <org.eventb.theory.core.typeParameter name="(" org.eventb.core.identifier="M"/>
+    <org.eventb.theory.core.newOperatorDefinition name=")" org.eventb.core.label="isIndiscernibles" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="M×M → RReal" org.eventb.core.identifier="d"/>
+        <org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="∀ x, y · x ∈ M ∧ y ∈ M ⇒ (&#10;&#9;(d(x↦y)=Rzero)⇔(x=y)&#10;)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="*" org.eventb.core.label="isSymmetric" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="M×M → RReal" org.eventb.core.identifier="d"/>
+        <org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="∀ x, y · x ∈ M ∧ y ∈ M ⇒ (&#10;&#9;d(x↦y) = d(y↦x)&#10;)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="+" org.eventb.core.label="isTriangleIneq" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="M×M → RReal" org.eventb.core.identifier="d"/>
+        <org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="∀ x, y, z · x ∈ M ∧ y ∈ M ∧ z ∈ M ⇒ (&#10;&#9;d(x↦z) ↦ plus(d(x↦y)↦d(y↦z)) ∈ leq&#10;)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.theorem name="," org.eventb.core.label="absDistance" org.eventb.core.predicate="isDistance(abs_distance)"/>
+    <org.eventb.theory.core.newOperatorDefinition name="-" org.eventb.core.label="isDistance" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="M×M → RReal" org.eventb.core.identifier="d"/>
+        <org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="isIndiscernibles(d) ∧ isSymmetric(d) ∧ isTriangleIneq(d)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.axiomaticDefinitionsBlock name="/" org.eventb.core.label="distances">
+        <org.eventb.theory.core.axiomaticOperatorDefinition name="'" org.eventb.core.label="abs_distance" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(RReal×RReal×RReal)"/>
+        <org.eventb.theory.core.axiomaticOperatorDefinition name="(" org.eventb.core.label="eucl_distance" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(RReal×RReal×RReal)"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="*" org.eventb.core.label="type_absDistance" org.eventb.core.predicate="abs_distance ∈ RReal×RReal → RReal"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="," org.eventb.core.label="def_absDistance" org.eventb.core.predicate="∀ x, y · x∈RReal ∧ y∈RReal ⇒&#10;abs_distance(x↦y) = abs(minus(x↦y))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="-" org.eventb.core.label="type_euclDistance" org.eventb.core.predicate="eucl_distance ∈ RReal×RReal → RReal"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="+" org.eventb.core.label="def_euclDistance" org.eventb.core.predicate="∀ x, y · x∈RReal ∧ y∈RReal ⇒&#10;eucl_distance(x↦y) = sqrt(times(minus(x↦y)↦minus(x↦y)))"/>
+    </org.eventb.theory.core.axiomaticDefinitionsBlock>
+    <org.eventb.theory.core.theorem name="0" org.eventb.core.label="euclDistance" org.eventb.core.predicate="isDistance(eucl_distance)"/>
+    <org.eventb.theory.core.axiomaticDefinitionsBlock name="1" org.eventb.core.label="Boules">
+        <org.eventb.theory.core.axiomaticOperatorDefinition name="'" org.eventb.core.comment="Rq: Impossible de mettre des WD-Conditions" org.eventb.core.label="bouleOuverte" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(M)">
+            <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.comment="Centre" org.eventb.core.expression="M" org.eventb.core.identifier="u0"/>
+            <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.comment="Rayon" org.eventb.core.expression="RReal" org.eventb.core.identifier="r"/>
+            <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.comment="Distance" org.eventb.core.expression="M×M → RReal" org.eventb.core.identifier="d"/>
+        </org.eventb.theory.core.axiomaticOperatorDefinition>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="(" org.eventb.core.label="def_bouleOuverte" org.eventb.core.predicate="∀ u0,r,d · u0∈M ∧ r∈RRealPlusStar ∧ d∈M×M → RReal ∧ isDistance(d) ⇒&#10;&#9;bouleOuverte(u0,r,d) = { u ∣ u ∈M  ∧ (d(u0↦u) ↦ r) ∈ lt }"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name=")" org.eventb.core.label="def_bouleFermee" org.eventb.core.predicate="∀ u0,r,d · u0∈M ∧ r∈RRealPlusStar ∧ d∈M×M → RReal ∧ isDistance(d) ⇒&#10;&#9;bouleFermee(u0,r,d) = { u ∣ u ∈M  ∧ (d(u0↦u) ↦ r) ∈ leq }"/>
+        <org.eventb.theory.core.axiomaticOperatorDefinition name="*" org.eventb.core.label="bouleFermee" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(M)">
+            <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.comment="Centre" org.eventb.core.expression="M" org.eventb.core.identifier="u0"/>
+            <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.comment="Rayon" org.eventb.core.expression="RReal" org.eventb.core.identifier="r"/>
+            <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.comment="Distance" org.eventb.core.expression="M×M → RReal" org.eventb.core.identifier="d"/>
+        </org.eventb.theory.core.axiomaticOperatorDefinition>
+    </org.eventb.theory.core.axiomaticDefinitionsBlock>
+    <org.eventb.theory.core.newOperatorDefinition name="3" org.eventb.core.label="isBoundedSet" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(M)" org.eventb.core.identifier="K"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="M×M→RReal" org.eventb.core.identifier="d"/>
+        <org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="∀ k · k∈K ⇒ (∃ M · M∈RReal ⇒ (d(k)↦M)∈leq)"/>
+        <org.eventb.theory.core.operatorWDcondition name="*" org.eventb.core.predicate="isDistance(d)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+</org.eventb.theory.core.theoryRoot>

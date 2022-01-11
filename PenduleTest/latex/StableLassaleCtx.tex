@@ -1,0 +1,24 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage{bsymb,b2latex}
+\begin{document}
+\SingleHeader{StableLassaleCtx}
+\CONTEXT{StableLassaleCtx}{GenericCtx}{}
+\CONSTANTS{
+	\Constant{V}{}
+	\Constant{F}{}
+	\Constant{K}{}
+	\Constant{d\_K}{}
+}
+\AXIOMS{
+	\Axiom{type\_V}{false}{$V \in{} S \tfun{} RReal$}{}
+	\Axiom{type\_F}{false}{$F \in{} RRealPlus\cprod{}S \tfun{} S$}{}
+	\Axiom{type\_K}{false}{$K \subseteq{} S \land{} K \neq{} \emptyset{}$}{\\K is not an empty subset.}
+	\Axiom{type\_d\_K}{false}{$d\_K \in{} S\cprod{}S \tfun{} RReal$}{}
+	\Axiom{dK\_distance}{false}{$isDistance(d\_K)$}{}
+	\Axiom{K\_compact}{false}{$isClosed(K,d\_K) \land{} isBoundedSet(K,d\_K)$}{}
+	\Axiom{Vtilde\_neg}{false}{$\forall{}p \qdot{} p\in{}K \limp{} tilde(V,F)(p) \mapsto{} Rzero \in{} leq$}{}
+	\Axiom{K\_InvariantSet}{false}{$isInvariantSet(K,F)$}{}
+	\Axiom{V\_continuous}{false}{$V\in{}Cn(1,K,RReal)$}{}
+}
+\END
+\end{document}

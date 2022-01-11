@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" version="3">
+    <org.eventb.core.extendsContext name="'" org.eventb.core.target="GenericCtx"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="(" org.eventb.core.identifier="V"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="*" org.eventb.core.comment="Fonction descriptive de l'equation différentielle" org.eventb.core.identifier="F"/>
+    <org.eventb.core.axiom name="+" org.eventb.core.label="type_V" org.eventb.core.predicate="V ∈ S → RReal"/>
+    <org.eventb.core.axiom name="-" org.eventb.core.label="type_F" org.eventb.core.predicate="F ∈ RRealPlus×S → S"/>
+    <org.eventb.core.axiom name="/" org.eventb.core.comment="K is not an empty subset." org.eventb.core.label="type_K" org.eventb.core.predicate="K ⊆ S ∧ K ≠ ∅"/>
+    <org.eventb.core.axiom name="6" org.eventb.core.label="type_d_K" org.eventb.core.predicate="d_K ∈ S×S → RReal"/>
+    <org.eventb.core.axiom name="7" org.eventb.core.label="dK_distance" org.eventb.core.predicate="isDistance(d_K)"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="0" org.eventb.core.identifier="K"/>
+    <org.eventb.core.axiom name="1" org.eventb.core.label="K_compact" org.eventb.core.predicate="isClosed(K,d_K) ∧ isBoundedSet(K,d_K)"/>
+    <org.eventb.core.axiom name="3" org.eventb.core.label="Vtilde_neg" org.eventb.core.predicate="∀p · p∈K ⇒ tilde(V,F)(p) ↦ Rzero ∈ leq"/>
+    <org.eventb.core.constant name="5" org.eventb.core.identifier="d_K"/>
+    <org.eventb.core.axiom name="8" org.eventb.core.label="K_InvariantSet" org.eventb.core.predicate="isInvariantSet(K,F)"/>
+    <org.eventb.core.axiom name="9" org.eventb.core.label="V_continuous" org.eventb.core.predicate="V∈Cn(1,S,RReal)"/>
+</org.eventb.core.contextFile>

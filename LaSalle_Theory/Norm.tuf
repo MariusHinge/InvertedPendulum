@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.comment="Only works for R^n sets (R-espace vectoriel) &#10;However i cant force the plugin theory to only consider those sets so this is ugly" org.eventb.core.configuration="org.eventb.theory.core.thy">
+    <org.eventb.theory.core.typeParameter name="'" org.eventb.core.identifier="E"/>
+    <org.eventb.theory.core.importTheoryProject name="," org.eventb.theory.core.importTheoryProject="/LaSalle_Theory">
+        <org.eventb.theory.core.importTheory name="'" org.eventb.theory.core.importTheory="/LaSalle_Theory/Espace Vectoriel.dtf|org.eventb.theory.core.deployedTheoryRoot#Espace Vectoriel"/>
+    </org.eventb.theory.core.importTheoryProject>
+    <org.eventb.theory.core.newOperatorDefinition name="-" org.eventb.core.label="isSeperate" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="E → RReal" org.eventb.core.identifier="N"/>
+        <org.eventb.theory.core.operatorArgument name="." org.eventb.core.expression="(E × E) → E" org.eventb.core.identifier="vec_plus"/>
+        <org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.core.comment="N(u) = O_R =&gt; N(u) 0_E" org.eventb.theory.core.formula="∀u· u∈E ∧ &#10;&#9;N(u) = Rzero ⇒ u = vec_zero"/>
+        <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="(RReal × E) → E" org.eventb.core.identifier="scal_times"/>
+        <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="E" org.eventb.core.identifier="vec_zero"/>
+        <org.eventb.theory.core.operatorWDcondition name="/" org.eventb.core.comment="Premiere ligne -&gt; A définir avant de considérer l'espace vectoriel&#10;Deuxieme ligne -&gt; Réels de G.Dupont qui forment un corps" org.eventb.core.predicate="VectorSpace(vec_plus,scal_times,vec_zero,&#10;&#9;plus,times,Rzero,Rone)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="." org.eventb.core.label="isHomogeneous" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="E → RReal" org.eventb.core.identifier="N"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="(E × E) → E" org.eventb.core.identifier="vec_plus"/>
+        <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="(RReal × E) → E" org.eventb.core.identifier="scal_times"/>
+        <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="E" org.eventb.core.identifier="vec_zero"/>
+        <org.eventb.theory.core.operatorWDcondition name="+" org.eventb.core.comment="Premiere ligne -&gt; A définir avant de considérer l'espace vectoriel&#10;Deuxieme ligne -&gt; Réels de G.Dupont" org.eventb.core.predicate="VectorSpace(vec_plus,scal_times,vec_zero,&#10;&#9;plus,times,Rzero,Rone)"/>
+        <org.eventb.theory.core.directOperatorDefinition name="," org.eventb.core.comment="N(a.u) = |a|N(u)" org.eventb.theory.core.formula="∀ a,u · a∈RReal ∧ u∈E ⇒ &#10;&#9;N(scal_times(a↦u)) = times(abs(a)↦N(u))"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="/" org.eventb.core.label="isInegTriang" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="E → RReal" org.eventb.core.identifier="N"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="(E × E) → E" org.eventb.core.identifier="vec_plus"/>
+        <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="(RReal × E) → E" org.eventb.core.identifier="scal_times"/>
+        <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="E" org.eventb.core.identifier="vec_zero"/>
+        <org.eventb.theory.core.directOperatorDefinition name="+" org.eventb.core.comment="N(u+v) = N(u) + N(v)" org.eventb.theory.core.formula="∀ u,v · u∈E ∧ v∈E ⇒ &#10;&#9;(N(vec_plus(u↦v))↦plus(N(u)↦N(v))) ∈ leq"/>
+        <org.eventb.theory.core.operatorWDcondition name="," org.eventb.core.comment="Premiere ligne -&gt; A définir avant de considérer l'espace vectoriel&#10;Deuxieme ligne -&gt; Réels de G.Dupont" org.eventb.core.predicate="VectorSpace(vec_plus,scal_times,vec_zero,&#10;&#9;plus,times,Rzero,Rone)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="0" org.eventb.core.label="isNorm" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="E → RReal" org.eventb.core.identifier="N"/>
+        <org.eventb.theory.core.operatorWDcondition name="(" org.eventb.core.predicate="VectorSpace(vec_plus,scal_times,vec_zero,&#10;&#9;plus,times,Rzero,Rone)"/>
+        <org.eventb.theory.core.operatorArgument name="," org.eventb.core.expression="(E × E) → E" org.eventb.core.identifier="vec_plus"/>
+        <org.eventb.theory.core.operatorArgument name="-" org.eventb.core.expression="(RReal × E) → E" org.eventb.core.identifier="scal_times"/>
+        <org.eventb.theory.core.operatorArgument name="." org.eventb.core.expression="E" org.eventb.core.identifier="vec_zero"/>
+        <org.eventb.theory.core.directOperatorDefinition name="/" org.eventb.theory.core.formula="isSeperate(N,vec_plus,scal_times,vec_zero) ∧&#10;isHomogeneous(N,vec_plus,scal_times,vec_zero) ∧&#10;isInegTriang(N,vec_plus,scal_times,vec_zero)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+</org.eventb.theory.core.theoryRoot>

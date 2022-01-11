@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+    <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="STATES" org.eventb.core.type="ℙ(STATES)"/>
+        <org.eventb.core.poIdentifier name="S" org.eventb.core.type="ℙ(RReal×RReal×RReal×RReal×RReal)"/>
+        <org.eventb.core.poPredicate name="STATET" org.eventb.core.predicate="S=(RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal))" org.eventb.core.source="/PenduleTest/GenericCtx.buc|org.eventb.core.contextFile#GenericCtx|org.eventb.core.axiom#)"/>
+        <org.eventb.core.poIdentifier name="F" org.eventb.core.type="ℙ(RReal×(RReal×RReal×RReal×RReal×RReal)×(RReal×RReal×RReal×RReal×RReal))"/>
+        <org.eventb.core.poIdentifier name="K" org.eventb.core.type="ℙ(RReal×RReal×RReal×RReal×RReal)"/>
+        <org.eventb.core.poIdentifier name="V" org.eventb.core.type="ℙ(RReal×RReal×RReal×RReal×RReal×RReal)"/>
+        <org.eventb.core.poIdentifier name="d_K" org.eventb.core.type="ℙ(RReal×RReal×RReal×RReal×RReal×(RReal×RReal×RReal×RReal×RReal)×RReal)"/>
+        <org.eventb.core.poPredicate name="STATEU" org.eventb.core.predicate="V∈S → (RReal ⦂ ℙ(RReal))" org.eventb.core.source="/PenduleTest/StableLassaleCtx.buc|org.eventb.core.contextFile#StableLassaleCtx|org.eventb.core.axiom#+"/>
+        <org.eventb.core.poPredicate name="STATEV" org.eventb.core.predicate="F∈(RRealPlus ⦂ ℙ(RReal)) × S → S" org.eventb.core.source="/PenduleTest/StableLassaleCtx.buc|org.eventb.core.contextFile#StableLassaleCtx|org.eventb.core.axiom#-"/>
+        <org.eventb.core.poPredicate name="STATEW" org.eventb.core.predicate="K⊆S∧K≠(∅ ⦂ ℙ(RReal×RReal×RReal×RReal×RReal))" org.eventb.core.source="/PenduleTest/StableLassaleCtx.buc|org.eventb.core.contextFile#StableLassaleCtx|org.eventb.core.axiom#\/"/>
+        <org.eventb.core.poPredicate name="STATEX" org.eventb.core.predicate="d_K∈S × S → (RReal ⦂ ℙ(RReal))" org.eventb.core.source="/PenduleTest/StableLassaleCtx.buc|org.eventb.core.contextFile#StableLassaleCtx|org.eventb.core.axiom#6"/>
+        <org.eventb.core.poPredicate name="STATEY" org.eventb.core.predicate="isDistance(d_K)" org.eventb.core.source="/PenduleTest/StableLassaleCtx.buc|org.eventb.core.contextFile#StableLassaleCtx|org.eventb.core.axiom#7"/>
+        <org.eventb.core.poPredicate name="STATEZ" org.eventb.core.predicate="isClosed(K,d_K)∧isBoundedSet(K,d_K)" org.eventb.core.source="/PenduleTest/StableLassaleCtx.buc|org.eventb.core.contextFile#StableLassaleCtx|org.eventb.core.axiom#1"/>
+        <org.eventb.core.poPredicate name="STATE[" org.eventb.core.predicate="∀p⦂RReal×RReal×RReal×RReal×RReal·p∈K⇒tilde(V,F)(p) ↦ (Rzero ⦂ RReal)∈(leq ⦂ ℙ(RReal×RReal))" org.eventb.core.source="/PenduleTest/StableLassaleCtx.buc|org.eventb.core.contextFile#StableLassaleCtx|org.eventb.core.axiom#3"/>
+        <org.eventb.core.poPredicate name="STATE\" org.eventb.core.predicate="isInvariantSet(K,F)" org.eventb.core.source="/PenduleTest/StableLassaleCtx.buc|org.eventb.core.contextFile#StableLassaleCtx|org.eventb.core.axiom#8"/>
+        <org.eventb.core.poPredicate name="STATE]" org.eventb.core.predicate="V∈Cn(1,S,RReal ⦂ ℙ(RReal))" org.eventb.core.source="/PenduleTest/StableLassaleCtx.buc|org.eventb.core.contextFile#StableLassaleCtx|org.eventb.core.axiom#9"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="t" org.eventb.core.type="RReal"/>
+        <org.eventb.core.poIdentifier name="x_p" org.eventb.core.type="ℙ(RReal×(RReal×RReal×RReal×RReal×RReal))"/>
+        <org.eventb.core.poIdentifier name="x_s" org.eventb.core.type="STATES"/>
+        <org.eventb.core.poPredicate name="x_t" org.eventb.core.predicate="t∈(RRealPlus ⦂ ℙ(RReal))" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poPredicate name="x_u" org.eventb.core.predicate="x_p∈(RReal ⦂ ℙ(RReal)) ⇸ S" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.invariant#inv2"/>
+        <org.eventb.core.poPredicate name="x_v" org.eventb.core.predicate="Closed2Closed(Rzero ⦂ RReal,t)⊆dom(x_p)" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.invariant#inv4"/>
+        <org.eventb.core.poPredicate name="x_w" org.eventb.core.predicate="x_s∈STATES" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.invariant#inv3"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="V_o_Sol_Deriv/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#ABSHYP"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(Rzero ⦂ RReal)∈dom(x_p)∧x_p∈(RReal ⦂ ℙ(RReal)) ⇸ (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal))" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#ABSHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/V_o_Sol_Deriv/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTALLHYPStableLassaleCtz">
+            <org.eventb.core.poPredicate name="'" org.eventb.core.predicate="x_p'∈D1({Rzero ⦂ RReal},S)" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#'|org.eventb.core.action#("/>
+        </org.eventb.core.poPredicateSet>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="x_p'(Rzero ⦂ RReal)∈K⇒x_p';V∈D1(Closed2Closed(Rzero ⦂ RReal,Rzero ⦂ RReal),RReal ⦂ ℙ(RReal))" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#\/"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#'"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poSequent#INITIALISATION\/V_o_Sol_Deriv\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/act2/FIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of action" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTALLHYPStableLassaleCtz">
+            <org.eventb.core.poPredicate name="'" org.eventb.core.predicate="x_p'∈{Rzero ⦂ RReal} → S" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#\/|org.eventb.core.action#("/>
+            <org.eventb.core.poPredicate name="(" org.eventb.core.predicate="x_s'∈STATES" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#\/|org.eventb.core.action#internal1"/>
+        </org.eventb.core.poPredicateSet>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="D1({Rzero ⦂ RReal},S)≠(∅ ⦂ ℙ(ℙ(RReal×(RReal×RReal×RReal×RReal×RReal))))" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#'|org.eventb.core.action#("/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#'|org.eventb.core.action#("/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTALLHYPStableLassaleCtz"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/act2/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTALLHYPStableLassaleCtz">
+            <org.eventb.core.poPredicate name="'" org.eventb.core.predicate="x_p'∈D1({Rzero ⦂ RReal},S)" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#'|org.eventb.core.action#("/>
+        </org.eventb.core.poPredicateSet>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="x_p'∈{Rzero ⦂ RReal} → S" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#\/|org.eventb.core.action#("/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#\/"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#\/|org.eventb.core.action#("/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#'"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poSequent#INITIALISATION\/act2\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTStableLassaleCtz" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="x_p'" org.eventb.core.type="ℙ(RReal×(RReal×RReal×RReal×RReal×RReal))"/>
+        <org.eventb.core.poIdentifier name="x_s'" org.eventb.core.type="STATES"/>
+        <org.eventb.core.poIdentifier name="t'" org.eventb.core.type="RReal"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPStableLassaleCtz" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTIDENTStableLassaleCtz" org.eventb.core.poStamp="0"/>
+    <org.eventb.core.poPredicateSet name="EVTIDENTStableLassaleCt{" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="x_s'" org.eventb.core.type="STATES"/>
+        <org.eventb.core.poIdentifier name="s" org.eventb.core.type="ℙ(STATES)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPStableLassaleCt{" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTIDENTStableLassaleCt{" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="s∈ℙ1(STATES)" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#2|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTStableLassaleCt|" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="x_s'" org.eventb.core.type="STATES"/>
+        <org.eventb.core.poIdentifier name="s" org.eventb.core.type="ℙ(STATES)"/>
+        <org.eventb.core.poIdentifier name="p" org.eventb.core.type="ℙ(STATES×RReal×(RReal×RReal×RReal×RReal×RReal))"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPStableLassaleCt|" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTIDENTStableLassaleCt\|" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="s∈ℙ1(STATES)" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#3|org.eventb.core.guard#("/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="p∈ℙ(STATES × (RReal ⦂ ℙ(RReal)) × S)" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#3|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="x_s ↦ t ↦ x_p(t)∈p" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#3|org.eventb.core.guard#."/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Behave/V_o_Sol_Deriv/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTALLHYPStableLassaleCt}">
+            <org.eventb.core.poPredicate name="'" org.eventb.core.predicate="x_p'∈(RReal ⦂ ℙ(RReal)) ⇸ S∧t'=tp∧Closed2Closed(Rzero ⦂ RReal,t')⊆dom(x_p')∧CBAPsolutionOf(t,t',x_p,x_p',e,Inv)" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#5|org.eventb.core.action#)"/>
+        </org.eventb.core.poPredicateSet>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="x_p'(Rzero ⦂ RReal)∈K⇒x_p';V∈D1(Closed2Closed(Rzero ⦂ RReal,t'),RReal ⦂ ℙ(RReal))" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#1"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#5"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poSequent#Behave\/V_o_Sol_Deriv\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTStableLassaleCt}" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="x_p'" org.eventb.core.type="ℙ(RReal×(RReal×RReal×RReal×RReal×RReal))"/>
+        <org.eventb.core.poIdentifier name="t'" org.eventb.core.type="RReal"/>
+        <org.eventb.core.poIdentifier name="Inv" org.eventb.core.type="ℙ(RReal×(RReal×RReal×RReal×RReal×RReal))"/>
+        <org.eventb.core.poIdentifier name="e" org.eventb.core.type="DE(RReal×RReal×RReal×RReal×RReal)"/>
+        <org.eventb.core.poIdentifier name="tp" org.eventb.core.type="RReal"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPStableLassaleCt}" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTIDENTStableLassaleCt}" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="tp∈(RRealPlus ⦂ ℙ(RReal))∧t ↦ tp∈(lt ⦂ ℙ(RReal×RReal))" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#5|org.eventb.core.guard#."/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="e∈DE(S)" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#5|org.eventb.core.guard#("/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="Solvable(Closed2Closed(t,tp),e)" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#5|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="Inv⊆(RRealPlus ⦂ ℙ(RReal)) × S" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#5|org.eventb.core.guard#,"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="t ↦ x_p(t)∈Inv" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#5|org.eventb.core.guard#\/"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Actuate/grd1/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTHYPStableLassaleCt~("/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(Rzero ⦂ RReal)∈dom(x_p)∧x_p∈(RReal ⦂ ℙ(RReal)) ⇸ (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal))" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#6|org.eventb.core.guard#("/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#6|org.eventb.core.guard#("/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTHYPStableLassaleCt~("/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Actuate/grd2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTHYPStableLassaleCt~+"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(Rzero ⦂ RReal)∈dom(x_p)∧x_p∈(RReal ⦂ ℙ(RReal)) ⇸ (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal))" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#6|org.eventb.core.guard#internal1"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#6|org.eventb.core.guard#internal1"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTHYPStableLassaleCt~+"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Actuate/grd6/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTHYPStableLassaleCt~,"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="t∈dom(x_p)∧x_p∈(RReal ⦂ ℙ(RReal)) ⇸ (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal))" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#6|org.eventb.core.guard#internal7"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#6|org.eventb.core.guard#internal7"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTHYPStableLassaleCt~,"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Actuate/V_o_Sol_Deriv/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTALLHYPStableLassaleCt~">
+            <org.eventb.core.poPredicate name="'" org.eventb.core.predicate="x_p'∈(RReal ⦂ ℙ(RReal)) ⇸ S∧t'=tp∧Closed2Closed(Rzero ⦂ RReal,t')⊆dom(x_p')∧CBAPsolutionOf(t,t',x_p,x_p',ode(F,x_p(Rzero ⦂ RReal),Rzero ⦂ RReal),Closed2Closed(t,tp) × S)" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#6|org.eventb.core.action#)"/>
+        </org.eventb.core.poPredicateSet>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="x_p'(Rzero ⦂ RReal)∈K⇒x_p';V∈D1(Closed2Closed(Rzero ⦂ RReal,t'),RReal ⦂ ℙ(RReal))" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#6"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poSequent#Actuate\/V_o_Sol_Deriv\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Actuate/grd1/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTALLHYPStableLassaleCt~"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="e∈DE(S)" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.guard#("/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.guard#("/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#6"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poSequent#Actuate\/grd1\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Actuate/grd2/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTALLHYPStableLassaleCt~"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Solvable(Closed2Closed(t,tp),e)" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.guard#internal1"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.guard#internal1"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#6"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poSequent#Actuate\/grd2\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Actuate/grd5/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTALLHYPStableLassaleCt~"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Closed2Closed(t,tp) × S⊆(RRealPlus ⦂ ℙ(RReal)) × S" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.guard#internal2"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.guard#internal2"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#6"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poSequent#Actuate\/grd5\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Actuate/grd6/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTALLHYPStableLassaleCt~"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="t ↦ x_p(t)∈Closed2Closed(t,tp) × S" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.guard#internal6"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.guard#internal6"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#6"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poSequent#Actuate\/grd6\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Actuate/act1/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTALLHYPStableLassaleCt~">
+            <org.eventb.core.poPredicate name="'" org.eventb.core.predicate="x_p'∈(RReal ⦂ ℙ(RReal)) ⇸ S∧t'=tp∧Closed2Closed(Rzero ⦂ RReal,t')⊆dom(x_p')∧CBAPsolutionOf(t,t',x_p,x_p',e,Closed2Closed(t,tp) × S)" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.action#)"/>
+        </org.eventb.core.poPredicateSet>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀t'⦂RReal,x_p'⦂ℙ(RReal×(RReal×RReal×RReal×RReal×RReal))·x_p'∈(RReal ⦂ ℙ(RReal)) ⇸ S∧t'=tp∧Closed2Closed(Rzero ⦂ RReal,t')⊆dom(x_p')⇒t∈(RRealPlus ⦂ ℙ(RReal))∧t'∈(RRealPlus ⦂ ℙ(RReal))∧x_p∈(RReal ⦂ ℙ(RReal)) ⇸ (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal))∧x_p'∈(RReal ⦂ ℙ(RReal)) ⇸ (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal))∧Closed2Closed(t,tp) × S∈ℙ((RRealPlus ⦂ ℙ(RReal)) × ((RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal))))∧Closed2Closed(Rzero ⦂ RReal,t)⊆dom(x_p)∧Solvable(Closed2Closed(t,t'),ode(F,x_p(Rzero ⦂ RReal),Rzero ⦂ RReal))∧t ↦ t'∈(lt ⦂ ℙ(RReal×RReal))∧(Rzero ⦂ RReal)∈dom(x_p)" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#6|org.eventb.core.action#)"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#6|org.eventb.core.action#)"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTALLHYPStableLassaleCt~"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Actuate/act1/FIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of action" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTALLHYPStableLassaleCt~">
+            <org.eventb.core.poPredicate name="'" org.eventb.core.predicate="x_p'∈(RReal ⦂ ℙ(RReal)) ⇸ S∧t'=tp∧Closed2Closed(Rzero ⦂ RReal,t')⊆dom(x_p')∧CBAPsolutionOf(t,t',x_p,x_p',e,Closed2Closed(t,tp) × S)" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.action#)"/>
+        </org.eventb.core.poPredicateSet>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∃t'⦂RReal,x_p'⦂ℙ(RReal×(RReal×RReal×RReal×RReal×RReal))·x_p'∈(RReal ⦂ ℙ(RReal)) ⇸ S∧t'=tp∧Closed2Closed(Rzero ⦂ RReal,t')⊆dom(x_p')∧CBAPsolutionOf(t,t',x_p,x_p',ode(F,x_p(Rzero ⦂ RReal),Rzero ⦂ RReal),Closed2Closed(t,tp) × S)" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#6|org.eventb.core.action#)"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#6|org.eventb.core.action#)"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTALLHYPStableLassaleCt~"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Actuate/act1/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTALLHYPStableLassaleCt~">
+            <org.eventb.core.poPredicate name="'" org.eventb.core.predicate="x_p'∈(RReal ⦂ ℙ(RReal)) ⇸ S∧t'=tp∧Closed2Closed(Rzero ⦂ RReal,t')⊆dom(x_p')∧CBAPsolutionOf(t,t',x_p,x_p',ode(F,x_p(Rzero ⦂ RReal),Rzero ⦂ RReal),Closed2Closed(t,tp) × S)" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#6|org.eventb.core.action#)"/>
+        </org.eventb.core.poPredicateSet>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="x_p'∈(RReal ⦂ ℙ(RReal)) ⇸ S∧t'=tp∧Closed2Closed(Rzero ⦂ RReal,t')⊆dom(x_p')∧CBAPsolutionOf(t,t',x_p,x_p',e,Closed2Closed(t,tp) × S)" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.action#)"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.action#)"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#6"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poSequent#Actuate\/act1\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTStableLassaleCt~" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="x_p'" org.eventb.core.type="ℙ(RReal×(RReal×RReal×RReal×RReal×RReal))"/>
+        <org.eventb.core.poIdentifier name="s" org.eventb.core.type="ℙ(STATES)"/>
+        <org.eventb.core.poIdentifier name="t'" org.eventb.core.type="RReal"/>
+        <org.eventb.core.poIdentifier name="Inv" org.eventb.core.type="ℙ(RReal×(RReal×RReal×RReal×RReal×RReal))"/>
+        <org.eventb.core.poIdentifier name="e" org.eventb.core.type="DE(RReal×RReal×RReal×RReal×RReal)"/>
+        <org.eventb.core.poIdentifier name="tp" org.eventb.core.type="RReal"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPStableLassaleCt~(" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTIDENTStableLassaleCt~" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="tp∈(RRealPlus ⦂ ℙ(RReal))∧t ↦ tp∈(lt ⦂ ℙ(RReal×RReal))" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#6|org.eventb.core.guard#internal5"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPStableLassaleCt~+" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTHYPStableLassaleCt~(" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="e=ode(F,x_p(Rzero ⦂ RReal),Rzero ⦂ RReal)" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#6|org.eventb.core.guard#("/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="s⊆STATES" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#6|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="x_s∈s" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#6|org.eventb.core.guard#)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPStableLassaleCt~," org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTHYPStableLassaleCt~+" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="Solvable(Closed2Closed(t,tp),ode(F,x_p(Rzero ⦂ RReal),Rzero ⦂ RReal))" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#6|org.eventb.core.guard#internal1"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPStableLassaleCt~" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#EVTHYPStableLassaleCt~," org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="t ↦ x_p(t)∈Closed2Closed(t,tp) × S" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.event#6|org.eventb.core.guard#internal7"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/PenduleTest/StableLassaleGeneric.bpo|org.eventb.core.poFile#StableLassaleGeneric|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="x_p(Rzero ⦂ RReal)∈K⇒x_p;V∈D1(Closed2Closed(Rzero ⦂ RReal,t),RReal ⦂ ℙ(RReal))" org.eventb.core.source="/PenduleTest/StableLassaleGeneric.bum|org.eventb.core.machineFile#StableLassaleGeneric|org.eventb.core.invariant#2"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

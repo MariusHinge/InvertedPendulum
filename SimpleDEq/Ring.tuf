@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.configuration="org.eventb.theory.core.thy">
+    <org.eventb.theory.core.typeParameter name="(" org.eventb.core.identifier="A"/>
+    <org.eventb.theory.core.newOperatorDefinition name="+" org.eventb.core.label="distributive" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="(A × A) → A" org.eventb.core.identifier="oplus"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="(A × A) → A" org.eventb.core.identifier="otimes"/>
+        <org.eventb.theory.core.operatorWDcondition name=")" org.eventb.core.predicate="A ≠ ∅"/>
+        <org.eventb.theory.core.directOperatorDefinition name="*" org.eventb.theory.core.formula="∀ x, y, z · x ∈ A ∧ y ∈ A ∧ z ∈ A ⇒ (&#10;&#9;otimes(x ↦ oplus(y ↦ z)) = oplus(otimes(x ↦ y) ↦ otimes(x ↦ z)) ∧&#10;&#9;otimes(oplus(y ↦ z) ↦ x) = oplus(otimes(y ↦ x) ↦ otimes(z ↦ x))&#10;)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="1" org.eventb.core.label="integral" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="(A × A) → A" org.eventb.core.identifier="otimes"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="A" org.eventb.core.identifier="azero"/>
+        <org.eventb.theory.core.operatorWDcondition name=")" org.eventb.core.predicate="A ≠ ∅ ∧ A ≠ {azero}"/>
+        <org.eventb.theory.core.directOperatorDefinition name="*" org.eventb.theory.core.formula="∀ x, y · x ∈ A ∧ y ∈ A ⇒ (otimes(x ↦ y) = azero ⇒ (x = azero ∨ y = azero))"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="3" org.eventb.core.label="Ring" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="(A × A) → A" org.eventb.core.identifier="oplus"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="(A × A) → A" org.eventb.core.identifier="otimes"/>
+        <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="A" org.eventb.core.identifier="azero"/>
+        <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="A" org.eventb.core.identifier="aunit"/>
+        <org.eventb.theory.core.operatorWDcondition name="+" org.eventb.core.predicate="A ≠ ∅"/>
+        <org.eventb.theory.core.directOperatorDefinition name="," org.eventb.theory.core.formula="AbelianGroup(oplus,azero) ∧ Monoid(otimes,aunit) ∧ distributive(oplus,otimes)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.theorem name="7" org.eventb.core.label="zeroAbsorbing" org.eventb.core.predicate="∀ oplus,otimes,azero,aunit · oplus ∈ ((A × A) → A) ∧ otimes ∈ ((A × A) → A) ∧ azero ∈ A ∧ aunit ∈ A ∧&#10;&#9;Ring(oplus,otimes,azero,aunit) ⇒ absorbing(otimes,azero)"/>
+    <org.eventb.theory.core.theorem name="=" org.eventb.core.label="plusInverseLeftDistribution" org.eventb.core.predicate="∀ oplus,otimes,azero,aunit · oplus ∈ ((A × A) → A) ∧ otimes ∈ ((A × A) → A) ∧ azero ∈ A ∧ aunit ∈ A ∧ Ring(oplus,otimes,azero,aunit) ⇒ (&#10;&#9;∀ a, b, a1 · a ∈ A ∧ b ∈ A ∧ a1 ∈ A ∧ inverses(oplus,azero,a,a1) ⇒ (&#10;&#9;&#9;inverses(oplus,azero,otimes(a ↦ b),otimes(a1 ↦ b))&#10;&#9;)&#10;)"/>
+    <org.eventb.theory.core.theorem name="&gt;" org.eventb.core.label="plusInverseRightDistribution" org.eventb.core.predicate="∀ oplus,otimes,azero,aunit · oplus ∈ ((A × A) → A) ∧ otimes ∈ ((A × A) → A) ∧ azero ∈ A ∧ aunit ∈ A ∧ Ring(oplus,otimes,azero,aunit) ⇒ (&#10;&#9;∀ a, b, b1 · a ∈ A ∧ b ∈ A ∧ b1 ∈ A ∧ inverses(oplus,azero,b,b1) ⇒ (&#10;&#9;&#9;inverses(oplus,azero,otimes(a ↦ b),otimes(a ↦ b1))&#10;&#9;)&#10;)"/>
+    <org.eventb.theory.core.theorem name=":" org.eventb.core.label="ringLeftCancellation" org.eventb.core.predicate="∀ oplus,otimes,azero,aunit · oplus ∈ ((A × A) → A) ∧ otimes ∈ ((A × A) → A) ∧ azero ∈ A ∧ aunit ∈ A ∧ azero ≠ aunit ∧ Ring(oplus,otimes,azero,aunit) ∧ integral(otimes,azero) ⇒ (&#10;&#9;∀ a, b, c · a ∈ A ∧ b ∈ A ∧ c ∈ A ∧ a ≠ azero ⇒&#10;&#9;&#9;((otimes(a ↦ b) = otimes(a ↦ c)) ⇔ (b = c))&#10;)"/>
+    <org.eventb.theory.core.theorem name=";" org.eventb.core.label="ringRightCancellation" org.eventb.core.predicate="∀ oplus,otimes,azero,aunit · oplus ∈ ((A × A) → A) ∧ otimes ∈ ((A × A) → A) ∧ azero ∈ A ∧ aunit ∈ A ∧ azero ≠ aunit ∧ Ring(oplus,otimes,azero,aunit) ∧ integral(otimes,azero) ⇒ (&#10;&#9;∀ a, b, c · a ∈ A ∧ b ∈ A ∧ c ∈ A ∧ a ≠ azero ⇒&#10;&#9;&#9;((otimes(b ↦ a) = otimes(c ↦ a)) ⇔ (b = c))&#10;)"/>
+    <org.eventb.theory.core.newOperatorDefinition name="4" org.eventb.core.label="CommutativeRing" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="(A × A) → A" org.eventb.core.identifier="oplus"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="(A × A) → A" org.eventb.core.identifier="otimes"/>
+        <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="A" org.eventb.core.identifier="azero"/>
+        <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="A" org.eventb.core.identifier="aunit"/>
+        <org.eventb.theory.core.operatorWDcondition name="+" org.eventb.core.predicate="A ≠ ∅"/>
+        <org.eventb.theory.core.directOperatorDefinition name="," org.eventb.theory.core.formula="Ring(oplus,otimes,azero,aunit) ∧ commutative(otimes)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="?" org.eventb.core.label="nonZeroInvertible" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="(A × A) → A" org.eventb.core.identifier="op"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="A" org.eventb.core.identifier="azero"/>
+        <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="A" org.eventb.core.identifier="aunit"/>
+        <org.eventb.theory.core.operatorWDcondition name="*" org.eventb.core.predicate="A ≠ ∅ ∧ (azero ≠ aunit)"/>
+        <org.eventb.theory.core.directOperatorDefinition name="+" org.eventb.theory.core.formula="(∀ x · x ∈ A ∧ x ≠ azero ⇒ (∃ y · y ∈ A ⇒ y ≠ azero ∧ (op(x ↦ y) = aunit ∧ op(y ↦ x) = aunit)))"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="@" org.eventb.core.label="nonZeroInverses" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="(A × A) → A" org.eventb.core.identifier="op"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="A" org.eventb.core.identifier="azero"/>
+        <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="A" org.eventb.core.identifier="aunit"/>
+        <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="A" org.eventb.core.identifier="x"/>
+        <org.eventb.theory.core.operatorArgument name="+" org.eventb.core.expression="A" org.eventb.core.identifier="y"/>
+        <org.eventb.theory.core.operatorWDcondition name="," org.eventb.core.predicate="A ≠ ∅ ∧ (azero ≠ aunit)"/>
+        <org.eventb.theory.core.directOperatorDefinition name="-" org.eventb.theory.core.formula="nonZeroInvertible(op,azero,aunit) ∧ x ≠ azero ⇒ ((op(x ↦ y) = aunit) ∧ (op(y ↦ x) = aunit))"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="5" org.eventb.core.label="DivisionRing" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="(A × A) → A" org.eventb.core.identifier="oplus"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="(A × A) → A" org.eventb.core.identifier="otimes"/>
+        <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="A" org.eventb.core.identifier="azero"/>
+        <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="A" org.eventb.core.identifier="aunit"/>
+        <org.eventb.theory.core.operatorWDcondition name="+" org.eventb.core.predicate="A ≠ ∅"/>
+        <org.eventb.theory.core.directOperatorDefinition name="," org.eventb.theory.core.formula="(azero ≠ aunit) ∧ Ring(oplus,otimes,azero,aunit) ∧ nonZeroInvertible(otimes,azero,aunit)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="6" org.eventb.core.label="Field" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="(A × A) → A" org.eventb.core.identifier="oplus"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="(A × A) → A" org.eventb.core.identifier="otimes"/>
+        <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="A" org.eventb.core.identifier="azero"/>
+        <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="A" org.eventb.core.identifier="aunit"/>
+        <org.eventb.theory.core.operatorWDcondition name="+" org.eventb.core.predicate="A ≠ ∅"/>
+        <org.eventb.theory.core.directOperatorDefinition name="," org.eventb.theory.core.formula="(azero ≠ aunit) ∧&#10;Ring(oplus,otimes,azero,aunit) ∧&#10;nonZeroInvertible(otimes,azero,aunit) ∧&#10;integral(otimes,azero) ∧&#10;commutative(otimes)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="8" org.eventb.core.label="absorbing" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="(A × A) → A" org.eventb.core.identifier="op"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="A" org.eventb.core.identifier="azero"/>
+        <org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="∀ x · x ∈ A ⇒ (op(x ↦ azero) = azero ∧ op(azero ↦ x) = azero)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.theorem name="A" org.eventb.core.label="nonZeroInverseNotZero" org.eventb.core.predicate="∀ oplus,otimes,azero,aunit,x,y ·&#10;&#9;oplus ∈ ((A × A) → A) ∧ otimes ∈ ((A × A) → A) ∧ azero ∈ A ∧ aunit ∈ A ∧&#10;&#9;Ring(oplus,otimes,azero,aunit) ∧ nonZeroInvertible(otimes,azero,aunit) ∧&#10;&#9;x ∈ A ∧ y ∈ A ∧ x ≠ azero ∧ nonZeroInverses(otimes,azero,aunit,x,y) ⇒ (&#10;&#9;&#9;y ≠ azero&#10;)"/>
+    <org.eventb.theory.core.importTheoryProject name="B" org.eventb.theory.core.importTheoryProject="/SimpleDEq">
+        <org.eventb.theory.core.importTheory name="'" org.eventb.theory.core.importTheory="/SimpleDEq/Group.dtf|org.eventb.theory.core.deployedTheoryRoot#Group"/>
+    </org.eventb.theory.core.importTheoryProject>
+</org.eventb.theory.core.theoryRoot>

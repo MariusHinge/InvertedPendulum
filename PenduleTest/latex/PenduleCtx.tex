@@ -1,0 +1,64 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage{bsymb,b2latex}
+\begin{document}
+\SingleHeader{PenduleCtx}
+\CONTEXT{PenduleCtx}{StableLassaleCtx}{}
+\CONSTANTS{
+	\Constant{g}{Constante gravitationnelle}
+	\Constant{M}{Masse du chariot}
+	\Constant{l}{Longueure du pendule}
+	\Constant{m}{Masse du poids}
+	\Constant{etat}{}
+	\Constant{K\_E}{Constante d'énergie}
+	\Constant{K\_v}{Constante de vitesse}
+	\Constant{K\_x}{Constante de position}
+	\Constant{K\_d}{Régulateur de fctrl}
+	\Constant{angle\_init}{Angle initial du pendule}
+	\Constant{E}{Fonction d'énergie du système}
+	\Constant{b}{}
+	\Constant{B}{}
+	\Constant{fctrl}{Fonction de controle du pendule}
+	\Constant{f0}{}
+	\Constant{f1}{}
+	\Constant{f2}{}
+	\Constant{f3}{}
+	\Constant{f4}{}
+	\Constant{R5dist}{}
+}
+\AXIOMS{
+	\Axiom{axm1}{false}{$g \in{} RRealPlusStar$}{}
+	\Axiom{axm2}{false}{$M \in{} RRealPlusStar$}{}
+	\Axiom{axm3}{false}{$l \in{} RRealPlusStar$}{}
+	\Axiom{axm11}{false}{$m \in{} RRealPlusStar$}{}
+	\Axiom{axm10}{false}{$partition(STATES,\{etat\})$}{}
+	\Axiom{axm4}{false}{$K\_E \in{} RRealPlusStar$}{}
+	\Axiom{axm5}{false}{$K\_v \in{} RRealPlusStar$}{}
+	\Axiom{axm6}{false}{$K\_x \in{} RRealPlusStar$}{}
+	\Axiom{axm7}{false}{$K\_d \in{} RRealPlusStar$}{}
+	\Axiom{axm9}{false}{$angle\_init \in{} RReal$}{}
+	\Axiom{dom\_f0}{false}{$f0 \in{} S \tfun{} RReal$}{}
+	\Axiom{dom\_f1}{false}{$f1 \in{} S \tfun{} RReal$}{}
+	\Axiom{dom\_f2}{false}{$f2 \in{} S \tfun{} RReal$}{}
+	\Axiom{dom\_f3}{false}{$f3 \in{} S \tfun{} RReal$}{}
+	\Axiom{dom\_f4}{false}{$f4 \in{} S \tfun{} RReal$}{}
+	\Axiom{axm12}{false}{$b\in{}RRealPlusStar$}{\\Mettre à RReal? Peut être nécessaire}
+	\Axiom{axm13}{false}{$B\in{}RRealPlusStar$}{\\Mettre à RReal? Peut être nécessaire}
+	\Axiom{def\_E}{false}{$\\E = (\lambda{} z1 \mapsto{} z2 \mapsto{} z4 \qdot{}\\~        z1 \in{} RReal \land{} z2 \in{} RReal \land{} z4 \in{} RReal |\\~        plus(\\~        times(m\mapsto{}times(g\mapsto{}times(l\mapsto{}(minus(z2\mapsto{}Rone)))))\\~        \mapsto{} times(divide(Rone\mapsto{}Rtwo)\\~        \mapsto{} plus( plus( times(times(z1\mapsto{}z1)\mapsto{}plus(M\mapsto{}m))\\~        \mapsto{}   times(Rtwo\mapsto{}times(z1\mapsto{}times(z4\mapsto{}times(m\mapsto{}times(l\mapsto{}z2)))))\\~        )\\~        \mapsto{}   times(z4\mapsto{}times(z4\mapsto{}times(m\mapsto{}times(l\mapsto{}l)))\\~        )\\~        )\\~        )\\~        )\\~        )$}{\\Comment exprimer dx (et dth)?\\~    Pour l'instant les variables ne sont pas liée à x (et th)!\\~    E(x,th) =\\~    m*g*l(cos(th)-1)\\~    + (1/2)\\~    * ( dx*dx*(M+m)\\~    + 2*dx*dth*(m*l*cos(th))\\~    + dth*dth*m*l*l\\~    ) }
+	\Axiom{def\_V}{false}{$\\V = (\lambda{} z0 \mapsto{} z1 \mapsto{} z2 \mapsto{} z3 \mapsto{} z4 \qdot{}\\~        z0 \in{} RReal \land{} z1 \in{} RReal \land{} z2 \in{} RReal \land{} z3 \in{} RReal \land{} z4 \in{} RReal |\\~        plus(plus(\\~        times(divide(K\_E \mapsto{} Rtwo)\mapsto{}times(E(z1\mapsto{}z2\mapsto{}z4)\mapsto{}E(z1\mapsto{}z2\mapsto{}z4)))\\~        \mapsto{} times(divide(K\_v \mapsto{} Rtwo)\mapsto{}times(z1\mapsto{}z1))\\~        )\\~        \mapsto{} times(divide(K\_x \mapsto{} Rtwo)\mapsto{}times(z0\mapsto{}z0))\\~        )\\~        )$}{}
+	\Axiom{def\_Vtilde}{false}{$\btrue{} $}{\\Vtilde = ($\lambda{}$ z0 $\mapsto{}$ z1 $\mapsto{}$ z2 $\mapsto{}$ z3 $\mapsto{}$ z4 $\qdot{}$\\~        z0 $\in{}$ RReal $\land{}$ z1 $\in{}$ RReal $\land{}$ z2 $\in{}$ RReal $\land{}$ z3 $\in{}$ RReal $\land{}$ z4 $\in{}$ RReal $|$\\~~~~uminus(times(K$\_$d$\mapsto{}$times(z0$\mapsto{}$z0))))}
+	\Axiom{def\_fctrl}{false}{$\\fctrl = (\lambda{} z0 \mapsto{} z1 \mapsto{} z2 \mapsto{} z3 \mapsto{} z4 \qdot{}\\~            z0 \in{} RReal \land{} z1 \in{} RReal \land{} z2 \in{} RReal \land{} z3 \in{} RReal \land{} z4 \in{} RReal |\\~            divide(\\~            minus( times(K\_v\mapsto{}times(m\mapsto{}times(z3\mapsto{}minus(times(g\mapsto{}z2)\mapsto{}times(l\mapsto{}times(z4\mapsto{}z4))))))\\~            \mapsto{} times(plus(M\mapsto{}times(m\mapsto{}times(z3\mapsto{}z3)))\\~            \mapsto{} plus(times(K\_x\mapsto{}z0)\mapsto{}times(K\_d\mapsto{}z1))\\~            )\\~            )\\~            \mapsto{} plus(K\_v\mapsto{}times(plus(M\mapsto{}times(m\mapsto{}times(z3\mapsto{}z3)))\mapsto{}times(K\_E\mapsto{}E(z1\mapsto{}z2\mapsto{}z4))))\\~            )\\~            )$}{\\Comment exprimer dx et dth? (z1 et z4 ici)\\~    Pour l'instant les variables ne sont pas liée à x et th! }
+	\Axiom{f0\_def}{false}{$f0 = (\lambda{} (z0 \mapsto{} z1 \mapsto{} z2 \mapsto{} z3 \mapsto{} z4) \qdot{} (z0 \mapsto{} z1 \mapsto{} z2 \mapsto{} z3 \mapsto{} z4) \in{} S | z1)$}{}
+	\Axiom{f1\_def}{false}{$\\f1 = (\lambda{} (z0 \mapsto{} z1 \mapsto{} z2 \mapsto{} z3 \mapsto{} z4) \qdot{} (z0 \mapsto{} z1 \mapsto{} z2 \mapsto{} z3 \mapsto{} z4) \in{} S\\~~~~| divide( plus(fctrl(z0 \mapsto{} z1 \mapsto{} z2 \mapsto{} z3 \mapsto{} z4)\mapsto{}\\~~~~	times(m\mapsto{}times(z3\mapsto{}minus(times(l\mapsto{}times(z4\mapsto{}z4))\mapsto{}times(g\mapsto{}z2)))))\\~~~~	\mapsto{} plus(M\mapsto{}times(m\mapsto{}times(z3\mapsto{}z3)))\\~~~~)\\)$}{}
+	\Axiom{f2\_def}{false}{$\\f2 = (\lambda{} (z0 \mapsto{} z1 \mapsto{} z2 \mapsto{} z3 \mapsto{} z4) \qdot{} (z0 \mapsto{} z1 \mapsto{} z2 \mapsto{} z3 \mapsto{} z4) \in{} S\\~~~~| times(uminus(z3)\mapsto{}z4)\\)$}{}
+	\Axiom{f3\_def}{false}{$\\f3 = (\lambda{} (z0 \mapsto{} z1 \mapsto{} z2 \mapsto{} z3 \mapsto{} z4) \qdot{} (z0 \mapsto{} z1 \mapsto{} z2 \mapsto{} z3 \mapsto{} z4) \in{} S\\~~~~| times(z2\mapsto{}z4)\\)$}{}
+	\Axiom{f4\_def}{false}{$\\f4 = (\lambda{} (z0 \mapsto{} z1 \mapsto{} z2 \mapsto{} z3 \mapsto{} z4) \qdot{} (z0 \mapsto{} z1 \mapsto{} z2 \mapsto{} z3 \mapsto{} z4) \in{} S\\~~~~| divide(minus(times(plus(M\mapsto{}m)\mapsto{}times(g\mapsto{}z3))\\~~~~		\mapsto{}times(z2\mapsto{}plus(fctrl(z0 \mapsto{} z1 \mapsto{} z2 \mapsto{} z3 \mapsto{} z4)\\~~~~			\mapsto{}times(m\mapsto{}times(l\mapsto{}times(z3\mapsto{}times(z4\mapsto{}z4)))))))\\~~~~	\mapsto{} times(l\mapsto{}plus(M\mapsto{}times(m\mapsto{}times(z3\mapsto{}z3))))\\~~~~)\\)$}{}
+	\Axiom{def\_F}{false}{$\\F= (\lambda{} t \mapsto{} (z0 \mapsto{} z1 \mapsto{} z2 \mapsto{} z3 \mapsto{} z4) \qdot{} t \in{} RReal \land{}(z0 \mapsto{} z1 \mapsto{} z2 \mapsto{} z3 \mapsto{} z4) \in{} S\\~ 				| f0(z0\mapsto{}z1\mapsto{}z2\mapsto{}z3\mapsto{}z4) \mapsto{}\\~        		  f1(z0\mapsto{}z1\mapsto{}z2\mapsto{}z3\mapsto{}z4) \mapsto{}\\~                 f2(z0\mapsto{}z1\mapsto{}z2\mapsto{}z3\mapsto{}z4) \mapsto{}\\~                 f3(z0\mapsto{}z1\mapsto{}z2\mapsto{}z3\mapsto{}z4) \mapsto{}\\~                 f4(z0\mapsto{}z1\mapsto{}z2\mapsto{}z3\mapsto{}z4))$}{\\Mauvais typage}
+	\Axiom{def\_b}{false}{$\\b=Rmin(\\~~~~\{divide(K\_v\mapsto{}times(K\_E\mapsto{}plus(M\mapsto{}m))),\\~~~~times(Rtwo\mapsto{}times(m\mapsto{}times(g\mapsto{}l)))\}\\)$}{}
+	\Axiom{def\_B}{false}{$B=divide(times(K\_E\mapsto{}times(b\mapsto{}b))\mapsto{}Rtwo)$}{}
+	\Axiom{axm14}{false}{$R5dist \in{} S\cprod{}S \tfun{} RReal $}{}
+	\Axiom{def\_R5dist}{false}{$\\R5dist= (\lambda{} (x0 \mapsto{} x1 \mapsto{} x2 \mapsto{} x3 \mapsto{} x4) \mapsto{} (y0 \mapsto{} y1 \mapsto{} y2 \mapsto{} y3 \mapsto{} y4) \qdot{} \\~~~~(x0 \mapsto{} x1 \mapsto{} x2 \mapsto{} x3 \mapsto{} x4) \in{} S \land{} (y0 \mapsto{} y1 \mapsto{} y2 \mapsto{} y3 \mapsto{} y4) \in{} S |\\~~~~sqrt(\\~~~~	plus(plus(plus(plus(\\~~~~		times(minus(x0\mapsto{}y0)\mapsto{}minus(x0\mapsto{}y0))\\~~~~		\mapsto{}times(minus(x1\mapsto{}y1)\mapsto{}minus(x1\mapsto{}y1)))\\~~~~		\mapsto{}times(minus(x2\mapsto{}y2)\mapsto{}minus(x2\mapsto{}y2)))\\~~~~		\mapsto{}times(minus(x3\mapsto{}y3)\mapsto{}minus(x3\mapsto{}y3)))\\~~~~		\mapsto{}times(minus(x4\mapsto{}y4)\mapsto{}minus(x4\mapsto{}y4)))\\~~~~)\\)$}{}
+	\Axiom{R5\_dist}{true}{$isDistance(R5dist)$}{\\isDistance(R5dist)}
+	\Axiom{def\_K}{false}{$\\K = \{(z0\mapsto{}z1\mapsto{}z2\mapsto{}z3\mapsto{}z4) |\\~~~~	(z0\mapsto{}z1\mapsto{}z2\mapsto{}z3\mapsto{}z4)\in{}S \land{}\\~~~~	(plus(times(z2\mapsto{}z2)\mapsto{}times(z3\mapsto{}z3)) = Rone) \land{}\\~~~~	V(z0\mapsto{}z1\mapsto{}z2\mapsto{}z3\mapsto{}z4) \mapsto{} B \in{} lt\\\}$}{}
+}
+\END
+\end{document}

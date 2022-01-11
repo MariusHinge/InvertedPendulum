@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.comment="RReal theory" org.eventb.core.configuration="org.eventb.theory.core.thy">
+<org.eventb.theory.core.axiomaticDefinitionsBlock name=")" org.eventb.core.label="Rdef">
+<org.eventb.theory.core.axiomaticOperatorDefinition name="'" org.eventb.core.label="Rzero" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.axiomaticTypeDefinition name="(" org.eventb.core.identifier="RReal"/>
+<org.eventb.theory.core.axiomaticOperatorDefinition name=")" org.eventb.core.label="Rone" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.axiomaticOperatorDefinition name="u" org.eventb.core.label="Rtwo" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="x" org.eventb.core.label="oneIsNotZero" org.eventb.core.predicate="Rone ≠ Rzero"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="v" org.eventb.core.label="twoIsNotOne" org.eventb.core.predicate="Rtwo ≠ Rone"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="w" org.eventb.core.label="twoIsNotZero" org.eventb.core.predicate="Rtwo ≠ Rzero"/>
+</org.eventb.theory.core.axiomaticDefinitionsBlock>
+<org.eventb.theory.core.proofRulesBlock name="6" org.eventb.core.label="plusAbelianGroup">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="a" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="b" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name=")" org.eventb.core.identifier="c" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.rewriteRule name="*" org.eventb.core.label="plus_commutativity" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Plus Commutativity" org.eventb.theory.core.formula="plus(a ↦ b)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="plus(b ↦ a)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="+" org.eventb.core.label="plus_neutralityL" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Plus Neutrality (Left)" org.eventb.theory.core.formula="plus(a ↦ Rzero)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="," org.eventb.core.label="plus_neutralityR" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Plus Neutrality (Right)" org.eventb.theory.core.formula="plus(Rzero ↦ a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="-" org.eventb.core.label="plus_associativityL" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Plus Associativity (Left)" org.eventb.theory.core.formula="plus(a ↦ plus(b ↦ c))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="plus(plus(a ↦ b) ↦ c)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="." org.eventb.core.label="plus_associativityR" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Plus Associativity (Right)" org.eventb.theory.core.formula="plus(plus(a ↦ b) ↦ c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="plus(a ↦ plus(b ↦ c))"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="/" org.eventb.core.label="minus_rewrite" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Minus Rewrite" org.eventb.theory.core.formula="minus(a ↦ b)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="plus(a ↦ uminus(b))"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="0" org.eventb.core.label="minus_uminus" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Minus/UMinus" org.eventb.theory.core.formula="uminus(minus(a ↦ b))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="minus(b ↦ a)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="1" org.eventb.core.label="minus_uminus_reverse" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="UMinus/Minus" org.eventb.theory.core.formula="minus(a ↦ b)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="uminus(minus(b ↦ a))"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="2" org.eventb.core.label="uminus_involutive" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="UMinus Involution" org.eventb.theory.core.formula="uminus(uminus(a))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="3" org.eventb.core.label="uminus_reductionL" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="UMinus Reduction (Left)" org.eventb.theory.core.formula="plus(a ↦ uminus(a))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Rzero"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="4" org.eventb.core.label="uminus_reductionR" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="UMinus Reduction (Right)" org.eventb.theory.core.formula="plus(uminus(a) ↦ a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Rzero"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="5" org.eventb.core.label="minus_reduction" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Minus Reduction" org.eventb.theory.core.formula="minus(a ↦ a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Rzero"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="6" org.eventb.core.label="zero_minus_left" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="0/Minus" org.eventb.theory.core.formula="minus(Rzero ↦ a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="uminus(a)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="7" org.eventb.core.label="zero_minus_right" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Minus/0" org.eventb.theory.core.formula="minus(a ↦ Rzero)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="8" org.eventb.core.label="uminus_neutral" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="UMinus(0)" org.eventb.theory.core.formula="uminus(Rzero)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Rzero"/>
+</org.eventb.theory.core.rewriteRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.proofRulesBlock name="7" org.eventb.core.label="timesCommutativeMonoid">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="a" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="b" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name=")" org.eventb.core.identifier="c" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.rewriteRule name="*" org.eventb.core.label="times_commutativity" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Times Commutativity" org.eventb.theory.core.formula="times(a ↦ b)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="times(b ↦ a)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="+" org.eventb.core.label="times_neutralityL" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Times Neutrality (Left)" org.eventb.theory.core.formula="times(a ↦ Rone)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="," org.eventb.core.label="times_neutralityR" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Times Neutrality (Right)" org.eventb.theory.core.formula="times(Rone ↦ a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="-" org.eventb.core.label="times_associativityL" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Times Associativity (Left)" org.eventb.theory.core.formula="times(a ↦ times(b ↦ c))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="times(times(a ↦ b) ↦ c)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="." org.eventb.core.label="times_associativityR" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Times Associativity (Right)" org.eventb.theory.core.formula="times(times(a ↦ b) ↦ c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="times(a ↦ times(b ↦ c))"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="/" org.eventb.core.label="times_absorbingL" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Times Absorbtion (Left)" org.eventb.theory.core.formula="times(a ↦ Rzero)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Rzero"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="0" org.eventb.core.label="times_absorbingR" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Times Absorbtion (Right)" org.eventb.theory.core.formula="times(Rzero ↦ a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Rzero"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="1" org.eventb.core.label="division_rewrite" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Division Rewrite" org.eventb.theory.core.formula="divide(a ↦ b)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="times(a ↦ inverse(b))"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="2" org.eventb.core.label="divide_inverse" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Inverse/Divide" org.eventb.theory.core.formula="inverse(divide(a ↦ b))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="a ≠ Rzero" org.eventb.theory.core.formula="divide(b ↦ a)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="3" org.eventb.core.label="divide_inverse_reverse" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Divide/Inverse" org.eventb.theory.core.formula="divide(a ↦ b)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="a ≠ Rzero" org.eventb.theory.core.formula="inverse(divide(b ↦ a))"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="4" org.eventb.core.label="inverse_involutive" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Inverse Involution" org.eventb.theory.core.formula="inverse(inverse(a))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="5" org.eventb.core.label="inverse_reductionL" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Inverse Reduction (Left)" org.eventb.theory.core.formula="times(a ↦ inverse(a))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Rone"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="6" org.eventb.core.label="inverse_reductionR" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Inverse Reduction (Right)" org.eventb.theory.core.formula="times(inverse(a) ↦ a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Rone"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="7" org.eventb.core.label="divide_reduction" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Divide Reduction" org.eventb.theory.core.formula="divide(a ↦ a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Rone"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="8" org.eventb.core.label="one_divide_left" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="1/Divide" org.eventb.theory.core.formula="divide(Rone ↦ a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="inverse(a)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="9" org.eventb.core.label="one_divide_right" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Divide/1" org.eventb.theory.core.formula="divide(a ↦ Rone)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name=":" org.eventb.core.label="inverse_neutral" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Inverse(one)" org.eventb.theory.core.formula="inverse(Rone)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Rone"/>
+</org.eventb.theory.core.rewriteRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.proofRulesBlock name="8" org.eventb.core.label="plusTimesDistributive">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="a" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="b" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name=")" org.eventb.core.identifier="c" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.rewriteRule name="*" org.eventb.core.label="left_distribute" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Left Distribute" org.eventb.theory.core.formula="times(a ↦ plus(b ↦ c))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="plus(times(a ↦ b) ↦ times(a ↦ c))"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="+" org.eventb.core.label="right_distribute" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Right Distribute" org.eventb.theory.core.formula="times(plus(b ↦ c) ↦ a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="plus(times(b ↦ a) ↦ times(c ↦ a))"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="," org.eventb.core.label="left_factorize" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Left Factorize" org.eventb.theory.core.formula="plus(times(a ↦ b) ↦ times(a ↦ c))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="times(a ↦ plus(b ↦ c))"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="-" org.eventb.core.label="right_factorize" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Right Factorize" org.eventb.theory.core.formula="plus(times(b ↦ a) ↦ times(c ↦ a))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="times(plus(b ↦ c) ↦ a)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="." org.eventb.core.label="left_minus_distribute" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Left Distribute (Minus)" org.eventb.theory.core.formula="times(a ↦ minus(b ↦ c))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="minus(times(a ↦ b) ↦ times(a ↦ c))"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="/" org.eventb.core.label="right_minus_distribute" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Right Distribute (Minus)" org.eventb.theory.core.formula="times(minus(b ↦ c) ↦ a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="minus(times(b ↦ a) ↦ times(c ↦ a))"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="1" org.eventb.core.label="left_minus_factorize" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Left Factorize (Minus)" org.eventb.theory.core.formula="minus(times(a ↦ b) ↦ times(a ↦ c))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="times(a ↦ minus(b ↦ c))"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="2" org.eventb.core.label="right_minus_factorize" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Right Factorize (Minus)" org.eventb.theory.core.formula="minus(times(b ↦ a) ↦ times(c ↦ a))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="times(minus(b ↦ c) ↦ a)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="0" org.eventb.core.label="minus_distribute" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Minus Distribute" org.eventb.theory.core.formula="uminus(plus(a ↦ b))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="plus(uminus(a) ↦ uminus(b))"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="3" org.eventb.core.label="minus_factorize" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Minus Factorize" org.eventb.theory.core.formula="plus(uminus(a) ↦ uminus(b))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="uminus(plus(a ↦ b))"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="4" org.eventb.core.label="divide_distribute" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Divide Distribute" org.eventb.theory.core.formula="divide(plus(b ↦ c) ↦ a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="plus(divide(b ↦ a) ↦ divide(c ↦ a))"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="8" org.eventb.core.label="divide_factorize" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Divide Factorize" org.eventb.theory.core.formula="plus(divide(b ↦ a) ↦ divide(c ↦ a))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="divide(plus(b ↦ c) ↦ a)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="5" org.eventb.core.label="inverse_uminus" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Inverse(UMinus)" org.eventb.theory.core.formula="inverse(uminus(a))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="a ≠ Rzero" org.eventb.theory.core.formula="uminus(inverse(a))"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="6" org.eventb.core.label="uminus_inverse" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="UMinus(Inverse)" org.eventb.theory.core.formula="uminus(inverse(a))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="a ≠ Rzero" org.eventb.theory.core.formula="inverse(uminus(a))"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="7" org.eventb.core.label="divide_left_absorbing" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="true" org.eventb.theory.core.desc="Divide Left Absorbtion" org.eventb.theory.core.formula="divide(Rzero ↦ a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Rzero"/>
+</org.eventb.theory.core.rewriteRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.proofRulesBlock name="9" org.eventb.core.label="equations">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="a" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="b" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name=")" org.eventb.core.identifier="c" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.rewriteRule name="*" org.eventb.core.label="plus_left_simplify" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(+) Left Simplify" org.eventb.theory.core.formula="plus(a ↦ b) = plus(a ↦ c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="b = c"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="+" org.eventb.core.label="plus_right_simplify" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(+) Right Simplify" org.eventb.theory.core.formula="plus(b ↦ a) = plus(c ↦ a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="b = c"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="," org.eventb.core.label="times_left_simplify" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(*) Left Simplify" org.eventb.theory.core.formula="times(a ↦ b) = times(a ↦ c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="a ≠ Rzero" org.eventb.theory.core.formula="b = c"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="-" org.eventb.core.label="times_right_simplify" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(*) Right Simplify" org.eventb.theory.core.formula="times(b ↦ a) = times(c ↦ a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="a ≠ Rzero" org.eventb.theory.core.formula="b = c"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="." org.eventb.core.label="minus_left_simplify" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(-) Left Simplify" org.eventb.theory.core.formula="minus(a ↦ b) = minus(a ↦ c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="b = c"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="/" org.eventb.core.label="minus_right_simplify" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(-) Right Simplify" org.eventb.theory.core.formula="minus(b ↦ a) = minus(c ↦ a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="b = c"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="0" org.eventb.core.label="divide_left_simplify" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(/) Left Simplify" org.eventb.theory.core.formula="divide(a ↦ b) = divide(a ↦ c)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="a ≠ Rzero" org.eventb.theory.core.formula="b = c"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="1" org.eventb.core.label="divide_right_simplify" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(/) Right Simplify" org.eventb.theory.core.formula="divide(b ↦ a) = divide(c ↦ a)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="b = c"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="2" org.eventb.core.label="uminus_simplify" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="UMinus Simplify" org.eventb.theory.core.formula="uminus(a) = uminus(b)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a = b"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="3" org.eventb.core.label="inverse_simplify" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Inverse Simplify" org.eventb.theory.core.formula="inverse(a) = inverse(b)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a = b"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="4" org.eventb.core.label="uminus_unsimplify" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="UMinus Un-Simplify" org.eventb.theory.core.formula="a = b">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="uminus(a) = uminus(b)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="5" org.eventb.core.label="inverse_unsimplify" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Inverse Un-Simplify" org.eventb.theory.core.formula="a = b">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="a ≠ Rzero ∧ b ≠ Rzero" org.eventb.theory.core.formula="inverse(a) = inverse(b)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="6" org.eventb.core.label="equal_to_minus" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(=) Balance" org.eventb.theory.core.formula="a = b">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="minus(a ↦ b) = Rzero"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="7" org.eventb.core.label="equal_to_divide" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(=) Divide Balance" org.eventb.theory.core.formula="a = b">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="b ≠ Rzero" org.eventb.theory.core.formula="divide(a ↦ b) = Rone"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="8" org.eventb.core.label="plus_eq_zero" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(+) Neutral Equation" org.eventb.theory.core.formula="plus(a ↦ b) = Rzero">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a = uminus(b)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="9" org.eventb.core.label="minus_eq_zero" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(-) Neutral Equation" org.eventb.theory.core.formula="minus(a ↦ b) = Rzero">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a = b"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name=":" org.eventb.core.label="times_eq_one" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(*) Neutral Equation" org.eventb.theory.core.formula="times(a ↦ b) = Rone">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="b ≠ Rzero" org.eventb.theory.core.formula="a = inverse(b)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name=";" org.eventb.core.label="divide_eq_one" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(/) Neutral Equation" org.eventb.theory.core.formula="divide(a ↦ b) = Rone">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a = b"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="=" org.eventb.core.label="times_integral" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(*) Integral" org.eventb.theory.core.formula="times(a ↦ b) = Rzero">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="a ≠ Rzero" org.eventb.theory.core.formula="b = Rzero"/>
+<org.eventb.theory.core.rewriteRuleRHS name="(" org.eventb.core.label="rhs2" org.eventb.core.predicate="b ≠ Rzero" org.eventb.theory.core.formula="a = Rzero"/>
+<org.eventb.theory.core.rewriteRuleRHS name=")" org.eventb.core.label="rhs3" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a = Rzero ∨ b = Rzero"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="&gt;" org.eventb.core.label="divide_integral" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(/) Integral" org.eventb.theory.core.formula="divide(a ↦ b) = Rzero">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a = Rzero"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="?" org.eventb.core.label="uminus_eq_rewrite" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="UMinus Eq Rewrite" org.eventb.theory.core.formula="uminus(a) = b">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a = uminus(b)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="@" org.eventb.core.label="inverse_eq_rewrite" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Inverse Eq Rewrite" org.eventb.theory.core.formula="inverse(a) = b">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="b ≠ Rzero" org.eventb.theory.core.formula="a = inverse(b)"/>
+</org.eventb.theory.core.rewriteRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.proofRulesBlock name=":" org.eventb.core.label="inequationsGeneral">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="a" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="b" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.rewriteRule name=")" org.eventb.core.label="leq_inversion" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(&lt;=) -&gt; (&gt;=)" org.eventb.theory.core.formula="a ↦ b ∈ leq">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="b ↦ a ∈ geq"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="*" org.eventb.core.label="geq_inversion" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(&gt;=) -&gt; (&lt;=)" org.eventb.theory.core.formula="a ↦ b ∈ geq">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="b ↦ a ∈ leq"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="+" org.eventb.core.label="lt_inversion" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(&lt;) -&gt; (&gt;)" org.eventb.theory.core.formula="a ↦ b ∈ lt">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="b ↦ a ∈ gt"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="," org.eventb.core.label="gt_inversion" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(&gt;) -&gt; (&lt;)" org.eventb.theory.core.formula="a ↦ b ∈ gt">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="b ↦ a ∈ lt"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.metaVariable name="-" org.eventb.core.identifier="c" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.rewriteRule name="0" org.eventb.core.label="leq_total" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(&gt;=) Total" org.eventb.theory.core.formula="¬(a ↦ b ∈ leq)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a ↦ b ∈ gt"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="1" org.eventb.core.label="geq_total" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(&lt;=) Total" org.eventb.theory.core.formula="¬(a ↦ b ∈ geq)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a ↦ b ∈ lt"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="2" org.eventb.core.label="geq_total_reverse" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(&lt;=) Total (Reverse)" org.eventb.theory.core.formula="¬(a ↦ b ∈ lt)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a ↦ b ∈ geq"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="3" org.eventb.core.label="leq_total_reverse" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(&gt;=) Total (Reverse)" org.eventb.theory.core.formula="¬(a ↦ b ∈ gt)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a ↦ b ∈ leq"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.inferenceRule name="4" org.eventb.core.label="leq_transitivity" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.desc="(&lt;=) Transitivity">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="a ↦ b ∈ leq" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.given name="(" org.eventb.core.predicate="b ↦ c ∈ leq" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.infer name=")" org.eventb.core.predicate="a ↦ c ∈ leq"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.inferenceRule name="5" org.eventb.core.label="lt_transitivity" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.desc="(&lt;) Transitivity">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="a ↦ b ∈ lt" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.given name="(" org.eventb.core.predicate="b ↦ c ∈ lt" org.eventb.theory.core.hyp="false"/>
+<org.eventb.theory.core.infer name=")" org.eventb.core.predicate="a ↦ c ∈ lt"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.inferenceRule name="6" org.eventb.core.label="geq_transitivity" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.desc="(&gt;=) Transitivity">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="a ↦ b ∈ geq" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.given name="(" org.eventb.core.predicate="b ↦ c ∈ geq" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.infer name=")" org.eventb.core.predicate="a ↦ c ∈ geq"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.inferenceRule name="7" org.eventb.core.label="gt_transitivity" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.desc="(&gt;) Transitivity">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="a ↦ b ∈ gt" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.given name="(" org.eventb.core.predicate="b ↦ c ∈ gt" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.infer name=")" org.eventb.core.predicate="a ↦ c ∈ gt"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.inferenceRule name="8" org.eventb.core.label="leq_antismetry" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.desc="(&lt;=) Antisymetry">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="a ↦ b ∈ leq" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.given name="(" org.eventb.core.predicate="b ↦ a ∈ leq" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.infer name=")" org.eventb.core.predicate="a = b"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.inferenceRule name="9" org.eventb.core.label="geq_antisymetry" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.desc="(&gt;=) Antisymetry">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="a ↦ b ∈ geq" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.given name="(" org.eventb.core.predicate="b ↦ a ∈ geq" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.infer name=")" org.eventb.core.predicate="a = b"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.rewriteRule name=":" org.eventb.core.label="eq_to_leq_weakening" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(=) -&gt; (&lt;=)" org.eventb.theory.core.formula="a = b">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a ↦ b ∈ leq"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name=";" org.eventb.core.label="eq_to_geq_weakening" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(=) -&gt; (&gt;=)" org.eventb.theory.core.formula="a = b">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a ↦ b ∈ geq"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.inferenceRule name="=" org.eventb.core.label="leq_lt_weakening" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.desc="(&lt;=)/(&lt;) Weakening">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="a ↦ b ∈ leq" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.given name="(" org.eventb.core.predicate="a ≠ b" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.infer name=")" org.eventb.core.predicate="a ↦ b ∈ lt"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.inferenceRule name="&gt;" org.eventb.core.label="geq_gt_weakening" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.desc="(&gt;=)/(&gt;) Weakening">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="a ↦ b ∈ geq" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.given name="(" org.eventb.core.predicate="a ≠ b" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.infer name=")" org.eventb.core.predicate="a ↦ b ∈ gt"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.rewriteRule name="?" org.eventb.core.label="noteq_rewrite" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(=/=)/(&lt;),(&gt;) Rewrite" org.eventb.theory.core.formula="a ≠ b">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="(a ↦ b ∈ lt) ∨ (b ↦ a ∈ lt)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.inferenceRule name="@" org.eventb.core.label="lt_leq_reduction" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.desc="(&lt;)/(&lt;=) Reduction">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="(a ↦ b ∈ lt) ∨ a = b" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.infer name="(" org.eventb.core.predicate="a ↦ b ∈ leq"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.inferenceRule name="A" org.eventb.core.label="gt_geq_reduction" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.desc="(&gt;)/(&gt;=) Reduction">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="(a ↦ b ∈ gt) ∨ a = b" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.infer name="(" org.eventb.core.predicate="a ↦ b ∈ geq"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.rewriteRule name="B" org.eventb.core.label="lt_to_leq_weakening" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(&lt;) -&gt; (&lt;=) Weakening" org.eventb.theory.core.formula="a ↦ b ∈ lt">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="(a ↦ b ∈ leq) ∧ a ≠ b"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="C" org.eventb.core.label="gt_to_geq_weakening" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(&gt;) -&gt; (&gt;=) Weakening" org.eventb.theory.core.formula="a ↦ b ∈ gt">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="(a ↦ b ∈ geq) ∧ a ≠ b"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="D" org.eventb.core.label="leq_reflexive" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(&lt;=) Reflexivity" org.eventb.theory.core.formula="a ↦ a ∈ leq">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="⊤"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="E" org.eventb.core.label="geq_reflexive" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(&gt;=) Reflexivity" org.eventb.theory.core.formula="a ↦ a ∈ geq">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="⊤"/>
+</org.eventb.theory.core.rewriteRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.proofRulesBlock name=";" org.eventb.core.label="inequationsCompatibility">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="a" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="b" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name=")" org.eventb.core.identifier="c" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.rewriteRule name="*" org.eventb.core.label="leq_plus_compatibility" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="+/(&lt;=) Compatibility" org.eventb.theory.core.formula="plus(a ↦ b) ↦ plus(a ↦ c) ∈ leq">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="b ↦ c ∈ leq"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="+" org.eventb.core.label="lt_plus_compatibility" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="+/(&lt;) Compatibility" org.eventb.theory.core.formula="plus(a ↦ b) ↦ plus(a ↦ c) ∈ lt">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="b ↦ c ∈ lt"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="," org.eventb.core.label="uminus_leq_ineq" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="UMinus/(&lt;=) Rule" org.eventb.theory.core.formula="a ↦ b ∈ leq">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="uminus(b) ↦ uminus(a) ∈ leq"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="-" org.eventb.core.label="uminus_lt_ineq" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="UMinus/(&lt;) Rule" org.eventb.theory.core.formula="a ↦ b ∈ lt">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="uminus(b) ↦ uminus(a) ∈ lt"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="." org.eventb.core.label="leq_times_compatibility" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="*/(&lt;=) Compatibility" org.eventb.theory.core.formula="times(a ↦ b) ↦ times(a ↦ c) ∈ leq">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="Rzero ↦ a ∈ lt" org.eventb.theory.core.formula="b ↦ c ∈ leq"/>
+<org.eventb.theory.core.rewriteRuleRHS name="(" org.eventb.core.label="rhs2" org.eventb.core.predicate="a ↦ Rzero ∈ lt" org.eventb.theory.core.formula="c ↦ b ∈ leq"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="/" org.eventb.core.label="lt_times_compatibility" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="*/(&lt;) Compatibility" org.eventb.theory.core.formula="times(a ↦ b) ↦ times(a ↦ c) ∈ lt">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="Rzero ↦ a ∈ lt" org.eventb.theory.core.formula="b ↦ c ∈ lt"/>
+<org.eventb.theory.core.rewriteRuleRHS name="(" org.eventb.core.label="rhs2" org.eventb.core.predicate="a ↦ Rzero ∈ lt" org.eventb.theory.core.formula="c ↦ b ∈ lt"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="0" org.eventb.core.label="inverse_leq_ineq" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Inverse/(&lt;=) Rule" org.eventb.theory.core.formula="a ↦ b ∈ leq">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="a ≠ Rzero ∧ b ≠ Rzero" org.eventb.theory.core.formula="inverse(b) ↦ inverse(a) ∈ leq"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="1" org.eventb.core.label="inverse_lt_ineq" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Inverse/(&lt;) Rule" org.eventb.theory.core.formula="a ↦ b ∈ lt">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="a ≠ Rzero ∧ b ≠ Rzero" org.eventb.theory.core.formula="inverse(b) ↦ inverse(a) ∈ lt"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="2" org.eventb.core.label="leq_balance_left" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(&lt;=) Balance Left" org.eventb.theory.core.formula="a ↦ b ∈ leq">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="minus(a ↦ b) ↦ Rzero ∈ leq"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="3" org.eventb.core.label="leq_balance_right" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(&lt;=) Balance Right" org.eventb.theory.core.formula="a ↦ b ∈ leq">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Rzero ↦ minus(b ↦ a) ∈ leq"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="4" org.eventb.core.label="lt_balance_left" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(&lt;) Balance Left" org.eventb.theory.core.formula="a ↦ b ∈ lt">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="minus(a ↦ b) ↦ Rzero ∈ lt"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="5" org.eventb.core.label="lt_balance_right" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(&lt;) Balance Right" org.eventb.theory.core.formula="a ↦ b ∈ lt">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Rzero ↦ minus(b ↦ a) ∈ lt"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="6" org.eventb.core.label="leq_div_balance_left" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(&lt;=) Divide Balance Left" org.eventb.theory.core.formula="a ↦ b ∈ leq">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="b ≠ Rzero" org.eventb.theory.core.formula="divide(a ↦ b) ↦ Rone ∈ leq"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="7" org.eventb.core.label="leq_div_balance_right" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(&lt;=) Divide Balance Right" org.eventb.theory.core.formula="a ↦ b ∈ leq">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="a ≠ Rzero" org.eventb.theory.core.formula="Rone ↦ divide(b ↦ a) ∈ leq"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="8" org.eventb.core.label="lt_div_balance_left" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(&lt;) Divide Balance Left" org.eventb.theory.core.formula="a ↦ b ∈ lt">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="b ≠ Rzero" org.eventb.theory.core.formula="divide(a ↦ b) ↦ Rone ∈ lt"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="9" org.eventb.core.label="lt_div_balance_right" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(&lt;) Divide Balance Right" org.eventb.theory.core.formula="a ↦ b ∈ lt">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="a ≠ Rzero" org.eventb.theory.core.formula="Rone ↦ divide(b ↦ a) ∈ lt"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name=":" org.eventb.core.label="leq_plus_balance_left" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(+)/(&lt;=) Balance Left" org.eventb.theory.core.formula="a ↦ plus(b ↦ c) ∈ leq">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="minus(a ↦ c) ↦ b ∈ leq"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name=";" org.eventb.core.label="leq_plus_balance_right" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(+)/(&lt;=) Balance Right" org.eventb.theory.core.formula="plus(a ↦ b) ↦ c ∈ leq">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a ↦ minus(b ↦ c) ∈ leq"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="=" org.eventb.core.label="leq_times_balance_left" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="true" org.eventb.theory.core.desc="(*)/(&lt;=) Balance Left" org.eventb.theory.core.formula="a ↦ times(b ↦ c) ∈ leq">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="Rzero ↦ c ∈ lt" org.eventb.theory.core.formula="divide(a ↦ c) ↦ b ∈ leq"/>
+<org.eventb.theory.core.rewriteRuleRHS name="(" org.eventb.core.label="rhs2" org.eventb.core.predicate="c ↦ Rzero ∈ lt" org.eventb.theory.core.formula="b ↦ divide(a ↦ c) ∈ leq"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="&gt;" org.eventb.core.label="leq_times_balance_right" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="true" org.eventb.theory.core.desc="(*)/(&lt;=) Balance Right" org.eventb.theory.core.formula="times(a ↦ b) ↦ c ∈ leq">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="Rzero ↦ b ∈ lt" org.eventb.theory.core.formula="a ↦ divide(c ↦ b) ∈ leq"/>
+<org.eventb.theory.core.rewriteRuleRHS name="(" org.eventb.core.label="rhs2" org.eventb.core.predicate="b ↦ Rzero ∈ lt" org.eventb.theory.core.formula="divide(c ↦ b) ↦ a ∈ leq"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element1" org.eventb.core.label="lt_plus_balance_left" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(+)/(&lt;) Balance Left" org.eventb.theory.core.formula="a ↦ plus(b ↦ c) ∈ lt">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="minus(a ↦ c) ↦ b ∈ lt"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element2" org.eventb.core.label="lt_plus_balance_right" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(+)/(&lt;) Balance Right" org.eventb.theory.core.formula="plus(a ↦ b) ↦ c ∈ lt">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a ↦ minus(b ↦ c) ∈ lt"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element3" org.eventb.core.label="lt_times_balance_left" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="true" org.eventb.theory.core.desc="(*)/(&lt;) Balance Left" org.eventb.theory.core.formula="a ↦ times(b ↦ c) ∈ lt">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="Rzero ↦ c ∈ lt" org.eventb.theory.core.formula="divide(a ↦ c) ↦ b ∈ lt"/>
+<org.eventb.theory.core.rewriteRuleRHS name="(" org.eventb.core.label="rhs2" org.eventb.core.predicate="c ↦ Rzero ∈ lt" org.eventb.theory.core.formula="b ↦ divide(a ↦ c) ∈ lt"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element4" org.eventb.core.label="lt_times_balance_right" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="true" org.eventb.theory.core.desc="(*)/(&lt;) Balance Right" org.eventb.theory.core.formula="times(a ↦ b) ↦ c ∈ lt">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="Rzero ↦ b ∈ lt" org.eventb.theory.core.formula="a ↦ divide(c ↦ b) ∈ lt"/>
+<org.eventb.theory.core.rewriteRuleRHS name="(" org.eventb.core.label="rhs2" org.eventb.core.predicate="b ↦ Rzero ∈ lt" org.eventb.theory.core.formula="divide(c ↦ b) ↦ a ∈ lt"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element5" org.eventb.core.label="inverse_positive_leq" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Inverse Positive" org.eventb.theory.core.formula="Rzero ↦ a ∈ leq">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="a ≠ Rzero" org.eventb.theory.core.formula="Rzero ↦ inverse(a) ∈ lt"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element6" org.eventb.core.label="inverse_negative_leq" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Inverse Negative" org.eventb.theory.core.formula="a ↦ Rzero ∈ leq">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="a ≠ Rzero" org.eventb.theory.core.formula="inverse(a) ↦ Rzero ∈ lt"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element7" org.eventb.core.label="inverse_positive_lt" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Inverse Strictly Positive" org.eventb.theory.core.formula="Rzero ↦ a ∈ lt">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Rzero ↦ inverse(a) ∈ lt"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element8" org.eventb.core.label="inverse_negative_lt" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Inverse Strictly Negative" org.eventb.theory.core.formula="a ↦ Rzero ∈ lt">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="inverse(a) ↦ Rzero ∈ lt"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element9" org.eventb.core.label="times_compatibility_leq" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(*)/&lt;= Compatibility" org.eventb.theory.core.formula="Rzero ↦ times(a ↦ b) ∈ leq">
+<org.eventb.theory.core.rewriteRuleRHS name="+" org.eventb.core.label="rhs5" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="(Rzero ↦ a ∈ leq ∧ Rzero ↦ b ∈ leq) ∨ (a ↦ Rzero ∈ leq ∧ b ↦ Rzero ∈ leq)"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element10" org.eventb.core.label="times_compatibility_geq" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(*)/&gt;= Compatibility" org.eventb.theory.core.formula="Rzero ↦ times(a ↦ b) ∈ geq">
+<org.eventb.theory.core.rewriteRuleRHS name="+" org.eventb.core.label="rhs5" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="(a ↦ Rzero ∈ leq ∧ Rzero ↦ b ∈ leq) ∨ (Rzero ↦ a ∈ leq ∧ b ↦ Rzero ∈ leq)"/>
+</org.eventb.theory.core.rewriteRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.proofRulesBlock name="@" org.eventb.core.label="absPredicates">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="x" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="y" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.rewriteRule name=")" org.eventb.core.label="abs_eqn" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Abs Equation" org.eventb.theory.core.formula="abs(x) = y">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="x = y ∨ uminus(x) = y"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="*" org.eventb.core.label="abs_contradict" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Abs Impossible" org.eventb.theory.core.formula="abs(x) = y">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="y ↦ Rzero ∈ lt" org.eventb.theory.core.formula="⊥"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="+" org.eventb.core.label="abs_zero" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Abs = 0" org.eventb.theory.core.formula="abs(x) = Rzero">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="x = Rzero"/>
+</org.eventb.theory.core.rewriteRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.axiomaticDefinitionsBlock name="C" org.eventb.core.label="Rorder">
+<org.eventb.theory.core.axiomaticOperatorDefinition name="element1" org.eventb.core.label="leq" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="RReal ↔ RReal"/>
+<org.eventb.theory.core.axiomaticOperatorDefinition name="element2" org.eventb.core.label="lt" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="RReal ↔ RReal"/>
+<org.eventb.theory.core.axiomaticOperatorDefinition name="element3" org.eventb.core.label="geq" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="RReal ↔ RReal"/>
+<org.eventb.theory.core.axiomaticOperatorDefinition name="element4" org.eventb.core.label="gt" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="RReal ↔ RReal"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element7" org.eventb.core.label="leqDef" org.eventb.core.predicate="order(leq)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element8" org.eventb.core.label="leqTotal" org.eventb.core.predicate="total(leq)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element10" org.eventb.core.label="ltDef" org.eventb.core.predicate="lt = strict(leq)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element11" org.eventb.core.label="geqDef" org.eventb.core.predicate="geq = converse(leq)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element12" org.eventb.core.label="gtDef" org.eventb.core.predicate="gt = strict(geq)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element13" org.eventb.core.label="supremumProperty" org.eventb.core.predicate="∀ P · P ∈ ℙ(RReal) ∧ P ≠ ∅ ⇒ (&#10;&#9;(∃ m · m ∈ RReal ∧ upperBound(leq,P,m)) ⇒&#10;&#9;(∃ B · B ∈ RReal ∧ supremum(leq,P,B))&#10;)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element6" org.eventb.core.label="zeroLtOne" org.eventb.core.predicate="(Rzero ↦ Rone) ∈ lt"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element14" org.eventb.core.label="oneLtTwo" org.eventb.core.predicate="(Rone ↦ Rtwo) ∈ lt"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element17" org.eventb.core.label="RmaxDef" org.eventb.core.predicate="∀ S · S ⊆ RReal ∧ hasMaximum(leq,S) ⇒ (Rmax(S) = Gmax(leq,S))"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element18" org.eventb.core.label="RminDef" org.eventb.core.predicate="∀ S · S ⊆ RReal ∧ hasMinimum(leq,S) ⇒ (Rmin(S) = Gmin(leq,S))"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element19" org.eventb.core.label="RsupDef" org.eventb.core.predicate="∀ S · S ⊆ RReal ∧ upperBounded(leq,S) ⇒ (Rsup(S) = Gsup(leq,S))"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element20" org.eventb.core.label="RinfDef" org.eventb.core.predicate="∀ S · S ⊆ RReal ∧ lowerBounded(leq,S) ⇒ (Rinf(S) = Ginf(leq,S))"/>
+<org.eventb.theory.core.axiomaticOperatorDefinition name="element15" org.eventb.core.label="Rmax" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="RReal">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(RReal)" org.eventb.core.identifier="A"/>
+</org.eventb.theory.core.axiomaticOperatorDefinition>
+<org.eventb.theory.core.axiomaticOperatorDefinition name="element16" org.eventb.core.label="Rmin" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="RReal">
+<org.eventb.theory.core.operatorArgument name="element1" org.eventb.core.expression="ℙ(RReal)" org.eventb.core.identifier="A"/>
+</org.eventb.theory.core.axiomaticOperatorDefinition>
+<org.eventb.theory.core.axiomaticOperatorDefinition name="element17" org.eventb.core.label="Rsup" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="RReal">
+<org.eventb.theory.core.operatorArgument name="element1" org.eventb.core.expression="ℙ(RReal)" org.eventb.core.identifier="A"/>
+</org.eventb.theory.core.axiomaticOperatorDefinition>
+<org.eventb.theory.core.axiomaticOperatorDefinition name="element18" org.eventb.core.label="Rinf" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="RReal">
+<org.eventb.theory.core.operatorArgument name="element1" org.eventb.core.expression="ℙ(RReal)" org.eventb.core.identifier="A"/>
+</org.eventb.theory.core.axiomaticOperatorDefinition>
+</org.eventb.theory.core.axiomaticDefinitionsBlock>
+<org.eventb.theory.core.axiomaticDefinitionsBlock name="D" org.eventb.core.label="Rparts">
+<org.eventb.theory.core.axiomaticOperatorDefinition name="element1" org.eventb.core.label="RRealStar" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(RReal)"/>
+<org.eventb.theory.core.axiomaticOperatorDefinition name="element2" org.eventb.core.label="RRealPlus" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(RReal)"/>
+<org.eventb.theory.core.axiomaticOperatorDefinition name="element3" org.eventb.core.label="RRealMinus" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(RReal)"/>
+<org.eventb.theory.core.axiomaticOperatorDefinition name="element4" org.eventb.core.label="RRealPlusStar" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(RReal)"/>
+<org.eventb.theory.core.axiomaticOperatorDefinition name="element5" org.eventb.core.label="RRealMinusStar" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(RReal)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element7" org.eventb.core.label="realStarDef" org.eventb.core.predicate="RRealStar = { x ∣ x ∈ RReal ∧ x ≠ Rzero }"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element8" org.eventb.core.label="realPlusDef" org.eventb.core.predicate="RRealPlus = { x ∣ Rzero ↦ x ∈ leq }"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element9" org.eventb.core.label="realMinusDef" org.eventb.core.predicate="RRealMinus = { x ∣ x ↦ Rzero ∈ leq }"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element10" org.eventb.core.label="realPlusStarDef" org.eventb.core.predicate="RRealPlusStar = { x ∣ Rzero ↦ x ∈ lt }"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element11" org.eventb.core.label="realMinusStarDef" org.eventb.core.predicate="RRealMinusStar = { x ∣ x ↦ Rzero ∈ lt }"/>
+</org.eventb.theory.core.axiomaticDefinitionsBlock>
+<org.eventb.theory.core.axiomaticDefinitionsBlock name="A" org.eventb.core.label="Roperators">
+<org.eventb.theory.core.axiomaticOperatorDefinition name="element1" org.eventb.core.label="plus" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(RReal×RReal×RReal)"/>
+<org.eventb.theory.core.axiomaticOperatorDefinition name="element2" org.eventb.core.label="times" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(RReal×RReal×RReal)"/>
+<org.eventb.theory.core.axiomaticOperatorDefinition name="element3" org.eventb.core.label="uminus" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(RReal×RReal)"/>
+<org.eventb.theory.core.axiomaticOperatorDefinition name="element4" org.eventb.core.label="inverse" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(RReal×RReal)"/>
+<org.eventb.theory.core.axiomaticOperatorDefinition name="element5" org.eventb.core.label="minus" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(RReal×RReal×RReal)"/>
+<org.eventb.theory.core.axiomaticOperatorDefinition name="element6" org.eventb.core.label="divide" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(RReal×RReal×RReal)"/>
+<org.eventb.theory.core.axiomaticOperatorDefinition name="element7" org.eventb.core.label="abs" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(RReal×RReal)"/>
+<org.eventb.theory.core.axiomaticOperatorDefinition name="element8" org.eventb.core.label="sqrt" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(RReal×RReal)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element9" org.eventb.core.label="plusType" org.eventb.core.predicate="plus ∈ ((RReal×RReal) → RReal)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element10" org.eventb.core.label="timesType" org.eventb.core.predicate="times ∈ ((RReal×RReal) → RReal)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element11" org.eventb.core.label="uminusType" org.eventb.core.predicate="uminus ∈ (RReal ⤖ RReal)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element12" org.eventb.core.label="inverseType" org.eventb.core.predicate="inverse ∈ (RRealStar ⤖ RRealStar)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element13" org.eventb.core.label="minusType" org.eventb.core.predicate="minus ∈ ((RReal×RReal) → RReal)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element14" org.eventb.core.label="divideType" org.eventb.core.predicate="divide ∈ ((RReal×RRealStar) → RReal)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element15" org.eventb.core.label="uminusDef" org.eventb.core.predicate="∀ x · x ∈ RReal ⇒ (inverses(plus,Rzero,x,uminus(x)))"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element16" org.eventb.core.label="minusDef" org.eventb.core.predicate="∀ x, y · x ∈ RReal ∧ y ∈ RReal ⇒ (&#10;&#9;minus(x ↦ y) = plus(x ↦ uminus(y))&#10;)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element17" org.eventb.core.label="inverseDef" org.eventb.core.predicate="∀ x · x ∈ RReal ∧ x ≠ Rzero ⇒ (&#10;&#9;times(x ↦ inverse(x)) = Rone&#10;)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element18" org.eventb.core.label="divideDef" org.eventb.core.predicate="∀ x, y · x ∈ RReal ∧ y ∈ RReal ∧ y ≠ Rzero ⇒ (&#10;&#9;divide(x ↦ y) = times(x ↦ inverse(y))&#10;)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element19" org.eventb.core.label="absType" org.eventb.core.predicate="abs ∈ (RReal → RRealPlus)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element20" org.eventb.core.label="absPos" org.eventb.core.predicate="∀ x · x ∈ RReal ⇒ (Rzero ↦ abs(x) ∈ leq)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element21" org.eventb.core.label="absZero" org.eventb.core.predicate="∀ x · x ∈ RReal ⇒ ((x = Rzero) ⇔ (abs(x) = Rzero))"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element22" org.eventb.core.label="absDef" org.eventb.core.predicate="∀ x · x ∈ RReal ⇒ (&#10;&#9;((x ↦ Rzero ∈ lt) ⇒ (abs(x) = uminus(x))) ∧&#10;&#9;((Rzero ↦ x ∈ lt) ⇒ (abs(x) = x))&#10;)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element23" org.eventb.core.label="absTriangular" org.eventb.core.predicate="∀ x, y · x ∈ RReal ∧ y ∈ RReal ⇒ (&#10;&#9;(abs(plus(x ↦ y)) ↦ plus(abs(x) ↦ abs(y)) ∈ leq)&#10;)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element24" org.eventb.core.label="absMinus" org.eventb.core.predicate="∀ x · x ∈ RReal ⇒ (abs(uminus(x)) = abs(x))"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element25" org.eventb.core.label="absMult" org.eventb.core.predicate="∀ x, y · x ∈ RReal ∧ y ∈ RReal ⇒ (&#10;&#9;abs(times(x ↦ y)) = times(abs(x) ↦ abs(y))&#10;)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element26" org.eventb.core.label="sqrtType" org.eventb.core.predicate="sqrt ∈ (RRealPlus ⤖ RRealPlus)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element27" org.eventb.core.label="sqrtDef" org.eventb.core.predicate="∀ x · x ∈ RRealPlus ⇒ (times(sqrt(x) ↦ sqrt(x)) = x)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element28" org.eventb.core.label="twoDef" org.eventb.core.predicate="Rtwo = plus(Rone ↦ Rone)"/>
+</org.eventb.theory.core.axiomaticDefinitionsBlock>
+<org.eventb.theory.core.axiomaticDefinitionsBlock name="B" org.eventb.core.label="Rstructure">
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element1" org.eventb.core.label="realField" org.eventb.core.predicate="Field(plus,times,Rzero,Rone)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element2" org.eventb.core.label="realIntegrity" org.eventb.core.predicate="integral(times,Rzero)"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element3" org.eventb.core.label="ringCompatibility" org.eventb.core.predicate="ringCompatible(plus,times,Rzero,Rone,leq)"/>
+</org.eventb.theory.core.axiomaticDefinitionsBlock>
+<org.eventb.theory.core.importTheoryProject name="E" org.eventb.theory.core.importTheoryProject="/SimpleDEq">
+<org.eventb.theory.core.importTheory name="'" org.eventb.theory.core.importTheory="/SimpleDEq/Relation.dtf|org.eventb.theory.core.deployedTheoryRoot#Relation"/>
+</org.eventb.theory.core.importTheoryProject>
+<org.eventb.theory.core.proofRulesBlock name="element6" org.eventb.core.label="realSubSetsUtility">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="a" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.rewriteRule name="(" org.eventb.core.label="realPlus_to_leq" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="R+ -&gt; &gt;= 0" org.eventb.theory.core.formula="a ∈ RRealPlus">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Rzero ↦ a ∈ leq"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name=")" org.eventb.core.label="realMinus_to_leq" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="R- -&gt; &lt;= 0" org.eventb.theory.core.formula="a ∈ RRealMinus">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a ↦ Rzero ∈ leq"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="*" org.eventb.core.label="realStar_to_neq" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="R* -&gt; /= 0" org.eventb.theory.core.formula="a ∈ RRealStar">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a ≠ Rzero"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element1" org.eventb.core.label="realPlusStar_to_leq" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="R+* -&gt; &gt; 0" org.eventb.theory.core.formula="a ∈ RRealPlusStar">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Rzero ↦ a ∈ lt"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element2" org.eventb.core.label="realMinusStar_to_leq" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="R-* -&gt; &lt; 0" org.eventb.theory.core.formula="a ∈ RRealMinusStar">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a ↦ Rzero ∈ lt"/>
+</org.eventb.theory.core.rewriteRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.proofRulesBlock name="element8" org.eventb.core.label="typing">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="a" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="b" org.eventb.theory.core.type="RReal"/>
+<org.eventb.theory.core.inferenceRule name=")" org.eventb.core.label="plusType" org.eventb.theory.core.applicability="both" org.eventb.theory.core.desc="Type (+)">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="a ∈ RReal" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.given name="(" org.eventb.core.predicate="b ∈ RReal" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.infer name=")" org.eventb.core.predicate="plus(a ↦ b) ∈ RReal"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.inferenceRule name="*" org.eventb.core.label="minusType" org.eventb.theory.core.applicability="both" org.eventb.theory.core.desc="Type (-)">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="a ∈ RReal" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.given name="(" org.eventb.core.predicate="b ∈ RReal" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.infer name=")" org.eventb.core.predicate="minus(a ↦ b) ∈ RReal"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.inferenceRule name="+" org.eventb.core.label="timesType" org.eventb.theory.core.applicability="both" org.eventb.theory.core.desc="Type (*)">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="a ∈ RReal" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.given name="(" org.eventb.core.predicate="b ∈ RReal" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.infer name=")" org.eventb.core.predicate="times(a ↦ b) ∈ RReal"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.inferenceRule name="," org.eventb.core.label="divideType" org.eventb.theory.core.applicability="both" org.eventb.theory.core.desc="Type (/)">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="a ∈ RReal" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.given name="(" org.eventb.core.predicate="b ∈ RReal" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.infer name=")" org.eventb.core.predicate="divide(a ↦ b) ∈ RRealStar"/>
+<org.eventb.theory.core.given name="*" org.eventb.core.predicate="b ≠ Rzero" org.eventb.theory.core.hyp="true"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.inferenceRule name="-" org.eventb.core.label="uminusType" org.eventb.theory.core.applicability="both" org.eventb.theory.core.desc="Type (UMinus)">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="a ∈ RReal" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.infer name="(" org.eventb.core.predicate="uminus(a) ∈ RReal"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.inferenceRule name="element8" org.eventb.core.label="inverseType" org.eventb.theory.core.applicability="both" org.eventb.theory.core.desc="Type (^-1)">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="a ∈ RRealStar" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.infer name="(" org.eventb.core.predicate="inverse(a) ∈ RRealStar"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.inferenceRule name="." org.eventb.core.label="sqrtType" org.eventb.theory.core.applicability="both" org.eventb.theory.core.desc="Type (sqrt)">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="a ∈ RRealPlus" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.infer name="(" org.eventb.core.predicate="sqrt(a) ∈ RRealPlus"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.inferenceRule name="/" org.eventb.core.label="absType" org.eventb.theory.core.applicability="both" org.eventb.theory.core.desc="Type (|.|)">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="a ∈ RReal" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.infer name="(" org.eventb.core.predicate="abs(a) ∈ RRealPlus"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.inferenceRule name="element1" org.eventb.core.label="plusTypeArg" org.eventb.theory.core.applicability="both" org.eventb.theory.core.desc="Type (+) arguments">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="a ∈ RReal" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.given name="(" org.eventb.core.predicate="b ∈ RReal" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.infer name=")" org.eventb.core.predicate="a ↦ b ∈ dom(plus)"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.inferenceRule name="element2" org.eventb.core.label="minusTypeArg" org.eventb.theory.core.applicability="both" org.eventb.theory.core.desc="Type (-) arguments">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="a ∈ RReal" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.given name="(" org.eventb.core.predicate="b ∈ RReal" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.infer name=")" org.eventb.core.predicate="a ↦ b ∈ dom(minus)"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.inferenceRule name="element3" org.eventb.core.label="timesTypeArg" org.eventb.theory.core.applicability="both" org.eventb.theory.core.desc="Type (*) arguments">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="a ∈ RReal" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.given name="(" org.eventb.core.predicate="b ∈ RReal" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.infer name=")" org.eventb.core.predicate="a ↦ b ∈ dom(times)"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.inferenceRule name="element4" org.eventb.core.label="divideTypeArg" org.eventb.theory.core.applicability="both" org.eventb.theory.core.desc="Type (/) arguments">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="a ∈ RReal" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.given name="(" org.eventb.core.predicate="b ∈ RReal" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.infer name=")" org.eventb.core.predicate="a ↦ b ∈ dom(divide)"/>
+<org.eventb.theory.core.given name="*" org.eventb.core.predicate="b ≠ Rzero" org.eventb.theory.core.hyp="true"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.inferenceRule name="element5" org.eventb.core.label="uminusTypeArg" org.eventb.theory.core.applicability="both" org.eventb.theory.core.desc="Type (UMinus) argument">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="a ∈ RReal" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.infer name="(" org.eventb.core.predicate="a ∈ dom(uminus)"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.inferenceRule name="element9" org.eventb.core.label="inverseTypeArg" org.eventb.theory.core.applicability="both" org.eventb.theory.core.desc="Type (^-1) argument">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="a ∈ RRealStar" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.infer name="(" org.eventb.core.predicate="a ∈ dom(inverse)"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.inferenceRule name="element6" org.eventb.core.label="sqrtTypeArg" org.eventb.theory.core.applicability="both" org.eventb.theory.core.desc="Type (sqrt) argument">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="a ∈ RRealPlus" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.infer name="(" org.eventb.core.predicate="a ∈ dom(sqrt)"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.inferenceRule name="element7" org.eventb.core.label="absTypeArg" org.eventb.theory.core.applicability="both" org.eventb.theory.core.desc="Type (|.|) argument">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="a ∈ RReal" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.infer name="(" org.eventb.core.predicate="a ∈ dom(abs)"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.rewriteRule name="element8" org.eventb.core.label="plusTypeRew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Type (+)" org.eventb.theory.core.formula="a ↦ b ∈ dom(plus)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a ∈ RReal ∧ b ∈ RReal"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element9" org.eventb.core.label="minusTypeRew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Type (-)" org.eventb.theory.core.formula="a ↦ b ∈ dom(minus)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a ∈ RReal ∧ b ∈ RReal"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element:" org.eventb.core.label="timesTypeRew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Type (*)" org.eventb.theory.core.formula="a ↦ b ∈ dom(times)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a ∈ RReal ∧ b ∈ RReal"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element;" org.eventb.core.label="divideTypeRew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Type (/)" org.eventb.theory.core.formula="a ↦ b ∈ dom(divide)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a ∈ RReal ∧ b ∈ RRealStar"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element=" org.eventb.core.label="uminusTypeRew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Type (UMinus)" org.eventb.theory.core.formula="a ∈ dom(uminus)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a ∈ RReal"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element17" org.eventb.core.label="inverseTypeRew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Type (^-1)" org.eventb.theory.core.formula="a ∈ dom(inverse)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a ∈ RRealStar"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element&gt;" org.eventb.core.label="absTypeRew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Type (|.|)" org.eventb.theory.core.formula="a ∈ dom(abs)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a ∈ RReal"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element?" org.eventb.core.label="sqrtTypeRew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Type (sqrt)" org.eventb.theory.core.formula="a ∈ dom(sqrt)">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a ∈ RRealPlus"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element@" org.eventb.core.label="plusBasicTypeRew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Basic Type (+)" org.eventb.theory.core.formula="plus ∈ RReal×RReal ⇸ RReal">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="⊤"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element10" org.eventb.core.label="minusBasicTypeRew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Basic Type (-)" org.eventb.theory.core.formula="minus ∈ RReal×RReal ⇸ RReal">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="⊤"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element11" org.eventb.core.label="timesBasicTypeRew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Basic Type (*)" org.eventb.theory.core.formula="times ∈ RReal×RReal ⇸ RReal">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="⊤"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element12" org.eventb.core.label="divideBasicTypeRew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Basic Type (/)" org.eventb.theory.core.formula="divide ∈ RReal×RReal ⇸ RReal">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="⊤"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element13" org.eventb.core.label="uminusBasicTypeRew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Basic Type (UMinus)" org.eventb.theory.core.formula="uminus ∈ RReal ⇸ RReal">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="⊤"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element14" org.eventb.core.label="inverseBasicTypeRew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Basic Type (^-1)" org.eventb.theory.core.formula="inverse ∈ RReal ⇸ RReal">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="⊤"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element15" org.eventb.core.label="absBasicTypeRew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Basic Type (|.|)" org.eventb.theory.core.formula="abs ∈ RReal ⇸ RReal">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="⊤"/>
+</org.eventb.theory.core.rewriteRule>
+<org.eventb.theory.core.rewriteRule name="element16" org.eventb.core.label="sqrtBasicTypeRew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Basic Type (sqrt)" org.eventb.theory.core.formula="sqrt ∈ RReal ⇸ RReal">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="⊤"/>
+</org.eventb.theory.core.rewriteRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.theorem name="element:" org.eventb.core.label="RzeroLtRtwo" org.eventb.core.predicate="Rzero ↦ Rtwo ∈ lt"/>
+<org.eventb.theory.core.theorem name="2" org.eventb.core.label="uminusOrderInversion" org.eventb.core.predicate="∀ x · x ∈ RReal ∧ (Rzero ↦ x ∈ leq) ⇒ (uminus(x) ↦ Rzero ∈ leq)"/>
+<org.eventb.theory.core.theorem name="3" org.eventb.core.label="uminusInvolutive" org.eventb.core.predicate="∀ x · x ∈ RReal ⇒ (uminus(uminus(x)) = x)"/>
+<org.eventb.theory.core.theorem name="5" org.eventb.core.label="uminusNeutrality" org.eventb.core.predicate="uminus(Rzero)=Rzero"/>
+<org.eventb.theory.core.theorem name="4" org.eventb.core.label="inverseInvolutive" org.eventb.core.predicate="∀ x · x ∈ RReal ∧ x ≠ Rzero ⇒ (inverse(inverse(x)) = x)"/>
+<org.eventb.theory.core.theorem name="=" org.eventb.core.label="sqrtTimesDistrib" org.eventb.core.predicate="∀ x, y · x ∈ RRealPlus ∧ y ∈ RRealPlus ⇒ (&#10;&#9;sqrt(times(x ↦ y)) = times(sqrt(x) ↦ sqrt(y))&#10;)"/>
+<org.eventb.theory.core.theorem name="&gt;" org.eventb.core.label="sqrtOne" org.eventb.core.predicate="sqrt(Rone) = Rone"/>
+<org.eventb.theory.core.theorem name="?" org.eventb.core.label="sqrtZero" org.eventb.core.predicate="sqrt(Rzero) = Rzero"/>
+<org.eventb.theory.core.theorem name="element2" org.eventb.core.label="realNotUpperBounded" org.eventb.core.predicate="∀ x · x ∈ RReal ⇒ (∃ x2 · x2 ∈ RReal ∧ x ↦ x2 ∈ lt)"/>
+<org.eventb.theory.core.theorem name="element3" org.eventb.core.label="realNotLowerBounded" org.eventb.core.predicate="∀ x · x ∈ RReal ⇒ (∃ x2 · x2 ∈ RReal ∧ x2 ↦ x ∈ lt)"/>
+<org.eventb.theory.core.theorem name="F" org.eventb.core.label="realPlusNotBounded" org.eventb.core.predicate="∀ x · x ∈ RRealPlus ⇒ (∃ x2 · x2 ∈ RRealPlus ∧ x ↦ x2 ∈ lt)"/>
+<org.eventb.theory.core.theorem name="element1" org.eventb.core.label="realMinusNotBounded" org.eventb.core.predicate="∀ x · x ∈ RRealMinus ⇒ (∃ x2 · x2 ∈ RRealMinus ∧ x2 ↦ x ∈ lt)"/>
+<org.eventb.theory.core.theorem name="element4" org.eventb.core.label="realPlusOrder" org.eventb.core.predicate="∀ a, b · a ∈ RRealPlus ∧ b ∈ RReal ∧ (a ↦ b ∈ leq) ⇒ b ∈ RRealPlus"/>
+<org.eventb.theory.core.theorem name="element5" org.eventb.core.label="realMinusOrder" org.eventb.core.predicate="∀ a, b · a ∈ RRealMinus ∧ b ∈ RReal ∧ (b ↦ a ∈ leq) ⇒ b ∈ RRealMinus"/>
+<org.eventb.theory.core.theorem name="element7" org.eventb.core.label="plusCompatibility" org.eventb.core.predicate="∀ a, b, c · a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧ (a ↦ b ∈ leq) ∧ (a ↦ c ∈ leq) ⇒&#10;&#9;(a ↦ plus(b ↦ c) ∈ leq)"/>
+<org.eventb.theory.core.theorem name="element9" org.eventb.core.label="plusCompatibility2" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;plus(a ↦ b) ↦ c ∈ leq ∧ Rzero ↦ b ∈ leq ⇒&#10;&#9;&#9;a ↦ c ∈ leq"/>
+<org.eventb.theory.core.theorem name="element;" org.eventb.core.label="extendedTransitivity" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ leq ∧ b ↦ c ∈ lt ⇒&#10;&#9;&#9;a ↦ c ∈ lt"/>
+<org.eventb.theory.core.theorem name="element10" org.eventb.core.label="extendedTransitivity2" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ∧ b ↦ c ∈ leq ⇒&#10;&#9;&#9;a ↦ c ∈ lt"/>
+<org.eventb.theory.core.theorem name="element11" org.eventb.core.label="extendedTransitivity3" org.eventb.core.predicate="∀ a, b, c ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ c ∈ RReal ∧&#10;&#9;a ↦ b ∈ lt ∧ b ↦ c ∈ lt ⇒&#10;&#9;&#9;a ↦ c ∈ lt"/>
+</org.eventb.theory.core.theoryRoot>

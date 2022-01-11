@@ -1,0 +1,101 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage{bsymb,b2latex}
+\usepackage{nopageno}
+\begin{document}
+\newcommand{\RReal}{\mathbb{R}}
+\newcommand{\RRealPlus}{\mathbb{R}^{+}}
+
+%\SingleHeader{Generic}
+%\MACHINE{Generic}{}{GenericCtx}{}
+\MACHINE{Generic}{}{}{}
+\iffalse
+\VARIABLES{
+	\Variable{t}{}
+	\Variable{x\_p}{}
+	\Variable{x\_s}{}
+}
+\INVARIANTS{
+	\Invariant{inv1}{false}{$t \in{} \RRealPlus$}{}
+	\Invariant{inv2}{false}{$x_p \in{} \RReal \pfun{} S$}{}
+	\Invariant{inv3}{false}{$[0;t] \subseteq{} dom(x_p)$}{}
+	\Invariant{inv4}{false}{$x_s \in{} STATES$}{}
+}
+\EVENTS{
+\INITIALISATION{false}{}{
+	\ACTIONS{false}{
+		\Action{act1}{$t \bcmeq{} 0$}{true}{}
+		\Action{act2}{$x_p \bcmin{} \{ 0 \} \tfun{} S$}{true}{}
+		\Action{act3}{$x_s \bcmin{} STATES$}{true}{}
+	}
+}
+\EVT{Transition}{false}{ordinary}{}{}{
+	\ANY{
+		\Param{s}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$s \in{} \pown{}(STATES)$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$x_s \bcmin{} s$}{true}{}
+	}
+}
+
+\EVT{Sense}{false}{ordinary}{}{}{
+	\ANY{
+		\Param{s}{true}{}
+		\Param{p}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$s \in{} \pown{}(STATES)$}{true}{}
+		\Guard{grd2}{false}{$p \in{} \pow{}(STATES\cprod{}\RReal\cprod{}S)$}{true}{}
+		\Guard{grd3}{false}{$(x_s \mapsto{} t \mapsto{} x_p(t)) \in{} p$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$x_s \bcmin{} s$}{true}{}
+	}
+}
+\EVT{Behave}{false}{ordinary}{}{}{
+	\ANY{
+		\Param{t\_p}{true}{}
+		\Param{e}{true}{}
+		\Param{Inv}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd0}{false}{$t_p \in{} \RRealPlus \land{} t < t_p$}{true}{}
+		\Guard{grd1}{false}{$e \in{} DE(S)$}{true}{}
+		\Guard{grd2}{false}{$Solvable([t;t_p],e)$}{true}{}
+		\Guard{grd3}{false}{$Inv \subseteq{} \RRealPlus \cprod{}S$}{true}{}
+		\Guard{grd4}{false}{$(t\mapsto{}x_p(t)) \in{} Inv$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$\\t,x_{p} \bcmsuch{} x_{p}' \in{} \RReal \pfun{} S \land{} t' = t_p \land{} [0;t'] \subseteq{} dom(x_{p}') \land{} \\CBAPsolutionOf(t,t',x_{p},x_{p}',e,Inv)$}{true}{}
+	}
+}
+\fi
+
+\EVT{Actuate}{false}{ordinary}{}{}{
+	\ANY{
+		\Param{t\_p}{true}{}
+		\Param{e}{true}{}
+		\Param{s}{true}{}
+		\Param{Inv}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd0}{false}{$t_p \in{} \RRealPlus \land{} t < t_p$}{true}{}
+		\Guard{grd1}{false}{$e \in{} DE(S)$}{true}{}
+		\Guard{grd2}{false}{$Solvable([t,t_p],e)$}{true}{}
+		\Guard{grd3}{false}{$s \subseteq{} STATES$}{true}{}
+		\Guard{grd4}{false}{$x_s \in{} s$}{true}{}
+		\Guard{grd5}{false}{$Inv \subseteq{} \RRealPlus\cprod{}S$}{true}{}
+		\Guard{grd6}{false}{$(t\mapsto{}x_p(t)) \in{} Inv$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$\\t,x\_p \bcmsuch{} x\_p' \in{} \RReal \pfun{} S \land{} \\t' = tp \land{} [0;t'] \subseteq{} dom(x\_p') \land{} \\CBAPsolutionOf(t,t',x_p,x_{p}',e,Inv)$}{true}{}
+	}
+}
+\iffalse
+
+}
+\fi
+\END
+\end{document}

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.configuration="org.eventb.theory.core.thy">
+<org.eventb.theory.core.typeParameter name="(" org.eventb.core.identifier="S"/>
+<org.eventb.theory.core.theorem name="9" org.eventb.core.label="converseDomain" org.eventb.core.predicate="∀ rel · rel ∈ (S ↔ S) ⇒ (dom(converse(rel)) = ran(rel))"/>
+<org.eventb.theory.core.theorem name=":" org.eventb.core.label="converseRange" org.eventb.core.predicate="∀ rel · rel ∈ (S ↔ S) ⇒ (ran(converse(rel)) = dom(rel))"/>
+<org.eventb.theory.core.theorem name=";" org.eventb.core.label="converseInvolutive" org.eventb.core.predicate="∀ rel · rel ∈ (S ↔ S) ⇒ (converse(converse(rel)) = rel)"/>
+<org.eventb.theory.core.theorem name="=" org.eventb.core.label="converseSymetry" org.eventb.core.predicate="∀ rel · rel ∈ (S ↔ S) ∧ symetrical(rel) ⇒ symetrical(converse(rel))"/>
+<org.eventb.theory.core.theorem name="&gt;" org.eventb.core.label="converseReflexivity" org.eventb.core.predicate="∀ rel · rel ∈ (S ↔ S) ∧ reflexive(rel) ⇒ reflexive(converse(rel))"/>
+<org.eventb.theory.core.theorem name="?" org.eventb.core.label="converseAntireflexivity" org.eventb.core.predicate="∀ rel · rel ∈ (S ↔ S) ∧ antireflexive(rel) ⇒ antireflexive(converse(rel))"/>
+<org.eventb.theory.core.theorem name="@" org.eventb.core.label="complementInvolutive" org.eventb.core.predicate="∀ rel · rel ∈ (S ↔ S) ⇒ (complement(complement(rel)) = rel)"/>
+<org.eventb.theory.core.theorem name="A" org.eventb.core.label="complementConverse" org.eventb.core.predicate="∀ rel · rel ∈ (S ↔ S) ⇒ (complement(converse(rel)) = converse(complement(rel)))"/>
+<org.eventb.theory.core.theorem name="B" org.eventb.core.label="complementSymetry" org.eventb.core.predicate="∀ rel · rel ∈ (S ↔ S) ∧ symetrical(rel) ⇒ symetrical(complement(rel))"/>
+<org.eventb.theory.core.theorem name="C" org.eventb.core.label="complementReflexivity" org.eventb.core.predicate="∀ rel · rel ∈ (S ↔ S) ∧ reflexive(rel) ⇒ antireflexive(complement(rel))"/>
+<org.eventb.theory.core.theorem name="D" org.eventb.core.label="complementAntireflexivity" org.eventb.core.predicate="∀ rel · rel ∈ (S ↔ S) ∧ antireflexive(rel) ⇒ reflexive(complement(rel))"/>
+<org.eventb.theory.core.theorem name="E" org.eventb.core.label="totalRelationsReflexivity" org.eventb.core.predicate="∀ rel · rel ∈ (S ↔ S) ∧ total(rel) ⇒ reflexive(rel)"/>
+<org.eventb.theory.core.theorem name="H" org.eventb.core.label="equivalenceClassEquity" org.eventb.core.predicate="∀ rel,x ,y · rel ∈ (S ↔ S) ∧ equivalence(rel) ∧ x ∈ S ∧ y ∈ S ⇒ (&#10;&#9;((x ↦ y) ∈ rel) ⇔ (equivalenceClass(rel, x) = equivalenceClass(rel, y))&#10;)"/>
+<org.eventb.theory.core.theorem name="I" org.eventb.core.label="equivalenceClassNotEmpty" org.eventb.core.predicate="∀ rel, x · rel ∈ (S ↔ S) ∧ equivalence(rel) ∧ x ∈ S ⇒&#10;&#9;(equivalenceClass(rel,x) ≠ ∅)"/>
+<org.eventb.theory.core.theorem name="J" org.eventb.core.label="equivalenceClassCover" org.eventb.core.predicate="∀ rel · rel ∈ (S ↔ S) ∧ equivalence(rel) ⇒ (&#10;&#9;(⋃ equivalenceClass(rel,x) ∣ x ∈ S) = S&#10;)"/>
+<org.eventb.theory.core.theorem name="K" org.eventb.core.label="equivalenceClassDisjoint" org.eventb.core.predicate="∀ rel, x, y · rel ∈ (S ↔ S) ∧ equivalence(rel) ∧ x ∈ S ∧ y ∈ S ∧ (x ↦ y ∉ rel) ⇒ (&#10;&#9;(equivalenceClass(rel,x) ∩ equivalenceClass(rel,y)) = ∅&#10;)"/>
+<org.eventb.theory.core.theorem name="V" org.eventb.core.label="supremumMaximal" org.eventb.core.predicate="∀ ord, T, M · ord ∈ (S ↔ S) ∧ order(ord) ∧ T ⊆ S ∧ M ∈ S ⇒&#10;&#9;(supremum(ord,T,M) ∧ M ∈ T ⇒ maximal(ord,T,M))"/>
+<org.eventb.theory.core.theorem name="W" org.eventb.core.label="infimumMinimal" org.eventb.core.predicate="∀ ord, T, M · ord ∈ (S ↔ S) ∧ order(ord) ∧ T ⊆ S ∧ M ∈ S ⇒&#10;&#9;(infimum(ord,T,M) ∧ M ∈ T ⇒ minimal(ord,T,M))"/>
+<org.eventb.theory.core.newOperatorDefinition name="'" org.eventb.core.label="reflexive" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="rel"/>
+<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="∀ x · x ∈ S ⇒ ((x ↦ x) ∈ rel)"/>
+<org.eventb.theory.core.operatorWDcondition name=")" org.eventb.core.predicate="S ≠ ∅"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name=")" org.eventb.core.label="antireflexive" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="rel"/>
+<org.eventb.theory.core.operatorWDcondition name="(" org.eventb.core.predicate="S ≠ ∅"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="∀ x · x ∈ S ⇒ (x ↦ x ∉ rel)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="*" org.eventb.core.label="symetrical" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="rel"/>
+<org.eventb.theory.core.operatorWDcondition name="(" org.eventb.core.predicate="S ≠ ∅"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="∀ x,y · x ∈ S ∧ y ∈ S ⇒ (&#10;&#9;(x ↦ y ∈ rel) ⇒ (y ↦ x ∈ rel)&#10;)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="+" org.eventb.core.label="asymetrical" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="rel"/>
+<org.eventb.theory.core.operatorWDcondition name="(" org.eventb.core.predicate="S ≠ ∅"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="∀ x,y · x ∈ S ∧ y ∈ S ⇒ (&#10;&#9;(x ↦ y ∈ rel) ⇒ (y ↦ x ∉ rel)&#10;)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="," org.eventb.core.label="antisymetrical" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="rel"/>
+<org.eventb.theory.core.operatorWDcondition name="(" org.eventb.core.predicate="S ≠ ∅"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="∀ x,y · x ∈ S ∧ y ∈ S ⇒ (&#10;&#9;(x ↦ y ∈ rel) ∧ (y ↦ x ∈ rel) ⇒ x = y&#10;)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="-" org.eventb.core.label="transitive" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="rel"/>
+<org.eventb.theory.core.operatorWDcondition name="(" org.eventb.core.predicate="S ≠ ∅"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="∀ x, y, z · x ∈ S ∧ y ∈ S ∧ z ∈ S ⇒ (&#10;&#9;(x ↦ y ∈ rel) ∧ (y ↦ z ∈ rel) ⇒ (x ↦ z ∈ rel)&#10;)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="." org.eventb.core.label="total" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="rel"/>
+<org.eventb.theory.core.operatorWDcondition name="(" org.eventb.core.predicate="S ≠ ∅"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="∀ x, y · x ∈ S ∧ y ∈ S ⇒ ((x ↦ y ∈ rel) ∨ (y ↦ x ∈ rel))"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="/" org.eventb.core.label="equivalence" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="rel"/>
+<org.eventb.theory.core.operatorWDcondition name="(" org.eventb.core.predicate="S ≠ ∅"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="reflexive(rel) ∧ symetrical(rel) ∧ transitive(rel)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="0" org.eventb.core.label="order" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="rel"/>
+<org.eventb.theory.core.operatorWDcondition name="(" org.eventb.core.predicate="S ≠ ∅"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="reflexive(rel) ∧ transitive(rel) ∧ antisymetrical(rel)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="1" org.eventb.core.label="strict" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="rel"/>
+<org.eventb.theory.core.operatorWDcondition name="(" org.eventb.core.predicate="S ≠ ∅"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="{ x ↦ y ∣ x ↦ y ∈ rel ∧ x ≠ y }"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="2" org.eventb.core.label="wellFounded" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="rel"/>
+<org.eventb.theory.core.operatorWDcondition name="(" org.eventb.core.predicate="S ≠ ∅"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="∀ X · X ⊆ S ∧ X ≠ ∅ ⇒ (&#10;&#9;∃ m · m ∈ X ⇒ (∀ x · x ∈ X ⇒ (x ↦ m ∉ rel))&#10;)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="3" org.eventb.core.label="wellPartialOrder" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="rel"/>
+<org.eventb.theory.core.operatorWDcondition name="(" org.eventb.core.predicate="S ≠ ∅"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="order(rel) ∧ wellFounded(strict(rel))"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="4" org.eventb.core.label="wellOrder" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="rel"/>
+<org.eventb.theory.core.operatorWDcondition name="(" org.eventb.core.predicate="S ≠ ∅"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="order(rel) ∧ total(rel) ∧ wellFounded(strict(rel))"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="element5" org.eventb.core.label="covers" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="rel"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="S" org.eventb.core.identifier="a"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="S" org.eventb.core.identifier="b"/>
+<org.eventb.theory.core.operatorWDcondition name="*" org.eventb.core.predicate="S ≠ ∅ ∧ order(rel)"/>
+<org.eventb.theory.core.directOperatorDefinition name="+" org.eventb.theory.core.formula="(a ↦ b ∈ rel) ∧ a ≠ b ∧ (∀ c · c ∈ S ∧ (a ↦ c ∈ rel) ∧ (c ↦ b ∈ rel) ⇒ ((c = a) ∨ (b = a)))"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.axiomaticDefinitionsBlock name="Z" org.eventb.core.label="operations">
+<org.eventb.theory.core.axiomaticOperatorDefinition name="'" org.eventb.core.label="Gmax" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="S">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="ord"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="T"/>
+</org.eventb.theory.core.axiomaticOperatorDefinition>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="(" org.eventb.core.label="GmaxDef" org.eventb.core.predicate="∀ ord,T · ord ∈ S ↔ S ∧ T ⊆ S ∧ hasMaximum(ord,T) ⇒ (maximum(ord,T,Gmax(ord,T)))"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element1" org.eventb.core.label="GminDef" org.eventb.core.predicate="∀ ord,T · ord ∈ S ↔ S ∧ T ⊆ S ∧ hasMinimum(ord,T) ⇒ (minimum(ord,T,Gmin(ord,T)))"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element2" org.eventb.core.label="GsupDef" org.eventb.core.predicate="∀ ord,T · ord ∈ S ↔ S ∧ T ⊆ S ∧ upperBounded(ord,T) ⇒ (supremum(ord,T,Gsup(ord,T)))"/>
+<org.eventb.theory.core.axiomaticDefinitionAxiom name="element3" org.eventb.core.label="GinfDef" org.eventb.core.predicate="∀ ord,T · ord ∈ S ↔ S ∧ T ⊆ S ∧ lowerBounded(ord,T) ⇒ (infimum(ord,T,Ginf(ord,T)))"/>
+<org.eventb.theory.core.axiomaticOperatorDefinition name=")" org.eventb.core.label="Gmin" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="S">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="ord"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="T"/>
+</org.eventb.theory.core.axiomaticOperatorDefinition>
+<org.eventb.theory.core.axiomaticOperatorDefinition name="element3" org.eventb.core.label="Gsup" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="S">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="ord"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="T"/>
+</org.eventb.theory.core.axiomaticOperatorDefinition>
+<org.eventb.theory.core.axiomaticOperatorDefinition name="element2" org.eventb.core.label="Ginf" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="S">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="ord"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="T"/>
+</org.eventb.theory.core.axiomaticOperatorDefinition>
+</org.eventb.theory.core.axiomaticDefinitionsBlock>
+<org.eventb.theory.core.newOperatorDefinition name="5" org.eventb.core.label="compose" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="rel1"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="rel2"/>
+<org.eventb.theory.core.operatorWDcondition name=")" org.eventb.core.predicate="S ≠ ∅"/>
+<org.eventb.theory.core.directOperatorDefinition name="*" org.eventb.theory.core.formula="{ x, z · x ∈ S ∧ z ∈ S ∧ (∃ y · y ∈ S ⇒ ((x ↦ y ∈ rel1) ∧ (y ↦ z ∈ rel2))) ∣ x ↦ z }"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="6" org.eventb.core.label="converse" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="rel"/>
+<org.eventb.theory.core.operatorWDcondition name="(" org.eventb.core.predicate="S ≠ ∅"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="{ x, y · x ∈ S ∧ y ∈ S ∧ y ↦ x ∈ rel ∣ x ↦ y }"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="7" org.eventb.core.label="complement" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="rel"/>
+<org.eventb.theory.core.operatorWDcondition name="(" org.eventb.core.predicate="S ≠ ∅"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="{ x,y · x ∈ S ∧ y ∈ S ∧ x ↦ y ∉ rel ∣ x ↦ y }"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="8" org.eventb.core.label="equality" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorWDcondition name="'" org.eventb.core.predicate="S ≠ ∅"/>
+<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="{ x ↦ y ∣ x ∈ S ∧ y ∈ S ∧ x = y }"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="F" org.eventb.core.label="preorder" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="rel"/>
+<org.eventb.theory.core.operatorWDcondition name="(" org.eventb.core.predicate="S ≠ ∅"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="reflexive(rel) ∧ transitive(rel)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="G" org.eventb.core.label="equivalenceClass" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="rel"/>
+<org.eventb.theory.core.operatorWDcondition name="(" org.eventb.core.predicate="S ≠ ∅ ∧ equivalence(rel)"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="{ y · y ∈ S ∧ (x ↦ y) ∈ rel ∣ y }"/>
+<org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="S" org.eventb.core.identifier="x"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="L" org.eventb.core.label="leftGeneralized" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="rel"/>
+<org.eventb.theory.core.operatorWDcondition name="(" org.eventb.core.predicate="S ≠ ∅"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="{ x,P · x ∈ S ∧ P ∈ ℙ(S) ∧ P ≠ ∅ ∧ (∀ y · y ∈ P ⇒ (x ↦ y ∈ rel)) ∣ x ↦ P }"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="M" org.eventb.core.label="rightGeneralized" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="rel"/>
+<org.eventb.theory.core.operatorWDcondition name="(" org.eventb.core.predicate="S ≠ ∅"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="{ P,x · P ∈ ℙ(S) ∧ P ≠ ∅ ∧ x ∈ S ∧ (∀ y · y ∈ P ⇒ (y ↦ x ∈ rel)) ∣ P ↦ x }"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="N" org.eventb.core.label="upperBound" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="ord"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="T"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="S" org.eventb.core.identifier="B"/>
+<org.eventb.theory.core.directOperatorDefinition name="*" org.eventb.theory.core.formula="∀ t · t ∈ T ⇒ t ↦ B ∈ ord"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="O" org.eventb.core.label="lowerBound" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="ord"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="T"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="S" org.eventb.core.identifier="B"/>
+<org.eventb.theory.core.directOperatorDefinition name="*" org.eventb.theory.core.formula="∀ t · t ∈ T ⇒ B ↦ t ∈ ord"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="X" org.eventb.core.label="bounds" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="ord"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="T"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="S" org.eventb.core.identifier="m"/>
+<org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="S" org.eventb.core.identifier="M"/>
+<org.eventb.theory.core.directOperatorDefinition name="+" org.eventb.theory.core.formula="lowerBound(ord,T,m) ∧ upperBound(ord,T,M)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="Y" org.eventb.core.label="upperBounded" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="ord"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="T"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="∃ M · M ∈ S ⇒ upperBound(ord,T,M)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="element2" org.eventb.core.label="lowerBounded" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="ord"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="T"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="∃ m · m ∈ S ⇒ lowerBound(ord,T,m)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="element1" org.eventb.core.label="bounded" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="ord"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="T"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="∃ m, M · m ∈ S ∧ M ∈ S ⇒ bounds(ord,T,m,M)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="Q" org.eventb.core.label="supremum" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="ord"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="T"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="S" org.eventb.core.identifier="M"/>
+<org.eventb.theory.core.directOperatorDefinition name="*" org.eventb.theory.core.formula="upperBound(ord,T,M) ∧&#10;(∀ m · m ∈ S ∧ upperBound(ord,T,m) ⇒ M ↦ m ∈ ord)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="P" org.eventb.core.label="infimum" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="ord"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="T"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="S" org.eventb.core.identifier="m"/>
+<org.eventb.theory.core.directOperatorDefinition name="*" org.eventb.theory.core.formula="lowerBound(ord,T,m) ∧&#10;(∀ M · M ∈ S ∧ lowerBound(ord,T,M) ⇒ M ↦ m ∈ ord)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="R" org.eventb.core.label="maximal" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="ord"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="T"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="T" org.eventb.core.identifier="M"/>
+<org.eventb.theory.core.directOperatorDefinition name="*" org.eventb.theory.core.formula="∀ x · x ∈ T ∧ M ↦ x ∈ ord ⇒ x = M"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="S" org.eventb.core.label="minimal" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="ord"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="T"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="T" org.eventb.core.identifier="M"/>
+<org.eventb.theory.core.directOperatorDefinition name="*" org.eventb.theory.core.formula="∀ x · x ∈ T ∧ x ↦ M ∈ ord ⇒ x = M"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="T" org.eventb.core.label="maximum" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="ord"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="T"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="T" org.eventb.core.identifier="M"/>
+<org.eventb.theory.core.directOperatorDefinition name="*" org.eventb.theory.core.formula="∀ x · x ∈ T ⇒ x ↦ M ∈ ord"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="U" org.eventb.core.label="minimum" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="ord"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="T"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="T" org.eventb.core.identifier="M"/>
+<org.eventb.theory.core.directOperatorDefinition name="*" org.eventb.theory.core.formula="∀ x · x ∈ T ⇒ M ↦ x ∈ ord"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="element3" org.eventb.core.label="hasMaximum" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="ord"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="T"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="∃ M · M ∈ S ⇒ maximum(ord,T,M)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="element4" org.eventb.core.label="hasMinimum" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="ord"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="T"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="∃ m · m ∈ S ⇒ minimum(ord,T,m)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="element6" org.eventb.core.label="monoidCompatible" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="(S × S) → S" org.eventb.core.identifier="op"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="S" org.eventb.core.identifier="e"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="rel"/>
+<org.eventb.theory.core.operatorWDcondition name="*" org.eventb.core.predicate="S ≠ ∅ ∧ Monoid(op,e) ∧ order(rel)"/>
+<org.eventb.theory.core.directOperatorDefinition name="+" org.eventb.theory.core.formula="∀ x, y, z · x ∈ S ∧ y ∈ S ∧ z ∈ S ∧ (x ↦ y ∈ rel) ⇒ (&#10;&#9;((op(x ↦ z) ↦ op(y ↦ z)) ∈ rel) ∧&#10;&#9;((op(z ↦ x) ↦ op(z ↦ y)) ∈ rel)&#10;)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="element7" org.eventb.core.label="ringCompatible" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="(S × S) → S" org.eventb.core.identifier="oplus"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="(S × S) → S" org.eventb.core.identifier="otimes"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="S" org.eventb.core.identifier="azero"/>
+<org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="S" org.eventb.core.identifier="unit"/>
+<org.eventb.theory.core.operatorArgument name="+" org.eventb.core.expression="S ↔ S" org.eventb.core.identifier="rel"/>
+<org.eventb.theory.core.operatorWDcondition name="," org.eventb.core.predicate="S ≠ ∅ ∧ Ring(oplus,otimes,azero,unit) ∧ order(rel)"/>
+<org.eventb.theory.core.directOperatorDefinition name="-" org.eventb.theory.core.formula="monoidCompatible(oplus,azero,rel) ∧ (&#10;&#9;∀ x, y · x ∈ S ∧ y ∈ S ∧ (azero ↦ x ∈ rel) ∧ (azero ↦ y ∈ rel) ⇒&#10;&#9;&#9;((azero ↦ otimes(x ↦ y) ∈ rel) ∧ (azero ↦ otimes(y ↦ x) ∈ rel))&#10;)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.importTheoryProject name="element8" org.eventb.theory.core.importTheoryProject="/SimpleDEq">
+<org.eventb.theory.core.importTheory name="'" org.eventb.theory.core.importTheory="/SimpleDEq/Ring.dtf|org.eventb.theory.core.deployedTheoryRoot#Ring"/>
+</org.eventb.theory.core.importTheoryProject>
+</org.eventb.theory.core.theoryRoot>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+    <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="STATES" org.eventb.core.type="ℙ(STATES)"/>
+        <org.eventb.core.poIdentifier name="S" org.eventb.core.type="ℙ(RReal×RReal×RReal×RReal×RReal)"/>
+        <org.eventb.core.poPredicate name="STATET" org.eventb.core.predicate="S=(RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal))" org.eventb.core.source="/PenduleTest/GenericCtx.buc|org.eventb.core.contextFile#GenericCtx|org.eventb.core.axiom#)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="t" org.eventb.core.type="RReal"/>
+        <org.eventb.core.poIdentifier name="x_p" org.eventb.core.type="ℙ(RReal×(RReal×RReal×RReal×RReal×RReal))"/>
+        <org.eventb.core.poIdentifier name="x_s" org.eventb.core.type="STATES"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="INITIALISATION/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTALLHYPGenericCt}"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(Rzero ⦂ RReal)∈(RRealPlus ⦂ ℙ(RReal))" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#\/"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poSequent#INITIALISATION\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTALLHYPGenericCt}">
+            <org.eventb.core.poPredicate name="'" org.eventb.core.predicate="x_p'∈{Rzero ⦂ RReal} → S" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#\/|org.eventb.core.action#("/>
+        </org.eventb.core.poPredicateSet>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="x_p'∈(RReal ⦂ ℙ(RReal)) ⇸ S" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.invariant#inv2"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#\/"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.invariant#inv2"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poSequent#INITIALISATION\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTALLHYPGenericCt}">
+            <org.eventb.core.poPredicate name="'" org.eventb.core.predicate="x_p'∈{Rzero ⦂ RReal} → S" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#\/|org.eventb.core.action#("/>
+        </org.eventb.core.poPredicateSet>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Closed2Closed(Rzero ⦂ RReal,Rzero ⦂ RReal)⊆dom(x_p')" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.invariant#inv4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#\/"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.invariant#inv4"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poSequent#INITIALISATION\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/act2/FIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of action" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTALLHYPGenericCt}"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{Rzero ⦂ RReal} → S≠(∅ ⦂ ℙ(ℙ(RReal×(RReal×RReal×RReal×RReal×RReal))))" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#\/|org.eventb.core.action#("/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#\/|org.eventb.core.action#("/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTALLHYPGenericCt}"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/act3/FIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of action" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTALLHYPGenericCt}"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="STATES≠(∅ ⦂ ℙ(STATES))" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#\/|org.eventb.core.action#internal1"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#\/|org.eventb.core.action#internal1"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTALLHYPGenericCt}"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTGenericCt}" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="x_p'" org.eventb.core.type="ℙ(RReal×(RReal×RReal×RReal×RReal×RReal))"/>
+        <org.eventb.core.poIdentifier name="x_s'" org.eventb.core.type="STATES"/>
+        <org.eventb.core.poIdentifier name="t'" org.eventb.core.type="RReal"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPGenericCt}" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTIDENTGenericCt}" org.eventb.core.poStamp="0"/>
+    <org.eventb.core.poSequent name="Transition/act1/FIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of action" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTALLHYPGenericCt~"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="s≠(∅ ⦂ ℙ(STATES))" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#2|org.eventb.core.action#)"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#2|org.eventb.core.action#)"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTALLHYPGenericCt~"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTGenericCt~" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="x_s'" org.eventb.core.type="STATES"/>
+        <org.eventb.core.poIdentifier name="s" org.eventb.core.type="ℙ(STATES)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPGenericCt~" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTIDENTGenericCt~" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="s∈ℙ1(STATES)" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#2|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Sense/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTHYPGenericCu'("/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="t∈dom(x_p)∧x_p∈(RReal ⦂ ℙ(RReal)) ⇸ (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal))" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#3|org.eventb.core.guard#."/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#3|org.eventb.core.guard#."/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTHYPGenericCu'("/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Sense/act1/FIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of action" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTALLHYPGenericCu'"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="s≠(∅ ⦂ ℙ(STATES))" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#3|org.eventb.core.action#)"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#3|org.eventb.core.action#)"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTALLHYPGenericCu'"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTGenericCu'" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="x_s'" org.eventb.core.type="STATES"/>
+        <org.eventb.core.poIdentifier name="s" org.eventb.core.type="ℙ(STATES)"/>
+        <org.eventb.core.poIdentifier name="p" org.eventb.core.type="ℙ(STATES×RReal×(RReal×RReal×RReal×RReal×RReal))"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPGenericCu'(" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTIDENTGenericCu'" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="s∈ℙ1(STATES)" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#3|org.eventb.core.guard#("/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="p∈ℙ(STATES × (RReal ⦂ ℙ(RReal)) × S)" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#3|org.eventb.core.guard#)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPGenericCu'" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTHYPGenericCu'(" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="x_s ↦ t ↦ x_p(t)∈p" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#3|org.eventb.core.guard#."/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Behave/grd4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTHYPGenericCu(*"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="t∈dom(x_p)∧x_p∈(RReal ⦂ ℙ(RReal)) ⇸ (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal))" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#1|org.eventb.core.guard#\/"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#1|org.eventb.core.guard#\/"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTHYPGenericCu(*"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Behave/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTALLHYPGenericCu(">
+            <org.eventb.core.poPredicate name="'" org.eventb.core.predicate="x_p'∈(RReal ⦂ ℙ(RReal)) ⇸ S∧t'=tp∧Closed2Closed(Rzero ⦂ RReal,t')⊆dom(x_p')∧CBAPsolutionOf(t,t',x_p,x_p',e,Inv)" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#1|org.eventb.core.action#)"/>
+        </org.eventb.core.poPredicateSet>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="t'∈(RRealPlus ⦂ ℙ(RReal))" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#1"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poSequent#Behave\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Behave/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTALLHYPGenericCu(">
+            <org.eventb.core.poPredicate name="'" org.eventb.core.predicate="x_p'∈(RReal ⦂ ℙ(RReal)) ⇸ S∧t'=tp∧Closed2Closed(Rzero ⦂ RReal,t')⊆dom(x_p')∧CBAPsolutionOf(t,t',x_p,x_p',e,Inv)" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#1|org.eventb.core.action#)"/>
+        </org.eventb.core.poPredicateSet>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="x_p'∈(RReal ⦂ ℙ(RReal)) ⇸ S" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.invariant#inv2"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#1"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.invariant#inv2"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poSequent#Behave\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Behave/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTALLHYPGenericCu(">
+            <org.eventb.core.poPredicate name="'" org.eventb.core.predicate="x_p'∈(RReal ⦂ ℙ(RReal)) ⇸ S∧t'=tp∧Closed2Closed(Rzero ⦂ RReal,t')⊆dom(x_p')∧CBAPsolutionOf(t,t',x_p,x_p',e,Inv)" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#1|org.eventb.core.action#)"/>
+        </org.eventb.core.poPredicateSet>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Closed2Closed(Rzero ⦂ RReal,t')⊆dom(x_p')" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.invariant#inv4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#1"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.invariant#inv4"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poSequent#Behave\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Behave/act1/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTALLHYPGenericCu("/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀t'⦂RReal,x_p'⦂ℙ(RReal×(RReal×RReal×RReal×RReal×RReal))·x_p'∈(RReal ⦂ ℙ(RReal)) ⇸ S∧t'=tp∧Closed2Closed(Rzero ⦂ RReal,t')⊆dom(x_p')⇒t∈(RRealPlus ⦂ ℙ(RReal))∧t'∈(RRealPlus ⦂ ℙ(RReal))∧x_p∈(RReal ⦂ ℙ(RReal)) ⇸ (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal))∧x_p'∈(RReal ⦂ ℙ(RReal)) ⇸ (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal))∧Inv∈ℙ((RRealPlus ⦂ ℙ(RReal)) × ((RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal))))∧Closed2Closed(Rzero ⦂ RReal,t)⊆dom(x_p)∧Solvable(Closed2Closed(t,t'),e)∧t ↦ t'∈(lt ⦂ ℙ(RReal×RReal))" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#1|org.eventb.core.action#)"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#1|org.eventb.core.action#)"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTALLHYPGenericCu("/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Behave/act1/FIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of action" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTALLHYPGenericCu("/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∃t'⦂RReal,x_p'⦂ℙ(RReal×(RReal×RReal×RReal×RReal×RReal))·x_p'∈(RReal ⦂ ℙ(RReal)) ⇸ S∧t'=tp∧Closed2Closed(Rzero ⦂ RReal,t')⊆dom(x_p')∧CBAPsolutionOf(t,t',x_p,x_p',e,Inv)" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#1|org.eventb.core.action#)"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#1|org.eventb.core.action#)"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTALLHYPGenericCu("/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTGenericCu(" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="x_p'" org.eventb.core.type="ℙ(RReal×(RReal×RReal×RReal×RReal×RReal))"/>
+        <org.eventb.core.poIdentifier name="t'" org.eventb.core.type="RReal"/>
+        <org.eventb.core.poIdentifier name="Inv" org.eventb.core.type="ℙ(RReal×(RReal×RReal×RReal×RReal×RReal))"/>
+        <org.eventb.core.poIdentifier name="e" org.eventb.core.type="DE(RReal×RReal×RReal×RReal×RReal)"/>
+        <org.eventb.core.poIdentifier name="tp" org.eventb.core.type="RReal"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPGenericCu(*" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTIDENTGenericCu(" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="tp∈(RRealPlus ⦂ ℙ(RReal))∧t ↦ tp∈(lt ⦂ ℙ(RReal×RReal))" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#1|org.eventb.core.guard#."/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="e∈DE(S)" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#1|org.eventb.core.guard#("/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="Solvable(Closed2Closed(t,tp),e)" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#1|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="Inv⊆(RRealPlus ⦂ ℙ(RReal)) × S" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#1|org.eventb.core.guard#,"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPGenericCu(" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTHYPGenericCu(*" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="t ↦ x_p(t)∈Inv" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#1|org.eventb.core.guard#\/"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Actuate/grd6/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTHYPGenericCu),"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="t∈dom(x_p)∧x_p∈(RReal ⦂ ℙ(RReal)) ⇸ (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal))" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.guard#internal6"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.guard#internal6"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTHYPGenericCu),"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Actuate/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTALLHYPGenericCu)">
+            <org.eventb.core.poPredicate name="'" org.eventb.core.predicate="x_p'∈(RReal ⦂ ℙ(RReal)) ⇸ S∧t'=tp∧Closed2Closed(Rzero ⦂ RReal,t')⊆dom(x_p')∧CBAPsolutionOf(t,t',x_p,x_p',e,Inv)" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.action#)"/>
+        </org.eventb.core.poPredicateSet>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="t'∈(RRealPlus ⦂ ℙ(RReal))" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poSequent#Actuate\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Actuate/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTALLHYPGenericCu)">
+            <org.eventb.core.poPredicate name="'" org.eventb.core.predicate="x_p'∈(RReal ⦂ ℙ(RReal)) ⇸ S∧t'=tp∧Closed2Closed(Rzero ⦂ RReal,t')⊆dom(x_p')∧CBAPsolutionOf(t,t',x_p,x_p',e,Inv)" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.action#)"/>
+        </org.eventb.core.poPredicateSet>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="x_p'∈(RReal ⦂ ℙ(RReal)) ⇸ S" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.invariant#inv2"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.invariant#inv2"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poSequent#Actuate\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Actuate/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTALLHYPGenericCu)">
+            <org.eventb.core.poPredicate name="'" org.eventb.core.predicate="x_p'∈(RReal ⦂ ℙ(RReal)) ⇸ S∧t'=tp∧Closed2Closed(Rzero ⦂ RReal,t')⊆dom(x_p')∧CBAPsolutionOf(t,t',x_p,x_p',e,Inv)" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.action#)"/>
+        </org.eventb.core.poPredicateSet>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Closed2Closed(Rzero ⦂ RReal,t')⊆dom(x_p')" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.invariant#inv4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.invariant#inv4"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poSequent#Actuate\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Actuate/act1/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTALLHYPGenericCu)"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀t'⦂RReal,x_p'⦂ℙ(RReal×(RReal×RReal×RReal×RReal×RReal))·x_p'∈(RReal ⦂ ℙ(RReal)) ⇸ S∧t'=tp∧Closed2Closed(Rzero ⦂ RReal,t')⊆dom(x_p')⇒t∈(RRealPlus ⦂ ℙ(RReal))∧t'∈(RRealPlus ⦂ ℙ(RReal))∧x_p∈(RReal ⦂ ℙ(RReal)) ⇸ (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal))∧x_p'∈(RReal ⦂ ℙ(RReal)) ⇸ (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal))∧Inv∈ℙ((RRealPlus ⦂ ℙ(RReal)) × ((RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal)) × (RReal ⦂ ℙ(RReal))))∧Closed2Closed(Rzero ⦂ RReal,t)⊆dom(x_p)∧Solvable(Closed2Closed(t,t'),e)∧t ↦ t'∈(lt ⦂ ℙ(RReal×RReal))" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.action#)"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.action#)"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTALLHYPGenericCu)"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Actuate/act1/FIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of action" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTALLHYPGenericCu)"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∃t'⦂RReal,x_p'⦂ℙ(RReal×(RReal×RReal×RReal×RReal×RReal))·x_p'∈(RReal ⦂ ℙ(RReal)) ⇸ S∧t'=tp∧Closed2Closed(Rzero ⦂ RReal,t')⊆dom(x_p')∧CBAPsolutionOf(t,t',x_p,x_p',e,Inv)" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.action#)"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.action#)"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTALLHYPGenericCu)"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTGenericCu)" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="x_p'" org.eventb.core.type="ℙ(RReal×(RReal×RReal×RReal×RReal×RReal))"/>
+        <org.eventb.core.poIdentifier name="s" org.eventb.core.type="ℙ(STATES)"/>
+        <org.eventb.core.poIdentifier name="t'" org.eventb.core.type="RReal"/>
+        <org.eventb.core.poIdentifier name="Inv" org.eventb.core.type="ℙ(RReal×(RReal×RReal×RReal×RReal×RReal))"/>
+        <org.eventb.core.poIdentifier name="e" org.eventb.core.type="DE(RReal×RReal×RReal×RReal×RReal)"/>
+        <org.eventb.core.poIdentifier name="tp" org.eventb.core.type="RReal"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPGenericCu)," org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTIDENTGenericCu)" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="tp∈(RRealPlus ⦂ ℙ(RReal))∧t ↦ tp∈(lt ⦂ ℙ(RReal×RReal))" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.guard#internal5"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="e∈DE(S)" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.guard#("/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="Solvable(Closed2Closed(t,tp),e)" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.guard#internal1"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="s⊆STATES" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="x_s∈s" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="Inv⊆(RRealPlus ⦂ ℙ(RReal)) × S" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.guard#internal2"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPGenericCu)" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#EVTHYPGenericCu)," org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="t ↦ x_p(t)∈Inv" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.event#4|org.eventb.core.guard#internal6"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/PenduleTest/Generic.bpo|org.eventb.core.poFile#Generic|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="t∈(RRealPlus ⦂ ℙ(RReal))" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="x_p∈(RReal ⦂ ℙ(RReal)) ⇸ S" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.invariant#inv2"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="Closed2Closed(Rzero ⦂ RReal,t)⊆dom(x_p)" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.invariant#inv4"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="x_s∈STATES" org.eventb.core.source="/PenduleTest/Generic.bum|org.eventb.core.machineFile#Generic|org.eventb.core.invariant#inv3"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.configuration="org.eventb.theory.core.thy">
+<org.eventb.theory.core.importTheoryProject name="'" org.eventb.theory.core.importTheoryProject="/SimpleDEq">
+<org.eventb.theory.core.importTheory name="'" org.eventb.theory.core.importTheory="/SimpleDEq/Functions.dtf|org.eventb.theory.core.deployedTheoryRoot#Functions"/>
+</org.eventb.theory.core.importTheoryProject>
+<org.eventb.theory.core.typeParameter name="(" org.eventb.core.identifier="E"/>
+<org.eventb.theory.core.typeParameter name=")" org.eventb.core.identifier="F"/>
+<org.eventb.theory.core.typeParameter name="*" org.eventb.core.identifier="G"/>
+<org.eventb.theory.core.newOperatorDefinition name="element2" org.eventb.core.label="partitionS" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(E)" org.eventb.core.identifier="X"/>
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(ℙ(E))" org.eventb.core.identifier="Xs"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="(∀ X1,X2 · X1 ∈ Xs ∧ X2 ∈ Xs ∧ X1 ≠ X2 ⇒ X1 ∩ X2 = ∅) ∧&#10;union(Xs) = X"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="+" org.eventb.core.label="piecewiseContinuous" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(ℙ(E))" org.eventb.core.identifier="Ix"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(F)" org.eventb.core.identifier="B"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="union(Ix) → B" org.eventb.core.identifier="f"/>
+<org.eventb.theory.core.operatorWDcondition name="*" org.eventb.core.predicate="Ix ≠ ∅"/>
+<org.eventb.theory.core.operatorWDcondition name="+" org.eventb.core.predicate="∀ I1,I2 · I1 ∈ Ix ∧ I2 ∈ Ix ∧ I1 ≠ I2 ⇒ I1 ∩ I2 = ∅"/>
+<org.eventb.theory.core.directOperatorDefinition name="," org.eventb.theory.core.formula="∀ I0 · I0 ∈ Ix ⇒ (I0 ◁ f) ∈ C0(I0,B)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="element1" org.eventb.core.label="partialPiecewiseContinuous" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(ℙ(E))" org.eventb.core.identifier="Ix"/>
+<org.eventb.theory.core.operatorWDcondition name="*" org.eventb.core.predicate="Ix ≠ ∅"/>
+<org.eventb.theory.core.operatorWDcondition name="+" org.eventb.core.predicate="∀ I1,I2 · I1 ∈ Ix ∧ I2 ∈ Ix ∧ I1 ≠ I2 ⇒ I1 ∩ I2 = ∅"/>
+<org.eventb.theory.core.directOperatorDefinition name="," org.eventb.theory.core.formula="∀ I0 · I0 ∈ Ix ⇒ ((I0×B) ◁ g) ∈ C0(I0×B,C)"/>
+<org.eventb.theory.core.operatorArgument name="-" org.eventb.core.expression="ℙ(F)" org.eventb.core.identifier="B"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(G)" org.eventb.core.identifier="C"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="union(Ix)×B → C" org.eventb.core.identifier="g"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="," org.eventb.core.label="piecewiseLipschitzContinuous" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(ℙ(E))" org.eventb.core.identifier="Ix"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(F)" org.eventb.core.identifier="B"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="union(Ix) → B" org.eventb.core.identifier="f"/>
+<org.eventb.theory.core.operatorWDcondition name="*" org.eventb.core.predicate="Ix ≠ ∅"/>
+<org.eventb.theory.core.operatorWDcondition name="+" org.eventb.core.predicate="∀ I1,I2 · I1 ∈ Ix ∧ I2 ∈ Ix ∧ I1 ≠ I2 ⇒ I1 ∩ I2 = ∅"/>
+<org.eventb.theory.core.directOperatorDefinition name="," org.eventb.theory.core.formula="∀ I0 · I0 ∈ Ix ⇒ lipschitzContinuous(I0,B,I0 ◁ f)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.theorem name="element3" org.eventb.core.label="untilPiecewise" org.eventb.core.predicate="∀ s,t0,f,g ·&#10;&#9;s ∈ RReal ∧ t0 ∈ RReal ∧ s ↦ t0 ∈ leq ∧&#10;&#9;f ∈ RReal ⇸ E ∧ g ∈ RReal ⇸ E ∧&#10;&#9;Closed2Open(s,t0) ⊆ dom(f) ∧ Closed2Infinity(t0) ⊆ dom(g) ∧&#10;&#9;f ∈ C0(Closed2Open(s,t0),E) ∧ g ∈ C0(Closed2Infinity(t0),E) ⇒&#10;&#9;&#9;piecewiseContinuous({Closed2Open(s,t0),Closed2Infinity(t0)},E,until(s,f,t0,g))"/>
+<org.eventb.theory.core.theorem name="element4" org.eventb.core.label="untilFPartialPiecewise" org.eventb.core.predicate="∀ s,t0,f,g ·&#10;&#9;s ∈ RReal ∧ t0 ∈ RReal ∧ s ↦ t0 ∈ leq ∧&#10;&#9;f ∈ RReal×E ⇸ F ∧ g ∈ RReal×E ⇸ F ∧&#10;&#9;Closed2Open(s,t0)×∅ ⊆ dom(f) ∧ Closed2Infinity(t0)×∅ ⊆ dom(g) ∧&#10;&#9;f ∈ C0(Closed2Open(s,t0)×E,F) ∧ g ∈ C0(Closed2Infinity(t0)×E,F) ⇒&#10;&#9;&#9;partialPiecewiseContinuous({Closed2Open(s,t0),Closed2Infinity(t0)},E,F,untilF(s,f,t0,g))"/>
+</org.eventb.theory.core.theoryRoot>

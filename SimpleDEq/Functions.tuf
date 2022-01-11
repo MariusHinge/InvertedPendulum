@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.configuration="org.eventb.theory.core.thy">
+    <org.eventb.theory.core.importTheoryProject name="'" org.eventb.theory.core.importTheoryProject="/SimpleDEq">
+        <org.eventb.theory.core.importTheory name="'" org.eventb.theory.core.importTheory="/SimpleDEq/Intervals.dtf|org.eventb.theory.core.deployedTheoryRoot#Intervals"/>
+    </org.eventb.theory.core.importTheoryProject>
+    <org.eventb.theory.core.axiomaticDefinitionsBlock name=")" org.eventb.core.label="continuity">
+        <org.eventb.theory.core.axiomaticOperatorDefinition name="'" org.eventb.core.label="C0" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(ℙ(E×F))">
+            <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(E)" org.eventb.core.identifier="A"/>
+            <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(F)" org.eventb.core.identifier="B"/>
+            <org.eventb.theory.core.operatorWDcondition name=")" org.eventb.core.predicate="A ≠ ∅"/>
+            <org.eventb.theory.core.operatorWDcondition name="*" org.eventb.core.predicate="B ≠ ∅"/>
+        </org.eventb.theory.core.axiomaticOperatorDefinition>
+        <org.eventb.theory.core.axiomaticOperatorDefinition name="(" org.eventb.core.label="D1" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(ℙ(RReal×F))">
+            <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(RReal)" org.eventb.core.identifier="A2"/>
+            <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(F)" org.eventb.core.identifier="B"/>
+        </org.eventb.theory.core.axiomaticOperatorDefinition>
+        <org.eventb.theory.core.axiomaticOperatorDefinition name=")" org.eventb.core.label="Cn" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(ℙ(E×F))">
+            <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℕ" org.eventb.core.identifier="n"/>
+            <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(E)" org.eventb.core.identifier="A"/>
+            <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="ℙ(F)" org.eventb.core.identifier="B"/>
+        </org.eventb.theory.core.axiomaticOperatorDefinition>
+        <org.eventb.theory.core.axiomaticOperatorDefinition name="*" org.eventb.core.label="Dn" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(ℙ(RReal×F))">
+            <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℕ" org.eventb.core.identifier="n"/>
+            <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(RReal)" org.eventb.core.identifier="A2"/>
+            <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="ℙ(F)" org.eventb.core.identifier="B"/>
+            <org.eventb.theory.core.operatorWDcondition name="*" org.eventb.core.predicate="n &gt; 0"/>
+        </org.eventb.theory.core.axiomaticOperatorDefinition>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="+" org.eventb.core.label="cid" org.eventb.core.predicate="∀ A,B · A ⊆ E ∧ B ⊆ F ⇒ (C0(A,B) = Cn(0,A,B))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="," org.eventb.core.label="did" org.eventb.core.predicate="∀ A,B · A ⊆ RReal ∧ B ⊆ F ⇒ (D1(A,B) = Dn(1,A,B))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="1" org.eventb.core.label="c_in_c" org.eventb.core.predicate="∀ A,B,k · A ⊆ E ∧ B ⊆ F ∧ k ∈ ℕ ⇒ (Cn(k+1,A,B) ⊂ Cn(k,A,B))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element1" org.eventb.core.label="d_in_d" org.eventb.core.predicate="∀ A,B,k · A ⊆ RReal ∧ B ⊆ F ∧ k ∈ ℕ ∧ k &gt; 0 ⇒ (Dn(k+1,A,B) ⊂ Dn(k,A,B))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="-" org.eventb.core.label="c_in_d" org.eventb.core.predicate="∀ A,B,k · A ⊆ RReal ∧ B ⊆ F ∧ k ∈ ℕ ∧ k &gt; 0 ⇒ (Cn(k,A,B) ⊂ Dn(k,A,B))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="." org.eventb.core.label="d_in_c" org.eventb.core.predicate="∀ A,B,k · A ⊆ RReal ∧ B ⊆ F ∧ k ∈ ℕ ∧ k &gt; 0 ⇒ (Dn(k,A,B) ⊂ Cn(k−1,A,B))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="/" org.eventb.core.label="c_inclusion_stable" org.eventb.core.predicate="∀ A,C,B,k ·&#10;&#9;A ⊆ E ∧ C ⊆ A ∧ B ⊆ F ∧ k ∈ ℕ&#10;&#9;&#9;⇒&#10;&#9;&#9;&#9;(Cn(k,A,B) ⊆ Cn(k,C,B))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="0" org.eventb.core.label="d_inclusion_stable" org.eventb.core.predicate="∀ A,C,B,k ·&#10;&#9;A ⊆ RReal ∧ C ⊆ A ∧ B ⊆ F ∧ k ∈ ℕ ∧ k &gt; 0&#10;&#9;&#9;⇒&#10;&#9;&#9;&#9;(Dn(k,A,B) ⊆ Dn(k,C,B))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element2" org.eventb.core.label="d_restriction" org.eventb.core.predicate="∀ A,C,B,k,f ·&#10;&#9;A ⊆ RReal ∧ C ⊆ A ∧ B ⊆ F ∧ k ∈ ℕ ∧ k &gt; 0 ∧&#10;&#9;f ∈ RReal ⇸ B ∧ A ⊆ dom(f) ∧ f ∈ Dn(k,A,B) ⇒&#10;&#9;&#9;(C ◁ f) ∈ Dn(k,C,B)"/>
+    </org.eventb.theory.core.axiomaticDefinitionsBlock>
+    <org.eventb.theory.core.axiomaticDefinitionsBlock name="*" org.eventb.core.label="derivative">
+        <org.eventb.theory.core.axiomaticOperatorDefinition name="'" org.eventb.core.label="Der" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(RReal×F)">
+            <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(RReal)" org.eventb.core.identifier="A2"/>
+            <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(F)" org.eventb.core.identifier="B"/>
+            <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="RReal ⇸ B" org.eventb.core.identifier="fa2b"/>
+            <org.eventb.theory.core.operatorWDcondition name="*" org.eventb.core.predicate="fa2b ∈ D1(A2,B)"/>
+            <org.eventb.theory.core.operatorWDcondition name="+" org.eventb.core.predicate="A2 ⊆ dom(fa2b)"/>
+        </org.eventb.theory.core.axiomaticOperatorDefinition>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="(" org.eventb.core.label="derType" org.eventb.core.predicate="∀ A,B,f · A ⊆ RReal ∧ B ⊆ F ∧ f ∈ (RReal ⇸ B) ∧ A ⊆ dom(f) ∧ f ∈ D1(A,B) ⇒ (Der(A,B,f) ∈ (A → F))"/>
+        <org.eventb.theory.core.axiomaticOperatorDefinition name=")" org.eventb.core.label="Dern" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(RReal×F)">
+            <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℕ" org.eventb.core.identifier="n"/>
+            <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(RReal)" org.eventb.core.identifier="A2"/>
+            <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="ℙ(F)" org.eventb.core.identifier="B"/>
+            <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="RReal ⇸ B" org.eventb.core.identifier="fa2b"/>
+            <org.eventb.theory.core.operatorWDcondition name="," org.eventb.core.predicate="n &gt; 0"/>
+            <org.eventb.theory.core.operatorWDcondition name="-" org.eventb.core.predicate="A2 ⊆ dom(fa2b)"/>
+        </org.eventb.theory.core.axiomaticOperatorDefinition>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="+" org.eventb.core.label="derDef_1" org.eventb.core.predicate="∀ A,B,f · A ⊆ RReal ∧ B ⊆ F ∧ f ∈ (RReal ⇸ B) ∧ A ⊆ dom(f) ∧ f ∈ Dn(1,A,B) ⇒ (&#10;&#9;Dern(1,A,B,f) = Der(A,B,f)&#10;)"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="*" org.eventb.core.label="dernDef_n" org.eventb.core.predicate="∀ A,B,f,k · A ⊆ RReal ∧ B ⊆ F ∧ f ∈ (RReal ⇸ B) ∧ A ⊆ dom(f) ∧ k ∈ ℕ ∧ k &gt; 1 ∧ f ∈ Dn(k,A,B) ⇒ (&#10;&#9;Dern(k,A,B,f) = Der(A,B,Dern(k−1,A,B,f))&#10;)"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="," org.eventb.core.label="c_def" org.eventb.core.predicate="∀ A,B,k,f · A ⊆ RReal ∧ B ⊆ F ∧ k ∈ ℕ ∧ k &gt; 1 ∧ f ∈ (RReal ⇸ B) ∧ dom(f) ⊆ A ⇒ (&#10;&#9;(f ∈ Cn(k,A,B) ⇔ (f ∈ Dn(k,A,B) ∧ Dern(k,A,B,f) ∈ C0(A,B)))&#10;)"/>
+    </org.eventb.theory.core.axiomaticDefinitionsBlock>
+    <org.eventb.theory.core.axiomaticDefinitionsBlock name="+" org.eventb.core.label="cartesian">
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="'" org.eventb.core.label="cartesian_continuity" org.eventb.core.predicate="∀ A,B,C,f,g,k ·&#10;&#9;A ⊆ E ∧ B ⊆ F ∧ C ⊆ G ∧ f ∈ (A → B) ∧ g ∈ (A → C) ∧ k ∈ ℕ ⇒&#10;&#9;&#9;(f ∈ Cn(k,A,B) ∧ g ∈ Cn(k,A,C) ⇔ (bind(f,g) ∈ Cn(k,A,B×C)))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="(" org.eventb.core.label="cartesian_derivability" org.eventb.core.predicate="∀ A,B,C,f,g,k ·&#10;&#9;A ⊆ RReal ∧ B ⊆ F ∧ C ⊆ G ∧ f ∈ (A → B) ∧ g ∈ (A → C) ∧ k ∈ ℕ ∧ k &gt; 0 ⇒&#10;&#9;&#9;(f ∈ Dn(k,A,B) ∧ g ∈ Dn(k,A,C) ⇔ (bind(f,g) ∈ Dn(k,A,B×C)))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name=")" org.eventb.core.label="cartesian_der" org.eventb.core.predicate="∀ A,B,C,f,g ·&#10;&#9;A ⊆ RReal ∧ B ⊆ F ∧ C ⊆ G ∧ f ∈ (A → B) ∧ g ∈ (A → C) ∧&#10;&#9;f ∈ D1(A,B) ∧ g ∈ D1(A,C) ⇒&#10;&#9;&#9;(Der(A,B×C,bind(f,g)) = bind(Der(A,B,f),Der(A,C,g)))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="*" org.eventb.core.label="cartesian_dern" org.eventb.core.predicate="∀ A,B,C,f,g,k ·&#10;&#9;A ⊆ RReal ∧ B ⊆ F ∧ C ⊆ G ∧ f ∈ (A → B) ∧ g ∈ (A → C) ∧ k ∈ ℕ ∧ k &gt; 0 ∧&#10;&#9;f ∈ Dn(k,A,B) ∧ g ∈ Dn(k,A,C) ⇒&#10;&#9;&#9;(Dern(k,A,B×C,bind(f,g)) = bind(Dern(k,A,B,f),Dern(k,A,C,g)))"/>
+    </org.eventb.theory.core.axiomaticDefinitionsBlock>
+    <org.eventb.theory.core.newOperatorDefinition name="-" org.eventb.core.label="bind" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="E ⇸ F" org.eventb.core.identifier="fab"/>
+        <org.eventb.theory.core.operatorArgument name="+" org.eventb.core.expression="E ⇸ G" org.eventb.core.identifier="gac"/>
+        <org.eventb.theory.core.directOperatorDefinition name="," org.eventb.theory.core.formula="(λ x · x ∈ dom(fab) ∣ (fab(x) ↦ gac(x)))"/>
+        <org.eventb.theory.core.operatorWDcondition name="-" org.eventb.core.predicate="dom(fab) = dom(gac)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.theorem name="4" org.eventb.core.label="functionEquality" org.eventb.core.predicate="∀ f, g · f ∈ E ⇸ F ∧ g ∈ E ⇸ F ⇒ (&#10;&#9;(f = g) ⇔ (dom(f) = dom(g) ∧ (∀ x · x ∈ dom(f) ⇒ (f(x) = g(x))))&#10;)"/>
+    <org.eventb.theory.core.typeParameter name="5" org.eventb.core.identifier="E"/>
+    <org.eventb.theory.core.typeParameter name="(" org.eventb.core.identifier="F"/>
+    <org.eventb.theory.core.typeParameter name="," org.eventb.core.identifier="G"/>
+    <org.eventb.theory.core.axiomaticDefinitionsBlock name="element3" org.eventb.core.label="partials">
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="'" org.eventb.core.label="partial_cue" org.eventb.core.predicate="∀ A,B,C,f,k ·&#10;&#9;A ⊆ E ∧ B ⊆ F ∧ C ⊆ G ∧ f ∈ (A×B→C) ∧ k ∈ ℕ ⇒ (&#10;&#9;&#9;f ∈ Cn(k,A×B,C) ⇔ ((∀ y0 · y0 ∈ B ⇒ partial1(f,y0) ∈ Cn(k,A,C)) ∧ (∀ x0 · x0 ∈ A ⇒ partial2(f,x0) ∈ Cn(k,B,C)))&#10;)"/>
+    </org.eventb.theory.core.axiomaticDefinitionsBlock>
+    <org.eventb.theory.core.axiomaticDefinitionsBlock name="." org.eventb.core.label="real_functions">
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="'" org.eventb.core.label="cste_cue" org.eventb.core.predicate="∀ l · l ∈ RReal ⇒ (∀ k · k ∈ ℕ ⇒ (Rfcste(l) ∈ Cn(k,RReal,RReal)))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="(" org.eventb.core.label="cste_der" org.eventb.core.predicate="∀ l · l ∈ RReal ⇒ (∀ k · k ∈ ℕ ∧ k &gt; 0 ⇒ (Rfcste(l) ∈ Dn(k,RReal,RReal)))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name=")" org.eventb.core.label="cste_der_def" org.eventb.core.predicate="∀ l · l ∈ RReal ⇒ (Der(RReal,RReal,Rfcste(l)) = Rfcste(Rzero))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="*" org.eventb.core.label="plus_cue" org.eventb.core.predicate="∀ A,f,g,k ·&#10;&#9;A ⊆ RReal ∧&#10;&#9;f ∈ (A → RReal) ∧ g ∈ (A → RReal) ∧&#10;&#9;k ∈ ℕ ∧&#10;&#9;f ∈ Cn(k,A,RReal) ∧ g ∈ Cn(k,A,RReal) ⇒&#10;&#9;&#9;(Rfplus(f ↦ g) ∈ Cn(k,A,RReal))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="+" org.eventb.core.label="plus_der" org.eventb.core.predicate="∀ A,f,g,k ·&#10;&#9;A ⊆ RReal ∧&#10;&#9;f ∈ (A → RReal) ∧ g ∈ (A → RReal) ∧&#10;&#9;k ∈ ℕ ∧ k &gt; 0 ∧&#10;&#9;f ∈ Dn(k,A,RReal) ∧ g ∈ Dn(k,A,RReal) ⇒&#10;&#9;&#9;(Rfplus(f ↦ g) ∈ Dn(k,A,RReal))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="," org.eventb.core.label="plus_der_def" org.eventb.core.predicate="∀ A,f,g,k ·&#10;&#9;A ⊆ RReal ∧&#10;&#9;f ∈ (A → RReal) ∧ g ∈ (A → RReal) ∧&#10;&#9;k ∈ ℕ ∧ k &gt; 0 ∧&#10;&#9;f ∈ Dn(k,A,RReal) ∧ g ∈ Dn(k,A,RReal) ⇒&#10;&#9;&#9;(Dern(k,A,RReal,Rfplus(f ↦ g)) = Rfplus(Dern(k,A,RReal,f) ↦ Dern(k,A,RReal,g)))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element1" org.eventb.core.label="times_cue" org.eventb.core.predicate="∀ A,f,g,k ·&#10;&#9;A ⊆ RReal ∧&#10;&#9;f ∈ (A → RReal) ∧ g ∈ (A → RReal) ∧&#10;&#9;k ∈ ℕ ∧&#10;&#9;f ∈ Cn(k,A,RReal) ∧ g ∈ Cn(k,A,RReal) ⇒&#10;&#9;&#9;(Rftimes(f ↦ g) ∈ Cn(k,A,RReal))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element2" org.eventb.core.label="times_der" org.eventb.core.predicate="∀ A,f,g,k ·&#10;&#9;A ⊆ RReal ∧&#10;&#9;f ∈ (A → RReal) ∧ g ∈ (A → RReal) ∧&#10;&#9;k ∈ ℕ ∧ k &gt; 0 ∧&#10;&#9;f ∈ Dn(k,A,RReal) ∧ g ∈ Dn(k,A,RReal) ⇒&#10;&#9;&#9;(Rftimes(f ↦ g) ∈ Dn(k,A,RReal))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element3" org.eventb.core.label="times_der_def" org.eventb.core.predicate="∀ A,f,g ·&#10;&#9;A ⊆ RReal ∧&#10;&#9;f ∈ (A → RReal) ∧ g ∈ (A → RReal) ∧&#10;&#9;f ∈ D1(A,RReal) ∧ g ∈ D1(A,RReal) ⇒&#10;&#9;&#9;(Der(A,RReal,Rftimes(f ↦ g)) = Rfplus(Rftimes(Der(A,RReal,f) ↦ g) ↦ Rftimes(f ↦ Der(A,RReal,g))))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element4" org.eventb.core.label="scal_cue" org.eventb.core.predicate="∀ A,l,f,k ·&#10;&#9;A ⊆ RReal ∧&#10;&#9;l ∈ RReal ∧ f ∈ (A → RReal) ∧&#10;&#9;k ∈ ℕ ∧&#10;&#9;f ∈ Cn(k,A,RReal) ⇒&#10;&#9;&#9;(Rfscal(l ↦ f) ∈ Cn(k,A,RReal))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element6" org.eventb.core.label="scal_der" org.eventb.core.predicate="∀ A,l,f,k ·&#10;&#9;A ⊆ RReal ∧&#10;&#9;l ∈ RReal ∧ f ∈ (A → RReal) ∧&#10;&#9;k ∈ ℕ ∧ k &gt; 0 ∧&#10;&#9;f ∈ Dn(k,A,RReal) ⇒&#10;&#9;&#9;(Rfscal(l ↦ f) ∈ Dn(k,A,RReal))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element5" org.eventb.core.label="scal_der_def" org.eventb.core.predicate="∀ A,l,f,k ·&#10;&#9;A ⊆ RReal ∧&#10;&#9;l ∈ RReal ∧ f ∈ (A → RReal) ∧&#10;&#9;k ∈ ℕ ∧ k &gt; 0 ∧&#10;&#9;f ∈ Dn(k,A,RReal) ⇒&#10;&#9;&#9;(Dern(k,A,RReal,Rfscal(l ↦ f)) = Rfscal(l ↦ Dern(k,A,RReal,f)))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element7" org.eventb.core.label="comp_cue" org.eventb.core.predicate="∀ A,B,f,g,k ·&#10;&#9;A ⊆ RReal ∧ B ⊆ RReal ∧&#10;&#9;f ∈ A → B ∧ g ∈ B → RReal ∧&#10;&#9;k ∈ ℕ ∧&#10;&#9;f ∈ Cn(k,A,B) ∧ g ∈ Cn(k,B,RReal) ⇒&#10;&#9;&#9;(g ∘ f ∈ Cn(k,A,RReal))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element8" org.eventb.core.label="comp_der" org.eventb.core.predicate="∀ A,B,f,g,k ·&#10;&#9;A ⊆ RReal ∧ B ⊆ RReal ∧&#10;&#9;f ∈ A → B ∧ g ∈ B → RReal ∧&#10;&#9;k ∈ ℕ ∧ k &gt; 0 ∧&#10;&#9;f ∈ Dn(k,A,B) ∧ g ∈ Dn(k,B,RReal) ⇒&#10;&#9;&#9;(g ∘ f ∈ Dn(k,A,RReal))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element9" org.eventb.core.label="comp_der_def" org.eventb.core.predicate="∀ A,B,f,g ·&#10;&#9;A ⊆ RReal ∧ B ⊆ RReal ∧&#10;&#9;f ∈ A → B ∧ g ∈ B → RReal ∧&#10;&#9;f ∈ D1(A,B) ∧ g ∈ D1(B,RReal) ⇒&#10;&#9;&#9;(Der(A,RReal,g ∘ f) = Rftimes((Der(B,RReal,g) ∘ f) ↦ Der(A,B,f)))"/>
+    </org.eventb.theory.core.axiomaticDefinitionsBlock>
+    <org.eventb.theory.core.axiomaticDefinitionsBlock name="6" org.eventb.core.label="lipschitz">
+        <org.eventb.theory.core.axiomaticOperatorDefinition name="'" org.eventb.core.label="lipschitzContinuous" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="">
+            <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(E)" org.eventb.core.identifier="A"/>
+            <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(F)" org.eventb.core.identifier="B"/>
+            <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="A → B" org.eventb.core.identifier="fab"/>
+        </org.eventb.theory.core.axiomaticOperatorDefinition>
+        <org.eventb.theory.core.axiomaticOperatorDefinition name="(" org.eventb.core.label="kLipschitzContinuous" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="">
+            <org.eventb.theory.core.operatorArgument name="element1" org.eventb.core.expression="ℙ(E)" org.eventb.core.identifier="A"/>
+            <org.eventb.theory.core.operatorArgument name="element2" org.eventb.core.expression="ℙ(F)" org.eventb.core.identifier="B"/>
+            <org.eventb.theory.core.operatorArgument name="element3" org.eventb.core.expression="A → B" org.eventb.core.identifier="fab"/>
+            <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="RReal" org.eventb.core.identifier="r"/>
+        </org.eventb.theory.core.axiomaticOperatorDefinition>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name=")" org.eventb.core.label="klip_lip" org.eventb.core.predicate="∀ A,B,f · A ⊆ E ∧ B ⊆ F ∧ f ∈ A → B ⇒ (&#10;&#9;lipschitzContinuous(A,B,f) ⇔ (∃ k · k ∈ RReal ⇒ kLipschitzContinuous(A,B,f,k))&#10;)"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="*" org.eventb.core.label="lip_cue" org.eventb.core.predicate="∀ A,B,f · A ⊆ E ∧ B ⊆ F ∧ f ∈ A → B ⇒ (&#10;&#9;lipschitzContinuous(A,B,f) ⇒ (f ∈ C0(A,B))&#10;)"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="+" org.eventb.core.label="lip_inclusion_stable" org.eventb.core.predicate="∀ A,B,C,f ·&#10;&#9;A ⊆ E ∧ B ⊆ F ∧ C ⊆ A ∧ f ∈ A → B ⇒ (&#10;&#9;&#9;lipschitzContinuous(A,B,f) ⇒ lipschitzContinuous(C,B,f)&#10;&#9;)"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element1" org.eventb.core.label="klip_inclusion_stable" org.eventb.core.predicate="∀ A,B,C,f,k ·&#10;&#9;A ⊆ E ∧ B ⊆ F ∧ C ⊆ A ∧ f ∈ A → B ∧ k ∈ RReal ⇒ (&#10;&#9;&#9;kLipschitzContinuous(A,B,f,k) ⇒ kLipschitzContinuous(C,B,f,k)&#10;&#9;)"/>
+    </org.eventb.theory.core.axiomaticDefinitionsBlock>
+    <org.eventb.theory.core.axiomaticDefinitionsBlock name="element4" org.eventb.core.label="trigo">
+        <org.eventb.theory.core.axiomaticOperatorDefinition name=")" org.eventb.core.label="pi" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="RReal"/>
+        <org.eventb.theory.core.axiomaticOperatorDefinition name="'" org.eventb.core.label="sin" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(RReal×RReal)"/>
+        <org.eventb.theory.core.axiomaticOperatorDefinition name="(" org.eventb.core.label="cos" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(RReal×RReal)"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="*" org.eventb.core.label="pi_pos" org.eventb.core.predicate="Rzero ↦ pi ∈ lt"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="+" org.eventb.core.label="sin_dom" org.eventb.core.predicate="sin ∈ RReal → RReal"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="," org.eventb.core.label="cos_dom" org.eventb.core.predicate="cos ∈ RReal → RReal"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="-" org.eventb.core.label="sin_bounded" org.eventb.core.predicate="boundedBy(RReal,sin,uminus(Rone),Rone)"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="." org.eventb.core.label="sin_ran" org.eventb.core.predicate="ran(sin) = Closed2Closed(uminus(Rone),Rone)"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element1" org.eventb.core.label="cos_bounded" org.eventb.core.predicate="boundedBy(RReal,cos,uminus(Rone),Rone)"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element2" org.eventb.core.label="cos_ran" org.eventb.core.predicate="ran(cos) = Closed2Closed(uminus(Rone),Rone)"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element5" org.eventb.core.label="cos_cinf" org.eventb.core.predicate="∀ n · n ∈ ℕ ⇒ cos ∈ Cn(n,RReal,RReal)"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element6" org.eventb.core.label="sin_cinf" org.eventb.core.predicate="∀ n · n ∈ ℕ ⇒ sin ∈ Cn(n,RReal,RReal)"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element3" org.eventb.core.label="cos0" org.eventb.core.predicate="cos(Rzero) = Rone"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element4" org.eventb.core.label="cospi" org.eventb.core.predicate="cos(pi) = uminus(Rone)"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element7" org.eventb.core.label="cospi2" org.eventb.core.predicate="cos(divide(pi↦Rtwo)) = Rzero"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element8" org.eventb.core.label="cosmpi2" org.eventb.core.predicate="cos(uminus(divide(pi↦Rtwo))) = Rzero"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element9" org.eventb.core.label="sin0" org.eventb.core.predicate="cos(Rzero) = Rzero"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element10" org.eventb.core.label="sinpi" org.eventb.core.predicate="cos(pi) = uminus(Rzero)"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element11" org.eventb.core.label="sinpi2" org.eventb.core.predicate="cos(divide(pi↦Rtwo)) = Rone"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element12" org.eventb.core.label="sinmpi2" org.eventb.core.predicate="cos(uminus(divide(pi↦Rtwo))) = uminus(Rone)"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element13" org.eventb.core.label="sin_odd" org.eventb.core.predicate="∀ x · x ∈ RReal ⇒ sin(uminus(x)) = uminus(sin(x))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element14" org.eventb.core.label="cos_even" org.eventb.core.predicate="∀ x · x ∈ RReal ⇒ cos(uminus(x)) = cos(x)"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element15" org.eventb.core.label="sin_refl_pi4" org.eventb.core.predicate="∀ x · x ∈ RReal ⇒ sin(minus(divide(pi↦Rtwo) ↦ x)) = cos(x)"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element16" org.eventb.core.label="cos_refl_pi4" org.eventb.core.predicate="∀ x · x ∈ RReal ⇒ cos(minus(divide(pi↦Rtwo) ↦ x)) = sin(x)"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element17" org.eventb.core.label="sin_refl_pi2" org.eventb.core.predicate="∀ x · x ∈ RReal ⇒ sin(minus(pi ↦ x)) = sin(x)"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element18" org.eventb.core.label="cos_refl_pi2" org.eventb.core.predicate="∀ x · x ∈ RReal ⇒ cos(minus(pi ↦ x)) = uminus(cos(x))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element19" org.eventb.core.label="sin_2pi" org.eventb.core.predicate="∀ x · x ∈ RReal ⇒ sin(plus(x ↦ times(Rtwo ↦ pi))) = sin(x)"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="element1:" org.eventb.core.label="cos_2pi" org.eventb.core.predicate="∀ x · x ∈ RReal ⇒ cos(plus(x ↦ times(Rtwo ↦ pi))) = cos(x)"/>
+    </org.eventb.theory.core.axiomaticDefinitionsBlock>
+    <org.eventb.theory.core.newOperatorDefinition name="element4" org.eventb.core.label="fproj1" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="E ⇸ F×G" org.eventb.core.identifier="fa_bc"/>
+        <org.eventb.theory.core.directOperatorDefinition name="+" org.eventb.theory.core.formula="(λ x↦y · x ∈ F ∧ y ∈ G ∣ x) ∘ fa_bc"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="element5" org.eventb.core.label="fproj2" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="E ⇸ F×G" org.eventb.core.identifier="fa_bc"/>
+        <org.eventb.theory.core.directOperatorDefinition name="+" org.eventb.theory.core.formula="(λ x↦y · x ∈ F ∧ y ∈ G ∣ y) ∘ fa_bc"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="0" org.eventb.core.label="Rfplus" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.directOperatorDefinition name="'" org.eventb.theory.core.formula="(λ rf ↦ rg · rf ∈ (RReal → RReal) ∧ rg ∈ (RReal → RReal) ∣&#10;&#9;(λ x · x ∈ RReal ∣ plus(rf(x) ↦ rg(x)))&#10;)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="1" org.eventb.core.label="Rftimes" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.directOperatorDefinition name="'" org.eventb.theory.core.formula="(λ rf ↦ rg · rf ∈ (RReal → RReal) ∧ rg ∈ (RReal → RReal) ∣&#10;&#9;(λ x · x ∈ RReal ∣ times(rf(x) ↦ rg(x)))&#10;)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="2" org.eventb.core.label="Rfscal" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.directOperatorDefinition name="'" org.eventb.theory.core.formula="(λ l ↦ rf · l ∈ RReal ∧ rf ∈ (RReal → RReal) ∣&#10;&#9;(λ x · x ∈ RReal ∣ times(l ↦ rf(x)))&#10;)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="3" org.eventb.core.label="Rfcste" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="RReal" org.eventb.core.identifier="l"/>
+        <org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="(λ x · x ∈ RReal ∣ l)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="7" org.eventb.core.label="partial1" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="(λ x · (x ↦ y) ∈ dom(fab_c) ∣ fab_c(x↦y))"/>
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="E×F⇸G" org.eventb.core.identifier="fab_c"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="F" org.eventb.core.identifier="y"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="element1" org.eventb.core.label="partial2" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="E×F⇸G" org.eventb.core.identifier="fab_c"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="E" org.eventb.core.identifier="x"/>
+        <org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="(λ y · (x ↦ y) ∈ dom(fab_c) ∣ fab_c(x↦y))"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="element33" org.eventb.core.label="partialComp" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="(λ t · t ∈ dom(gab) ∧ (t ↦ gab(t)) ∈ dom(fabb) ∣ fabb(t ↦ gab(t)))"/>
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="E×F⇸G" org.eventb.core.identifier="fabb"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="E⇸F" org.eventb.core.identifier="gab"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="element8" org.eventb.core.label="unpartialize1" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(E)" org.eventb.core.identifier="A"/>
+        <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="F⇸G" org.eventb.core.identifier="fbc"/>
+        <org.eventb.theory.core.directOperatorDefinition name="+" org.eventb.theory.core.formula="(λ x↦y · x ∈ A ∧ y ∈ dom(fbc) ∣ fbc(y))"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="element9" org.eventb.core.label="unpartialize2" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(F)" org.eventb.core.identifier="B"/>
+        <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="E ⇸ G" org.eventb.core.identifier="fac"/>
+        <org.eventb.theory.core.directOperatorDefinition name="+" org.eventb.theory.core.formula="(λ x↦y · x ∈ dom(fac) ∧ y ∈ B ∣ fac(x))"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.theorem name="element17" org.eventb.core.label="bind_type" org.eventb.core.predicate="∀ A,B,C,f,g · A ⊆ E ∧ B ⊆ F ∧ C ⊆ G ∧ f ∈ A → B ∧ g ∈ A → C ⇒&#10;&#9;bind(f,g) ∈ A → B×C"/>
+    <org.eventb.theory.core.theorem name="element=" org.eventb.core.label="proj1_type" org.eventb.core.predicate="∀ A,B,C,f · A ⊆ E ∧ B ⊆ F ∧ C ⊆ G ∧ f ∈ A → B×C ⇒ (&#10;&#9;fproj1(f) ∈ A → B&#10;)"/>
+    <org.eventb.theory.core.theorem name="element10" org.eventb.core.label="proj2_type" org.eventb.core.predicate="∀ A,B,C,f · A ⊆ E ∧ B ⊆ F ∧ C ⊆ G ∧ f ∈ A → B×C ⇒ (&#10;&#9;fproj2(f) ∈ A → C&#10;)"/>
+    <org.eventb.theory.core.theorem name="element12" org.eventb.core.label="partial1_type" org.eventb.core.predicate="∀ A,B,C,f,y · A ⊆ E ∧ B ⊆ F ∧ C ⊆ G ∧ f ∈ A×B → C ∧ y ∈ B ⇒ (&#10;&#9;partial1(f,y) ∈ A → C&#10;)"/>
+    <org.eventb.theory.core.theorem name="element13" org.eventb.core.label="partial2_type" org.eventb.core.predicate="∀ A,B,C,f,x · A ⊆ E ∧ B ⊆ F ∧ C ⊆ G ∧ f ∈ A×B → C ∧ x ∈ A ⇒ (&#10;&#9;partial2(f,x) ∈ B → C&#10;)"/>
+    <org.eventb.theory.core.theorem name="element44" org.eventb.core.label="partialComp_type" org.eventb.core.predicate="∀ A,B,B2,f,g ·&#10;&#9;A ⊆ E ∧ B ⊆ F ∧ B2 ⊆ G ∧&#10;&#9;f ∈ A×B → B2 ∧ g ∈ A → B ⇒&#10;&#9;&#9;partialComp(f,g) ∈ A → B2"/>
+    <org.eventb.theory.core.theorem name="element2" org.eventb.core.label="proj1_bind" org.eventb.core.predicate="∀ A,B,C,f,g · A ⊆ E ∧ B ⊆ F ∧ C ⊆ G ∧ f ∈ A → B ∧ g ∈ A → C ⇒ (&#10;&#9;fproj1(bind(f,g)) = f&#10;)"/>
+    <org.eventb.theory.core.theorem name="element3" org.eventb.core.label="proj2_bind" org.eventb.core.predicate="∀ A,B,C,f,g · A ⊆ E ∧ B ⊆ F ∧ C ⊆ G ∧ f ∈ A → B ∧ g ∈ A → C ⇒ (&#10;&#9;fproj2(bind(f,g)) = g&#10;)"/>
+    <org.eventb.theory.core.theorem name="element6" org.eventb.core.label="bind_proj" org.eventb.core.predicate="∀ A,B,C,f · A ⊆ E ∧ B ⊆ F ∧ C ⊆ G ∧ f ∈ A → B×C ⇒ (&#10;&#9;bind(fproj1(f),fproj2(f)) = f&#10;)"/>
+    <org.eventb.theory.core.theorem name="element7" org.eventb.core.label="proj_cue" org.eventb.core.predicate="∀ A,B,C,f,k · A ⊆ E ∧ B ⊆ F ∧ C ⊆ G ∧ f ∈ A → B×C ∧ k ∈ ℕ ⇒ (&#10;&#9;f ∈ Cn(k,A,B×C) ⇔ (fproj1(f) ∈ Cn(k,A,B) ∧ fproj2(f) ∈ Cn(k,A,C))&#10;)"/>
+    <org.eventb.theory.core.theorem name="element:" org.eventb.core.label="unpartialized1_cue" org.eventb.core.predicate="∀ A,B,C,f,k · A ⊆ E ∧ B ⊆ F ∧ C ⊆ G ∧ f ∈ B → C ∧ k ∈ ℕ ∧ f ∈ Cn(k,B,C) ⇒&#10;&#9;(unpartialize1(A,f) ∈ Cn(k,A×B,C))"/>
+    <org.eventb.theory.core.theorem name="element8" org.eventb.core.label="unpartialized2_cue" org.eventb.core.predicate="∀ A,B,C,f,k · A ⊆ E ∧ B ⊆ F ∧ C ⊆ G ∧ f ∈ A → C ∧ k ∈ ℕ ∧ f ∈ Cn(k,A,C) ⇒&#10;&#9;(unpartialize2(B,f) ∈ Cn(k,A×B,C))"/>
+    <org.eventb.theory.core.theorem name="element;" org.eventb.core.label="unpartialize2_partial1" org.eventb.core.predicate="∀ A,B,C,f · A ⊆ E ∧ B ⊆ F ∧ C ⊆ G ∧ f ∈ A → C&#10;&#9;⇒&#10;&#9;&#9;(∀ y · y ∈ B ⇒ partial1(unpartialize2(B,f),y) = f)"/>
+    <org.eventb.theory.core.theorem name="element9" org.eventb.core.label="unpartialize1_partial2" org.eventb.core.predicate="∀ A,B,C,f · A ⊆ E ∧ B ⊆ F ∧ C ⊆ G ∧ f ∈ B → C&#10;&#9;⇒&#10;&#9;&#9;(∀ x · x ∈ A ⇒ partial2(unpartialize1(A,f),x) = f)"/>
+    <org.eventb.theory.core.theorem name="element11" org.eventb.core.label="MeanValue" org.eventb.core.predicate="∀ a,b,f,M ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ∧&#10;&#9;f ∈ RReal ⇸ RReal ∧ Closed2Closed(a,b) ⊆ dom(f) ∧ f ∈ D1(Closed2Closed(a,b),RReal) ∧&#10;&#9;M ∈ RReal ∧ (∀ x · x ∈ Closed2Closed(a,b) ⇒ (abs(Der(Closed2Closed(a,b),RReal,f)(x)) ↦ M ∈ leq)) ⇒&#10;&#9;&#9;(abs(divide(minus(f(b) ↦ f(a)) ↦ minus(b ↦ a))) ↦ M ∈ leq)"/>
+    <org.eventb.theory.core.theorem name="element14" org.eventb.core.label="functionConcat" org.eventb.core.predicate="∀ A, B, f, g ·&#10;&#9;A ⊆ E ∧ B ⊆ E ∧ f ∈ A → F ∧ g ∈ B → F ∧&#10;&#9;(∀ x · x ∈ (A ∩ B) ⇒ f(x) = g(x)) ⇒&#10;&#9;&#9;(f ∪ g) ∈ (A ∪ B) → F"/>
+    <org.eventb.theory.core.theorem name="element42" org.eventb.core.label="functionConcatTyping" org.eventb.core.predicate="∀ f, g ·&#10;&#9;f ∈ E ⇸ F ∧ g ∈ E ⇸ F ∧&#10;&#9;(∀ x · x ∈ (dom(f) ∩ dom(g)) ⇒ f(x) = g(x)) ⇒&#10;&#9;&#9;(f ∪ g) ∈ (dom(f) ∪ dom(g)) → F"/>
+    <org.eventb.theory.core.theorem name="element15" org.eventb.core.label="restrictionTyping" org.eventb.core.predicate="∀ A,B,f · A ⊆ E ∧ B ⊆ A ∧ f ∈ A → F ⇒ ((B ◁ f) ∈ B → F)"/>
+    <org.eventb.theory.core.theorem name="element43" org.eventb.core.label="restrictionDomain" org.eventb.core.predicate="∀ f,A · f ∈ E ⇸ F ∧ A ⊆ E ⇒ dom(A ◁ f) = A"/>
+    <org.eventb.theory.core.theorem name="element16" org.eventb.core.label="partialFunction" org.eventb.core.predicate="∀ A,B,f1,f2 ·&#10;&#9;A ⊆ E ∧ B ⊆ E ∧ A ∩ B = ∅ ∧&#10;&#9;f1 ∈ A → F ∧ f2 ∈ B → F ⇒ (&#10;&#9;&#9;(A ◁ (f1 ∪ f2)) = f1 ∧&#10;&#9;&#9;(B ◁ (f1 ∪ f2)) = f2&#10;&#9;)"/>
+    <org.eventb.theory.core.theorem name="element36" org.eventb.core.label="strictlyPositiveWeakening" org.eventb.core.predicate="∀ A,f ·&#10;&#9;A ⊆ RReal ∧ f ∈ RReal ⇸ RReal ∧ A ⊆ dom(f) ∧&#10;&#9;strictlyPositive(A,f) ⇒&#10;&#9;&#9;positive(A,f)"/>
+    <org.eventb.theory.core.theorem name="element35" org.eventb.core.label="strictlyNegativeWeakening" org.eventb.core.predicate="∀ A,f ·&#10;&#9;A ⊆ RReal ∧ f ∈ RReal ⇸ RReal ∧ A ⊆ dom(f) ∧&#10;&#9;strictlyNegative(A,f) ⇒&#10;&#9;&#9;negative(A,f)"/>
+    <org.eventb.theory.core.proofRulesBlock name="element18" org.eventb.core.label="typing">
+        <org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="A" org.eventb.theory.core.type="ℙ(E)"/>
+        <org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="B" org.eventb.theory.core.type="ℙ(F)"/>
+        <org.eventb.theory.core.metaVariable name=")" org.eventb.core.identifier="C" org.eventb.theory.core.type="ℙ(G)"/>
+        <org.eventb.theory.core.metaVariable name="*" org.eventb.core.identifier="fab" org.eventb.theory.core.type="ℙ(E×F)"/>
+        <org.eventb.theory.core.metaVariable name="+" org.eventb.core.identifier="gac" org.eventb.theory.core.type="ℙ(E×G)"/>
+        <org.eventb.theory.core.metaVariable name="," org.eventb.core.identifier="fa_bc" org.eventb.theory.core.type="ℙ(E×(F×G))"/>
+        <org.eventb.theory.core.metaVariable name="-" org.eventb.core.identifier="fab_c" org.eventb.theory.core.type="ℙ(E×F×G)"/>
+        <org.eventb.theory.core.metaVariable name="." org.eventb.core.identifier="x" org.eventb.theory.core.type="E"/>
+        <org.eventb.theory.core.metaVariable name="/" org.eventb.core.identifier="y" org.eventb.theory.core.type="F"/>
+        <org.eventb.theory.core.inferenceRule name="0" org.eventb.core.label="bindType" org.eventb.theory.core.applicability="both" org.eventb.theory.core.desc="Type (bind)">
+            <org.eventb.theory.core.given name="'" org.eventb.core.predicate="fab ∈ A → B" org.eventb.theory.core.hyp="true"/>
+            <org.eventb.theory.core.given name="(" org.eventb.core.predicate="gac ∈ A → C" org.eventb.theory.core.hyp="true"/>
+            <org.eventb.theory.core.infer name=")" org.eventb.core.predicate="bind(fab,gac) ∈ A→B×C"/>
+        </org.eventb.theory.core.inferenceRule>
+        <org.eventb.theory.core.inferenceRule name="1" org.eventb.core.label="proj1Type" org.eventb.theory.core.applicability="both" org.eventb.theory.core.desc="Type (proj1)">
+            <org.eventb.theory.core.given name="'" org.eventb.core.predicate="fa_bc ∈ A → B×C" org.eventb.theory.core.hyp="true"/>
+            <org.eventb.theory.core.infer name="(" org.eventb.core.predicate="fproj1(fa_bc) ∈ A → B"/>
+        </org.eventb.theory.core.inferenceRule>
+        <org.eventb.theory.core.inferenceRule name="2" org.eventb.core.label="proj2Type" org.eventb.theory.core.applicability="both" org.eventb.theory.core.desc="Type (proj2)">
+            <org.eventb.theory.core.given name="'" org.eventb.core.predicate="fa_bc ∈ A → B×C" org.eventb.theory.core.hyp="true"/>
+            <org.eventb.theory.core.infer name="(" org.eventb.core.predicate="fproj2(fa_bc) ∈ A → C"/>
+        </org.eventb.theory.core.inferenceRule>
+        <org.eventb.theory.core.inferenceRule name="3" org.eventb.core.label="partial1Type" org.eventb.theory.core.applicability="both" org.eventb.theory.core.desc="Type (partial1)">
+            <org.eventb.theory.core.given name="'" org.eventb.core.predicate="fab_c ∈ A×B → C" org.eventb.theory.core.hyp="true"/>
+            <org.eventb.theory.core.infer name="(" org.eventb.core.predicate="partial1(fab_c,y) ∈ A → C"/>
+            <org.eventb.theory.core.given name=")" org.eventb.core.predicate="y ∈ B" org.eventb.theory.core.hyp="true"/>
+        </org.eventb.theory.core.inferenceRule>
+        <org.eventb.theory.core.inferenceRule name="element1" org.eventb.core.label="partial2Type" org.eventb.theory.core.applicability="both" org.eventb.theory.core.desc="Type (partial2)">
+            <org.eventb.theory.core.given name="'" org.eventb.core.predicate="fab_c ∈ A×B → C" org.eventb.theory.core.hyp="true"/>
+            <org.eventb.theory.core.infer name="(" org.eventb.core.predicate="partial2(fab_c,x) ∈ B → C"/>
+            <org.eventb.theory.core.given name=")" org.eventb.core.predicate="x ∈ A" org.eventb.theory.core.hyp="true"/>
+        </org.eventb.theory.core.inferenceRule>
+        <org.eventb.theory.core.metaVariable name="element3" org.eventb.core.identifier="A2" org.eventb.theory.core.type="ℙ(E)"/>
+        <org.eventb.theory.core.inferenceRule name="element4" org.eventb.core.label="domainRestrictionType" org.eventb.theory.core.applicability="both" org.eventb.theory.core.desc="Type (&lt;|)">
+            <org.eventb.theory.core.given name="'" org.eventb.core.predicate="A2 ⊆ A" org.eventb.theory.core.hyp="true"/>
+            <org.eventb.theory.core.given name="(" org.eventb.core.predicate="fab ∈ A → B" org.eventb.theory.core.hyp="true"/>
+            <org.eventb.theory.core.infer name=")" org.eventb.core.predicate="(A2 ◁ fab) ∈ A2 → B"/>
+        </org.eventb.theory.core.inferenceRule>
+        <org.eventb.theory.core.rewriteRule name="element5" org.eventb.core.label="domainRestrictionInvolutive" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(&lt;|) Involutive" org.eventb.theory.core.formula="A ◁ (A ◁ fab)">
+            <org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="A ◁ fab"/>
+        </org.eventb.theory.core.rewriteRule>
+        <org.eventb.theory.core.rewriteRule name="element6" org.eventb.core.label="domainRestrictionComplete" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="(&lt;|) on complete functions" org.eventb.theory.core.formula="A ◁ fab">
+            <org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="dom(fab) = A" org.eventb.theory.core.formula="fab"/>
+        </org.eventb.theory.core.rewriteRule>
+        <org.eventb.theory.core.rewriteRule name="element7" org.eventb.core.label="basicDomainRestrictionTyping" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Basic Type (&lt;|)" org.eventb.theory.core.formula="(A ◁ fab) ∈ E ⇸ F">
+            <org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="fab ∈ E ⇸ F"/>
+        </org.eventb.theory.core.rewriteRule>
+        <org.eventb.theory.core.rewriteRule name="element8" org.eventb.core.label="basicBindTyping" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Basic Type (bind)" org.eventb.theory.core.formula="bind(fab,gac) ∈ E ⇸ F×G">
+            <org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="fab ∈ E ⇸ F ∧ gac ∈ E ⇸ G"/>
+        </org.eventb.theory.core.rewriteRule>
+        <org.eventb.theory.core.rewriteRule name="element9" org.eventb.core.label="bindDomain" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="bind domain" org.eventb.theory.core.formula="dom(bind(fab,gac))">
+            <org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="dom(fab)"/>
+        </org.eventb.theory.core.rewriteRule>
+        <org.eventb.theory.core.rewriteRule name="element:" org.eventb.core.label="fcsteTyping" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Type (fcste)" org.eventb.theory.core.formula="fcste(A,y) ∈ A → F">
+            <org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="⊤"/>
+        </org.eventb.theory.core.rewriteRule>
+    </org.eventb.theory.core.proofRulesBlock>
+    <org.eventb.theory.core.newOperatorDefinition name="element19" org.eventb.core.label="increasing" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(RReal)" org.eventb.core.identifier="AR"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="AR → RReal" org.eventb.core.identifier="f"/>
+        <org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="∀ x, y · x ∈ AR ∧ y ∈ AR ⇒ (&#10;&#9;(x ↦ y ∈ leq) ⇔ (f(x) ↦ f(y) ∈ leq)&#10;)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="element20" org.eventb.core.label="strictlyIncreasing" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(RReal)" org.eventb.core.identifier="AR"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="AR → RReal" org.eventb.core.identifier="f"/>
+        <org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="∀ x, y · x ∈ AR ∧ y ∈ AR ⇒ (&#10;&#9;(x ↦ y ∈ lt) ⇔ (f(x) ↦ f(y) ∈ lt)&#10;)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="element21" org.eventb.core.label="decreasing" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(RReal)" org.eventb.core.identifier="AR"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="AR → RReal" org.eventb.core.identifier="f"/>
+        <org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="∀ x, y · x ∈ AR ∧ y ∈ AR ⇒ (&#10;&#9;(x ↦ y ∈ leq) ⇔ (f(x) ↦ f(y) ∈ geq)&#10;)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="element22" org.eventb.core.label="strictlyDecreasing" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(RReal)" org.eventb.core.identifier="AR"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="AR → RReal" org.eventb.core.identifier="f"/>
+        <org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="∀ x, y · x ∈ AR ∧ y ∈ AR ⇒ (&#10;&#9;(x ↦ y ∈ lt) ⇔ (f(x) ↦ f(y) ∈ gt)&#10;)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="element23" org.eventb.core.label="constant" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(E)" org.eventb.core.identifier="A"/>
+        <org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="∀ x · x ∈ A ⇒ (∀ y · y ∈ A ⇒ fa(x) = fa(y))"/>
+        <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="A → F" org.eventb.core.identifier="fa"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.theorem name="element24" org.eventb.core.label="positiveDer2Increasing" org.eventb.core.predicate="∀ A,f ·&#10;&#9;A ⊆ RReal ∧&#10;&#9;f ∈ A → RReal ∧ f ∈ D1(A,RReal) ⇒ (&#10;&#9;&#9;positive(A,Der(A,RReal,f))&#10;&#9;&#9;⇔&#10;&#9;&#9;&#9;increasing(A,f)&#10;&#9;)"/>
+    <org.eventb.theory.core.theorem name="element27" org.eventb.core.label="strictlyPositiveDer2StrictlyIncreasing" org.eventb.core.predicate="∀ A,f ·&#10;&#9;A ⊆ RReal ∧&#10;&#9;f ∈ RReal ⇸ RReal ∧ A ⊆ dom(f) ∧ f ∈ D1(A,RReal) ⇒ (&#10;&#9;&#9;strictlyPositive(A,Der(A,RReal,f))&#10;&#9;&#9;⇔&#10;&#9;&#9;&#9;strictlyIncreasing(A,f)&#10;&#9;)"/>
+    <org.eventb.theory.core.theorem name="element26" org.eventb.core.label="negativeDer2Decreasing" org.eventb.core.predicate="∀ A,f ·&#10;&#9;A ⊆ RReal ∧&#10;&#9;f ∈ A → RReal ∧ f ∈ D1(A,RReal) ⇒ (&#10;&#9;&#9;negative(A,Der(A,RReal,f))&#10;&#9;&#9;⇔&#10;&#9;&#9;&#9;decreasing(A,f)&#10;&#9;)"/>
+    <org.eventb.theory.core.theorem name="element25" org.eventb.core.label="strictlyNegativeDer2StrictlyDecreasing" org.eventb.core.predicate="∀ A,f ·&#10;&#9;A ⊆ RReal ∧&#10;&#9;f ∈ RReal ⇸ RReal ∧ A ⊆ dom(f) ∧ f ∈ D1(A,RReal) ⇒ (&#10;&#9;&#9;strictlyNegative(A,Der(A,RReal,f))&#10;&#9;&#9;⇔&#10;&#9;&#9;&#9;strictlyDecreasing(A,f)&#10;&#9;)"/>
+    <org.eventb.theory.core.theorem name="element28" org.eventb.core.label="zeroDer2Constant" org.eventb.core.predicate="∀ A,f ·&#10;&#9;A ⊆ RReal ∧&#10;&#9;f ∈ RReal ⇸ RReal ∧ A ⊆ dom(f) ∧ f ∈ D1(A,RReal) ⇒ (&#10;&#9;&#9;(∀ x · x ∈ A ⇒ Der(A,RReal,f)(x) = Rzero)&#10;&#9;&#9;⇔&#10;&#9;&#9;&#9;constant(A,f)&#10;&#9;)"/>
+    <org.eventb.theory.core.theorem name="element38" org.eventb.core.label="meanValue_geq" org.eventb.core.predicate="∀ a,b,m,f ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ∧ m ∈ RReal ∧&#10;&#9;f ∈ RReal ⇸ RReal ∧ Closed2Closed(a,b) ⊆ dom(f) ∧ f ∈ D1(Closed2Closed(a,b),RReal) ∧&#10;&#9;f(a) ↦ m ∈ geq ∧ positive(Closed2Closed(a,b),Der(Closed2Closed(a,b),RReal,f)) ⇒&#10;&#9;&#9;(∀ t · t ∈ Closed2Closed(a,b) ⇒ f(t) ↦ m ∈ geq)"/>
+    <org.eventb.theory.core.theorem name="element39" org.eventb.core.label="meanValue_geq_strict" org.eventb.core.predicate="∀ a,b,m,f ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ∧ m ∈ RReal ∧&#10;&#9;f ∈ RReal ⇸ RReal ∧ Closed2Closed(a,b) ⊆ dom(f) ∧ f ∈ D1(Closed2Closed(a,b),RReal) ∧&#10;&#9;f(a) ↦ m ∈ geq ∧ strictlyPositive(Closed2Closed(a,b),Der(Closed2Closed(a,b),RReal,f)) ⇒&#10;&#9;&#9;(∀ t · t ∈ Open2Closed(a,b) ⇒ f(t) ↦ m ∈ gt)"/>
+    <org.eventb.theory.core.theorem name="element40" org.eventb.core.label="meanValue_leq" org.eventb.core.predicate="∀ a,b,m,f ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ∧ m ∈ RReal ∧&#10;&#9;f ∈ RReal ⇸ RReal ∧ Closed2Closed(a,b) ⊆ dom(f) ∧ f ∈ D1(Closed2Closed(a,b),RReal) ∧&#10;&#9;f(a) ↦ m ∈ leq ∧ negative(Closed2Closed(a,b),Der(Closed2Closed(a,b),RReal,f)) ⇒&#10;&#9;&#9;(∀ t · t ∈ Closed2Closed(a,b) ⇒ f(t) ↦ m ∈ leq)"/>
+    <org.eventb.theory.core.theorem name="element41" org.eventb.core.label="meanValue_leq_strict" org.eventb.core.predicate="∀ a,b,m,f ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ∧ m ∈ RReal ∧&#10;&#9;f ∈ RReal ⇸ RReal ∧ Closed2Closed(a,b) ⊆ dom(f) ∧ f ∈ D1(Closed2Closed(a,b),RReal) ∧&#10;&#9;f(a) ↦ m ∈ leq ∧ strictlyNegative(Closed2Closed(a,b),Der(Closed2Closed(a,b),RReal,f)) ⇒&#10;&#9;&#9;(∀ t · t ∈ Open2Closed(a,b) ⇒ f(t) ↦ m ∈ lt)"/>
+    <org.eventb.theory.core.newOperatorDefinition name="element29" org.eventb.core.label="positive" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(E)" org.eventb.core.identifier="A"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="A → RReal" org.eventb.core.identifier="far"/>
+        <org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="∀ x · x ∈ A ⇒ Rzero ↦ far(x) ∈ leq"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="element30" org.eventb.core.label="strictlyPositive" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(E)" org.eventb.core.identifier="A"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="A → RReal" org.eventb.core.identifier="far"/>
+        <org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="∀ x · x ∈ A ⇒ Rzero ↦ far(x) ∈ lt"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="element31" org.eventb.core.label="negative" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(E)" org.eventb.core.identifier="A"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="A → RReal" org.eventb.core.identifier="far"/>
+        <org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="∀ x · x ∈ A ⇒ Rzero ↦ far(x) ∈ geq"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="element32" org.eventb.core.label="strictlyNegative" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(E)" org.eventb.core.identifier="A"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="A → RReal" org.eventb.core.identifier="far"/>
+        <org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="∀ x · x ∈ A ⇒ Rzero ↦ far(x) ∈ gt"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.proofRulesBlock name="element33" org.eventb.core.label="binding">
+        <org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="A" org.eventb.theory.core.type="ℙ(E)"/>
+        <org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="B" org.eventb.theory.core.type="ℙ(F)"/>
+        <org.eventb.theory.core.metaVariable name=")" org.eventb.core.identifier="C" org.eventb.theory.core.type="ℙ(G)"/>
+        <org.eventb.theory.core.metaVariable name="*" org.eventb.core.identifier="AR" org.eventb.theory.core.type="ℙ(RReal)"/>
+        <org.eventb.theory.core.metaVariable name="+" org.eventb.core.identifier="fab" org.eventb.theory.core.type="ℙ(E×F)"/>
+        <org.eventb.theory.core.metaVariable name="element2" org.eventb.core.identifier="gac" org.eventb.theory.core.type="ℙ(E×G)"/>
+        <org.eventb.theory.core.metaVariable name="element1" org.eventb.core.identifier="fab2" org.eventb.theory.core.type="ℙ(E×F)"/>
+        <org.eventb.theory.core.metaVariable name="," org.eventb.core.identifier="gac2" org.eventb.theory.core.type="ℙ(E×G)"/>
+        <org.eventb.theory.core.metaVariable name="-" org.eventb.core.identifier="fa_bc" org.eventb.theory.core.type="ℙ(E×(F×G))"/>
+        <org.eventb.theory.core.metaVariable name="." org.eventb.core.identifier="farb" org.eventb.theory.core.type="ℙ(RReal×F)"/>
+        <org.eventb.theory.core.metaVariable name="/" org.eventb.core.identifier="garc" org.eventb.theory.core.type="ℙ(RReal×G)"/>
+        <org.eventb.theory.core.metaVariable name="0" org.eventb.core.identifier="far_bc" org.eventb.theory.core.type="ℙ(RReal×(F×G))"/>
+        <org.eventb.theory.core.rewriteRule name="1" org.eventb.core.label="bindProjRew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="bind/proj" org.eventb.theory.core.formula="bind(fproj1(fa_bc),fproj2(fa_bc))">
+            <org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="fa_bc"/>
+        </org.eventb.theory.core.rewriteRule>
+        <org.eventb.theory.core.rewriteRule name="2" org.eventb.core.label="bindDerRew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="bind/Der" org.eventb.theory.core.formula="Der(AR,B×C,bind(farb,garc))">
+            <org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="bind(Der(AR,B,farb),Der(AR,C,garc))"/>
+        </org.eventb.theory.core.rewriteRule>
+        <org.eventb.theory.core.rewriteRule name="3" org.eventb.core.label="bindEquality" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="bind/=" org.eventb.theory.core.formula="bind(fab,gac)=bind(fab2,gac2)">
+            <org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="fab = fab2 ∧ gac = gac2"/>
+        </org.eventb.theory.core.rewriteRule>
+        <org.eventb.theory.core.rewriteRule name="element3" org.eventb.core.label="bindC0Rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="bind/C0" org.eventb.theory.core.formula="bind(fab,gac) ∈ C0(A,B×C)">
+            <org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="fab ∈ C0(A,B) ∧ gac ∈ C0(A,C)"/>
+        </org.eventb.theory.core.rewriteRule>
+        <org.eventb.theory.core.rewriteRule name="element5" org.eventb.core.label="bindD1Rew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="bind/D1" org.eventb.theory.core.formula="bind(farb,garc) ∈ D1(AR,B×C)">
+            <org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="farb ∈ D1(AR,B) ∧ garc ∈ D1(AR,C)"/>
+        </org.eventb.theory.core.rewriteRule>
+        <org.eventb.theory.core.rewriteRule name="element6" org.eventb.core.label="bindCnRew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="bind/Cn" org.eventb.theory.core.formula="bind(farb,garc) ∈ Cn(n,AR,B×C)">
+            <org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="n ≥ 0" org.eventb.theory.core.formula="farb ∈ Cn(n,AR,B) ∧ garc ∈ Cn(n,AR,C)"/>
+        </org.eventb.theory.core.rewriteRule>
+        <org.eventb.theory.core.rewriteRule name="element7" org.eventb.core.label="bindDnRew" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="bind/Dn" org.eventb.theory.core.formula="bind(farb,garc) ∈ Dn(n,AR,B×C)">
+            <org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="n &gt; 0" org.eventb.theory.core.formula="farb ∈ Dn(n,AR,B) ∧ garc ∈ Dn(n,AR,C)"/>
+        </org.eventb.theory.core.rewriteRule>
+        <org.eventb.theory.core.metaVariable name="element5" org.eventb.core.identifier="n" org.eventb.theory.core.type="ℤ "/>
+        <org.eventb.theory.core.rewriteRule name="element8" org.eventb.core.label="bindRestrict" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="bind/(&lt;|)" org.eventb.theory.core.formula="A ◁ bind(fab,gac)">
+            <org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="bind(A ◁ fab, A ◁ gac)"/>
+        </org.eventb.theory.core.rewriteRule>
+    </org.eventb.theory.core.proofRulesBlock>
+    <org.eventb.theory.core.theorem name="element34" org.eventb.core.label="meanValue_positivity" org.eventb.core.predicate="∀ a,b,f ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ∧&#10;&#9;f ∈ RReal ⇸ RReal ∧ Closed2Closed(a,b) ⊆ dom(f) ∧ f ∈ D1(Closed2Closed(a,b),RReal) ∧&#10;&#9;f(a) ↦ Rzero ∈ geq ∧ positive(Closed2Closed(a,b),Der(Closed2Closed(a,b),RReal,f)) ⇒&#10;&#9;&#9;positive(Closed2Closed(a,b),f)"/>
+    <org.eventb.theory.core.theorem name="element37" org.eventb.core.label="meanValue_negativity" org.eventb.core.predicate="∀ a,b,f ·&#10;&#9;a ∈ RReal ∧ b ∈ RReal ∧ a ↦ b ∈ lt ∧&#10;&#9;f ∈ RReal ⇸ RReal ∧ Closed2Closed(a,b) ⊆ dom(f) ∧ f ∈ D1(Closed2Closed(a,b),RReal) ∧&#10;&#9;f(a) ↦ Rzero ∈ leq ∧ negative(Closed2Closed(a,b),Der(Closed2Closed(a,b),RReal,f)) ⇒&#10;&#9;&#9;negative(Closed2Closed(a,b),f)"/>
+    <org.eventb.theory.core.typeParameter name="element45" org.eventb.core.identifier="H"/>
+    <org.eventb.theory.core.typeParameter name="element46" org.eventb.core.identifier="I"/>
+    <org.eventb.theory.core.theorem name="element48" org.eventb.core.label="bind_bind_partialComp" org.eventb.core.predicate="∀ f1,f2,x1,x2,Af,Bf,Cf,Ax,Bx,Cx ·&#10;&#9;Af ⊆ E ∧ Bf ⊆ F ∧ Cf ⊆ G ∧&#10;&#9;Ax ⊆ Af ∧ Bx ⊆ Bf ∧ Cx ⊆ Cf ∧&#10;&#9;f1 ∈ Af×(Bf×Cf) → Bf ∧ f2 ∈ Af×(Bf×Cf) → Cf ∧&#10;&#9;x1 ∈ Ax → Bx ∧ x2 ∈ Ax → Cx ⇒&#10;&#9;&#9;partialComp(&#10;&#9;&#9;&#9;bind(f1,f2),&#10;&#9;&#9;&#9;bind(x1,x2)&#10;&#9;&#9;) = bind(&#10;&#9;&#9;&#9;partialComp(f1,bind(x1,x2)),&#10;&#9;&#9;&#9;partialComp(f2,bind(x1,x2))&#10;&#9;&#9;)"/>
+    <org.eventb.theory.core.proofRulesBlock name="element49" org.eventb.core.label="continuity">
+        <org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="A" org.eventb.theory.core.type="ℙ(E)"/>
+        <org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="B" org.eventb.theory.core.type="ℙ(F)"/>
+        <org.eventb.theory.core.metaVariable name=")" org.eventb.core.identifier="AR" org.eventb.theory.core.type="ℙ(RReal)"/>
+        <org.eventb.theory.core.metaVariable name="*" org.eventb.core.identifier="n" org.eventb.theory.core.type="ℤ "/>
+        <org.eventb.theory.core.rewriteRule name="+" org.eventb.core.label="C0_to_Cn0" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="C0 rewrite" org.eventb.theory.core.formula="C0(A,B)">
+            <org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Cn(0,A,B)"/>
+        </org.eventb.theory.core.rewriteRule>
+        <org.eventb.theory.core.rewriteRule name="," org.eventb.core.label="D1_toDn1" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="D1 rewrite" org.eventb.theory.core.formula="D1(AR,B)">
+            <org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="Dn(1,AR,B)"/>
+        </org.eventb.theory.core.rewriteRule>
+        <org.eventb.theory.core.rewriteRule name="-" org.eventb.core.label="Cn0_to_C0" org.eventb.theory.core.applicability="both" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Cn(0) rewrite" org.eventb.theory.core.formula="Cn(0,A,B)">
+            <org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="C0(A,B)"/>
+        </org.eventb.theory.core.rewriteRule>
+        <org.eventb.theory.core.rewriteRule name="." org.eventb.core.label="Dn1_to_D1" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Dn(1) rewrite" org.eventb.theory.core.formula="Dn(1,AR,B)">
+            <org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="D1(AR,B)"/>
+        </org.eventb.theory.core.rewriteRule>
+    </org.eventb.theory.core.proofRulesBlock>
+    <org.eventb.theory.core.proofRulesBlock name="element4:" org.eventb.core.label="misc">
+        <org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="f" org.eventb.theory.core.type="ℙ(E×F)"/>
+        <org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="g" org.eventb.theory.core.type="ℙ(E×F)"/>
+        <org.eventb.theory.core.rewriteRule name=")" org.eventb.core.label="fun_equality" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Function (=)" org.eventb.theory.core.formula="f = g">
+            <org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="dom(f) = dom(g) ∧ (∀x · x ∈ dom(f) ⇒ f(x) = g(x))"/>
+        </org.eventb.theory.core.rewriteRule>
+    </org.eventb.theory.core.proofRulesBlock>
+    <org.eventb.theory.core.newOperatorDefinition name="element4;" org.eventb.core.label="application" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.directOperatorDefinition name="'" org.eventb.theory.core.formula="(λ f_ ↦ e_ · f_ ∈ E ⇸ F ∧ e_ ∈ dom(f_) ∣ f_(e_))"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="element4=" org.eventb.core.label="until" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="RReal" org.eventb.core.identifier="start"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="RReal ⇸ E" org.eventb.core.identifier="fre"/>
+        <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="RReal" org.eventb.core.identifier="t0"/>
+        <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="RReal ⇸ E" org.eventb.core.identifier="gre"/>
+        <org.eventb.theory.core.operatorWDcondition name="+" org.eventb.core.predicate="start ↦ t0 ∈ leq"/>
+        <org.eventb.theory.core.operatorWDcondition name="," org.eventb.core.predicate="Closed2Open(start,t0) ⊆ dom(fre)"/>
+        <org.eventb.theory.core.operatorWDcondition name="-" org.eventb.core.predicate="Closed2Infinity(t0) ⊆ dom(gre)"/>
+        <org.eventb.theory.core.directOperatorDefinition name="." org.eventb.theory.core.formula="(Closed2Open(start,t0) ◁ fre) ∪ (Closed2Infinity(t0) ◁ gre)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="element34" org.eventb.core.label="untilF" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="RReal" org.eventb.core.identifier="start"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="RReal×E ⇸ F" org.eventb.core.identifier="fref"/>
+        <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="RReal" org.eventb.core.identifier="t0"/>
+        <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="RReal×E ⇸ F" org.eventb.core.identifier="gref"/>
+        <org.eventb.theory.core.operatorWDcondition name="+" org.eventb.core.predicate="start ↦ t0 ∈ leq"/>
+        <org.eventb.theory.core.operatorWDcondition name="," org.eventb.core.predicate="Closed2Open(start,t0)×∅ ⊆ dom(fref)"/>
+        <org.eventb.theory.core.operatorWDcondition name="-" org.eventb.core.predicate="Closed2Infinity(t0)×∅ ⊆ dom(gref)"/>
+        <org.eventb.theory.core.directOperatorDefinition name="." org.eventb.theory.core.formula="((Closed2Open(start,t0)×E) ◁ fref) ∪ ((Closed2Infinity(t0)×E) ◁ gref)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.theorem name="element4&gt;" org.eventb.core.label="until_type" org.eventb.core.predicate="∀ s,t0,f,g ·&#10;&#9;s ∈ RReal ∧ t0 ∈ RReal ∧ s ↦ t0 ∈ leq ∧&#10;&#9;f ∈ RReal ⇸ E ∧ g ∈ RReal ⇸ E ∧&#10;&#9;Closed2Open(s,t0) ⊆ dom(f) ∧ Closed2Infinity(t0) ⊆ dom(g) ⇒&#10;&#9;&#9;until(s,f,t0,g) ∈ Closed2Infinity(s) → E"/>
+    <org.eventb.theory.core.theorem name="element4?" org.eventb.core.label="until_restrict1" org.eventb.core.predicate="∀ s,t0,f,g ·&#10;&#9;s ∈ RReal ∧ t0 ∈ RReal ∧ s ↦ t0 ∈ leq ∧&#10;&#9;f ∈ RReal ⇸ E ∧ g ∈ RReal ⇸ E ∧&#10;&#9;Closed2Open(s,t0) ⊆ dom(f) ∧ Closed2Infinity(t0) ⊆ dom(g) ⇒&#10;&#9;&#9;(Closed2Open(s,t0) ◁ until(s,f,t0,g)) = f"/>
+    <org.eventb.theory.core.theorem name="element4@" org.eventb.core.label="until_restrict2" org.eventb.core.predicate="∀ s,t0,f,g ·&#10;&#9;s ∈ RReal ∧ t0 ∈ RReal ∧ s ↦ t0 ∈ leq ∧&#10;&#9;f ∈ RReal ⇸ E ∧ g ∈ RReal ⇸ E ∧&#10;&#9;Closed2Open(s,t0) ⊆ dom(f) ∧ Closed2Infinity(t0) ⊆ dom(g) ⇒&#10;&#9;&#9;(Closed2Infinity(t0) ◁ until(s,f,t0,g)) = g"/>
+    <org.eventb.theory.core.newOperatorDefinition name="element4A" org.eventb.core.label="fcste" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(E)" org.eventb.core.identifier="A"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="F" org.eventb.core.identifier="v"/>
+        <org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="(λ x · x∈ A ∣ v)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.theorem name="element4B" org.eventb.core.label="until_bind1" org.eventb.core.predicate="∀ s,t0,f1,f2,g ·&#10;&#9;s ∈ RReal ∧ t0 ∈ RReal ∧ s ↦ t0 ∈ leq ∧&#10;&#9;f1 ∈ RReal ⇸ E ∧ f2 ∈ RReal ⇸ E ∧ g ∈ RReal ⇸ F ∧&#10;&#9;Closed2Open(s,t0) ⊆ dom(f1) ∧ Closed2Infinity(t0) ⊆ dom(f2) ⇒ (&#10;&#9;&#9;bind(until(s,f1,t0,f2),g) = until(s,bind(f1,g),t0,bind(f2,g))&#10;&#9;)"/>
+    <org.eventb.theory.core.theorem name="element49" org.eventb.core.label="until_bind2" org.eventb.core.predicate="∀ s,t0,f,g1,g2 ·&#10;&#9;s ∈ RReal ∧ t0 ∈ RReal ∧ s ↦ t0 ∈ leq ∧&#10;&#9;f ∈ RReal ⇸ E ∧ g1 ∈ RReal ⇸ F ∧ g2 ∈ RReal ⇸ F ∧&#10;&#9;Closed2Open(s,t0) ⊆ dom(g1) ∧ Closed2Infinity(t0) ⊆ dom(g2) ⇒ (&#10;&#9;&#9;bind(f,until(s,g1,t0,g2)) = until(s,bind(f,g1),t0,bind(f,g2))&#10;&#9;)"/>
+    <org.eventb.theory.core.theorem name="element4C" org.eventb.core.label="untilF_type" org.eventb.core.predicate="∀ s,t0,f,g ·&#10;&#9;s ∈ RReal ∧ t0 ∈ RReal ∧ s ↦ t0 ∈ leq ∧&#10;&#9;f ∈ RReal×E ⇸ F ∧ g ∈ RReal×E ⇸ F ∧&#10;&#9;Closed2Open(s,t0)×∅ ⊆ dom(f) ∧ Closed2Infinity(t0)×∅ ⊆ dom(g) ⇒&#10;&#9;&#9;untilF(s,f,t0,g) ∈ RReal×E ⇸ F"/>
+    <org.eventb.theory.core.theorem name="element54" org.eventb.core.label="untilF_type_strong" org.eventb.core.predicate="∀ s,t0,f,g,A ·&#10;&#9;A ⊆ E ∧&#10;&#9;s ∈ RReal ∧ t0 ∈ RReal ∧ s ↦ t0 ∈ leq ∧&#10;&#9;f ∈ RReal×A → F ∧ g ∈ RReal×A → F ⇒&#10;&#9;&#9;untilF(s,f,t0,g) ∈ Closed2Infinity(s)×A → F"/>
+    <org.eventb.theory.core.theorem name="element50" org.eventb.core.label="untilF_bind1" org.eventb.core.predicate="∀ s,t0,f1,f2,g ·&#10;&#9;s ∈ RReal ∧ t0 ∈ RReal ∧ s ↦ t0 ∈ leq ∧&#10;&#9;f1 ∈ RReal×E ⇸ F ∧ f2 ∈ RReal×E ⇸ F ∧ g ∈ RReal×E ⇸ G ∧&#10;&#9;Closed2Open(s,t0)×∅ ⊆ dom(f1) ∧ Closed2Infinity(t0)×∅ ⊆ dom(f2) ⇒ (&#10;&#9;&#9;bind(untilF(s,f1,t0,f2),g) = untilF(s,bind(f1,g),t0,bind(f2,g))&#10;&#9;)"/>
+    <org.eventb.theory.core.theorem name="element51" org.eventb.core.label="untilF_bind2" org.eventb.core.predicate="∀ s,t0,f,g1,g2 ·&#10;&#9;s ∈ RReal ∧ t0 ∈ RReal ∧ s ↦ t0 ∈ leq ∧&#10;&#9;f ∈ RReal×E ⇸ F ∧ g1 ∈ RReal×E ⇸ G ∧ g2 ∈ RReal×E ⇸ G ∧&#10;&#9;Closed2Open(s,t0)×∅ ⊆ dom(g1) ∧ Closed2Infinity(t0)×∅ ⊆ dom(g2) ⇒ (&#10;&#9;&#9;bind(f,untilF(s,g1,t0,g2)) = untilF(s,bind(f,g1),t0,bind(f,g2))&#10;&#9;)"/>
+    <org.eventb.theory.core.theorem name="element52" org.eventb.core.label="fcste_cue" org.eventb.core.predicate="∀ A,l · A ⊆ E ∧ l ∈ F ⇒ (fcste(A,l) ∈ C0(A,F))"/>
+    <org.eventb.theory.core.theorem name="element53" org.eventb.core.label="fcste_type" org.eventb.core.predicate="∀ A,l · A ⊆ E ∧ l ∈ F ⇒ fcste(A,l) ∈ A → F"/>
+    <org.eventb.theory.core.newOperatorDefinition name="element55" org.eventb.core.label="boundedBy" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(E)" org.eventb.core.identifier="A"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="E ⇸ RReal" org.eventb.core.identifier="far"/>
+        <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="RReal" org.eventb.core.identifier="fmin"/>
+        <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="RReal" org.eventb.core.identifier="fmax"/>
+        <org.eventb.theory.core.directOperatorDefinition name="+" org.eventb.theory.core.formula="∀ x_ · x_ ∈ A ⇒ fmin ↦ far(x_) ∈ leq ∧ far(x_) ↦ fmax ∈ leq"/>
+        <org.eventb.theory.core.operatorWDcondition name="," org.eventb.core.predicate="A ⊆ dom(far)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+</org.eventb.theory.core.theoryRoot>

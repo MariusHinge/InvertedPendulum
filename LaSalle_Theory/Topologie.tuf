@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.configuration="org.eventb.theory.core.thy">
+    <org.eventb.theory.core.typeParameter name="(" org.eventb.core.comment="Metric Space" org.eventb.core.identifier="M"/>
+    <org.eventb.theory.core.newOperatorDefinition name=")" org.eventb.core.label="isOpen" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(M)" org.eventb.core.identifier="X"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="M×M→RReal" org.eventb.core.identifier="d"/>
+        <org.eventb.theory.core.operatorWDcondition name=")" org.eventb.core.predicate="isDistance(d)"/>
+        <org.eventb.theory.core.directOperatorDefinition name="*" org.eventb.theory.core.formula="∀ u0 · u0∈X ⇒&#10;(∃ h · h∈RRealPlusStar ⇒&#10;bouleOuverte(u0,h,d) ⊂ X)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="*" org.eventb.core.label="isClosed" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(M)" org.eventb.core.identifier="X"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="M×M→RReal" org.eventb.core.identifier="d"/>
+        <org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="isOpen(M∖X, d)"/>
+        <org.eventb.theory.core.operatorWDcondition name="*" org.eventb.core.predicate="isDistance(d)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.newOperatorDefinition name="," org.eventb.core.label="isBounded" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(M)" org.eventb.core.identifier="X"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="M×M→RReal" org.eventb.core.identifier="d"/>
+        <org.eventb.theory.core.operatorWDcondition name=")" org.eventb.core.predicate="isDistance(d)"/>
+        <org.eventb.theory.core.directOperatorDefinition name="*" org.eventb.theory.core.formula="∃ e,r · e∈M ∧ r∈RReal ⇒&#10;&#9;X ⊂ bouleFermee(e,r,d)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.importTheoryProject name="+" org.eventb.theory.core.importTheoryProject="/LaSalle_Theory">
+        <org.eventb.theory.core.importTheory name="'" org.eventb.theory.core.importTheory="/LaSalle_Theory/MetricSet.dtf|org.eventb.theory.core.deployedTheoryRoot#MetricSet"/>
+    </org.eventb.theory.core.importTheoryProject>
+    <org.eventb.theory.core.newOperatorDefinition name="-" org.eventb.core.label="isCompact" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(M)" org.eventb.core.identifier="X"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="M×M→RReal" org.eventb.core.identifier="d"/>
+        <org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.core.comment="Only true in the case of R^n" org.eventb.theory.core.formula="isClosed(X,d) ∧ isBounded(X,d)"/>
+        <org.eventb.theory.core.operatorWDcondition name="*" org.eventb.core.predicate="isDistance(d)"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+</org.eventb.theory.core.theoryRoot>

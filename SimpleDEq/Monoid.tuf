@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.comment="Defines a standard monoid" org.eventb.core.configuration="org.eventb.theory.core.thy">
+<org.eventb.theory.core.typeParameter name=")" org.eventb.core.comment="Set that serves as basis for the monoid" org.eventb.core.identifier="M"/>
+<org.eventb.theory.core.newOperatorDefinition name="," org.eventb.core.label="associative" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="(M × M) → M" org.eventb.core.identifier="op"/>
+<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="∀ x, y, z · x ∈ M ∧ y ∈ M ∧ z ∈ M ⇒ op(x ↦ op(y ↦ z)) = op(op(x ↦ y) ↦ z)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="-" org.eventb.core.label="neutral" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="∀ x · x ∈ M ⇒ (op(x ↦ e) = x ∧ op(e ↦ x) = x)"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="(M × M) → M" org.eventb.core.identifier="op"/>
+<org.eventb.theory.core.operatorArgument name="*" org.eventb.core.expression="M" org.eventb.core.identifier="e"/>
+<org.eventb.theory.core.operatorWDcondition name="+" org.eventb.core.predicate="M ≠ ∅"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="." org.eventb.core.label="Monoid" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="(M × M) → M" org.eventb.core.identifier="op"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="M" org.eventb.core.identifier="e"/>
+<org.eventb.theory.core.operatorWDcondition name=")" org.eventb.core.predicate="M ≠ ∅"/>
+<org.eventb.theory.core.directOperatorDefinition name="*" org.eventb.theory.core.formula="associative(op) ∧ neutral(op, e)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.theorem name="/" org.eventb.core.label="neutralUnicity" org.eventb.core.predicate="∀ op, e · op ∈ ((M × M) → M) ∧ e ∈ M ∧ Monoid(op, e) ⇒ (&#10;&#9;∀ x · x ∈ M ∧ neutral(op, x) ⇒ x = e&#10;)"/>
+</org.eventb.theory.core.theoryRoot>

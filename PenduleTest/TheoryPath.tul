@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryLanguageRoot org.eventb.core.configuration="org.eventb.theory.core.tul">
+    <org.eventb.theory.core.availableTheoryProject name="'" org.eventb.theory.core.availableTheoryProject="/LaSalle_Theory">
+        <org.eventb.theory.core.availableTheory name="(" org.eventb.theory.core.availableTheory="/LaSalle_Theory/Stability.dtf|org.eventb.theory.core.deployedTheoryRoot#Stability"/>
+        <org.eventb.theory.core.availableTheory name=")" org.eventb.theory.core.availableTheory="/LaSalle_Theory/LaSalleTheory.dtf|org.eventb.theory.core.deployedTheoryRoot#LaSalleTheory"/>
+    </org.eventb.theory.core.availableTheoryProject>
+    <org.eventb.theory.core.availableTheoryProject name="(" org.eventb.theory.core.availableTheoryProject="/PenduleTest">
+        <org.eventb.theory.core.availableTheory name="'" org.eventb.theory.core.availableTheory="/PenduleTest/R5_add.dtf|org.eventb.theory.core.deployedTheoryRoot#R5_add"/>
+        <org.eventb.theory.core.availableTheory name="(" org.eventb.theory.core.availableTheory="/PenduleTest/Functions_add.dtf|org.eventb.theory.core.deployedTheoryRoot#Functions_add"/>
+    </org.eventb.theory.core.availableTheoryProject>
+    <org.eventb.theory.core.availableTheoryProject name=")" org.eventb.theory.core.availableTheoryProject="/PenduleInv">
+        <org.eventb.theory.core.availableTheory name="'" org.eventb.theory.core.availableTheory="/PenduleInv/ExtendDeriv.dtf|org.eventb.theory.core.deployedTheoryRoot#ExtendDeriv"/>
+    </org.eventb.theory.core.availableTheoryProject>
+</org.eventb.theory.core.theoryLanguageRoot>

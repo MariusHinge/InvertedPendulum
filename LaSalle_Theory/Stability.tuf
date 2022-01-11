@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.comment="Extremely minimal" org.eventb.core.configuration="org.eventb.theory.core.thy">
+    <org.eventb.theory.core.importTheoryProject name="'" org.eventb.theory.core.importTheoryProject="/LaSalle_Theory">
+        <org.eventb.theory.core.importTheory name="'" org.eventb.theory.core.importTheory="/LaSalle_Theory/Norm.dtf|org.eventb.theory.core.deployedTheoryRoot#Norm"/>
+    </org.eventb.theory.core.importTheoryProject>
+    <org.eventb.theory.core.typeParameter name="(" org.eventb.core.comment="Vector Space" org.eventb.core.identifier="E"/>
+    <org.eventb.theory.core.newOperatorDefinition name=")" org.eventb.core.label="Stable" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.directOperatorDefinition name="'" org.eventb.core.comment="||z_0 - y_0|| &lt; delta =&gt;&#10;! t . t:RRealPlusStar =&gt; &#10;||z(t) - y(t)|| &lt; eps" org.eventb.theory.core.formula="∀ eps · eps∈RRealPlusStar ⇒ (&#10;&#9;∃ delta · delta∈RRealPlusStar ⇒ (&#10;&#9;&#9;∀ z · z ∈ RRealPlus → E ∧ solutionOf(RRealPlus,z,eq) ⇒ (&#10;&#9;&#9;&#9;(N(vec_plus(z(Rzero)↦vec_uminus(y(Rzero))))↦delta)∈lt ⇒ (&#10;&#9;&#9;&#9;&#9;∀t · t∈RRealPlusStar ⇒ &#10;&#9;&#9;&#9;&#9;&#9;(N(vec_plus(z(t)↦vec_uminus(y(t))))↦eps)∈lt&#10;&#9;&#9;&#9;)&#10;&#9;&#9;)&#10;&#9;)&#10;)"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.comment="The solution" org.eventb.core.expression="RReal ⇸ E" org.eventb.core.identifier="y"/>
+        <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.comment="The differential equation" org.eventb.core.expression="DE(E)" org.eventb.core.identifier="eq"/>
+        <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.comment="Norm" org.eventb.core.expression="E → RReal" org.eventb.core.identifier="N"/>
+        <org.eventb.theory.core.operatorWDcondition name="+" org.eventb.core.comment="type of y" org.eventb.core.predicate="y ∈ RRealPlus → E"/>
+        <org.eventb.theory.core.operatorWDcondition name="-" org.eventb.core.comment="y is solution of eq" org.eventb.core.predicate="solutionOf(RRealPlus,y,eq)"/>
+        <org.eventb.theory.core.operatorWDcondition name="." org.eventb.core.comment="N is a Norm" org.eventb.core.predicate="isNorm(N,vec_plus,scal_times,vec_zero)"/>
+        <org.eventb.theory.core.operatorWDcondition name="3" org.eventb.core.predicate="∀ x · x∈E ⇒ inverses(vec_plus,vec_zero,x,vec_uminus(x))"/>
+        <org.eventb.theory.core.operatorArgument name="/" org.eventb.core.comment="See Vector Space Theory" org.eventb.core.expression="E × E → E" org.eventb.core.identifier="vec_plus"/>
+        <org.eventb.theory.core.operatorArgument name="0" org.eventb.core.comment="See Vector Space Theory" org.eventb.core.expression="RReal × E → E" org.eventb.core.identifier="scal_times"/>
+        <org.eventb.theory.core.operatorArgument name="1" org.eventb.core.comment="See Vector Space Theory" org.eventb.core.expression="E" org.eventb.core.identifier="vec_zero"/>
+        <org.eventb.theory.core.operatorArgument name="2" org.eventb.core.comment="The unit minus function&#10;Associates any vector &quot;x&quot; with his opposite &quot;-x&quot;" org.eventb.core.expression="E → E" org.eventb.core.identifier="vec_uminus"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.importTheoryProject name="*" org.eventb.theory.core.importTheoryProject="/SimpleDEq">
+        <org.eventb.theory.core.importTheory name="'" org.eventb.theory.core.importTheory="/SimpleDEq/DiffEq.dtf|org.eventb.theory.core.deployedTheoryRoot#DiffEq"/>
+    </org.eventb.theory.core.importTheoryProject>
+    <org.eventb.theory.core.newOperatorDefinition name="+" org.eventb.core.label="LyapunovStable" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.comment="The solution" org.eventb.core.expression="RReal ⇸ E" org.eventb.core.identifier="y"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.comment="The differential equation" org.eventb.core.expression="DE(E)" org.eventb.core.identifier="eq"/>
+        <org.eventb.theory.core.operatorArgument name=")" org.eventb.core.comment="Norm" org.eventb.core.expression="E → RReal" org.eventb.core.identifier="N"/>
+        <org.eventb.theory.core.operatorArgument name="*" org.eventb.core.comment="See Vector Space Theory" org.eventb.core.expression="E × E → E" org.eventb.core.identifier="vec_plus"/>
+        <org.eventb.theory.core.operatorArgument name="+" org.eventb.core.comment="See Vector Space Theory" org.eventb.core.expression="RReal × E → E" org.eventb.core.identifier="scal_times"/>
+        <org.eventb.theory.core.operatorArgument name="," org.eventb.core.comment="See Vector Space Theory" org.eventb.core.expression="E" org.eventb.core.identifier="vec_zero"/>
+        <org.eventb.theory.core.operatorArgument name="-" org.eventb.core.comment="The unit minus function&#10;Associates any vector &quot;x&quot; with his opposite &quot;-x&quot;" org.eventb.core.expression="E → E" org.eventb.core.identifier="vec_uminus"/>
+        <org.eventb.theory.core.directOperatorDefinition name="." org.eventb.theory.core.formula="∃ delta · delta∈RRealPlusStar ⇒ (&#10;&#9;∀ z · z ∈ RRealPlus → E ∧ solutionOf(RRealPlus,z,eq) ⇒ (&#10;&#9;&#9;(N(vec_plus(z(Rzero)↦vec_uminus(y(Rzero))))↦delta)∈lt ⇒ (&#10;&#9;&#9;&#9;∀ eps · eps∈RRealPlusStar ⇒ (&#10;&#9;&#9;&#9;&#9;∃ T · T∈RRealPlus ⇒ (&#10;&#9;&#9;&#9;&#9;&#9;(∀ t · t∈RRealPlus ∧ (T↦t)∈leq ∧&#10;&#9;&#9;&#9;&#9;&#9; (N(vec_plus(z(t)↦vec_uminus(y(t))))↦eps)∈lt)&#10;&#9;&#9;&#9;&#9;)&#10;&#9;&#9;&#9;)&#10;&#9;&#9;)&#10;&#9;)&#10;)"/>
+        <org.eventb.theory.core.operatorWDcondition name="/" org.eventb.core.comment="type of y" org.eventb.core.predicate="y ∈ RRealPlus → E"/>
+        <org.eventb.theory.core.operatorWDcondition name="0" org.eventb.core.comment="y is solution of eq" org.eventb.core.predicate="solutionOf(RRealPlus,y,eq)"/>
+        <org.eventb.theory.core.operatorWDcondition name="1" org.eventb.core.comment="N is a norm" org.eventb.core.predicate="isNorm(N,vec_plus,scal_times,vec_zero)"/>
+        <org.eventb.theory.core.operatorWDcondition name="2" org.eventb.core.predicate="∀ x · x∈E ⇒ inverses(vec_plus,vec_zero,x,vec_uminus(x))"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+</org.eventb.theory.core.theoryRoot>

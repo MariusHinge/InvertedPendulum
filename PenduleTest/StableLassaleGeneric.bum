@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+    <org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+        <org.eventb.core.action name="'" org.eventb.core.assignment="t ≔ Rzero" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="internal2" org.eventb.core.assignment="x_s :∈ STATES" org.eventb.core.label="act3"/>
+        <org.eventb.core.action name="(" org.eventb.core.assignment="x_p :∈ D1({Rzero},S)" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.refinesMachine name="(" org.eventb.core.target="Generic"/>
+    <org.eventb.core.seesContext name=")" org.eventb.core.target="StableLassaleCtx"/>
+    <org.eventb.core.invariant name="2" org.eventb.core.label="V_o_Sol_Deriv" org.eventb.core.predicate="x_p(Rzero) ∈ K ⇒ x_p;V ∈ D1(Closed2Closed(Rzero,t),RReal)"/>
+    <org.eventb.core.event name="3" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Transition">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Transition"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="4" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Sense">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Sense"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="5" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Behave">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Behave"/>
+        <org.eventb.core.parameter name="-" org.eventb.core.identifier="tp"/>
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="e"/>
+        <org.eventb.core.guard name="." org.eventb.core.label="grd0" org.eventb.core.predicate="tp ∈ RRealPlus ∧ t ↦ tp ∈ lt"/>
+        <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="e ∈ DE(S)"/>
+        <org.eventb.core.action name=")" org.eventb.core.assignment="t,x_p :∣ x_p' ∈ RReal ⇸ S ∧ t' = tp ∧ Closed2Closed(Rzero,t') ⊆ dom(x_p') ∧ &#10;CBAPsolutionOf(t,t',x_p,x_p',e,Inv)" org.eventb.core.label="act1"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="Solvable(Closed2Closed(t,tp),e)"/>
+        <org.eventb.core.parameter name="+" org.eventb.core.identifier="Inv"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="Inv ⊆ RRealPlus×S"/>
+        <org.eventb.core.guard name="/" org.eventb.core.label="grd4" org.eventb.core.predicate="(t↦x_p(t)) ∈ Inv"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="6" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Actuate">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Actuate"/>
+        <org.eventb.core.parameter name="internal4" org.eventb.core.identifier="tp"/>
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="e"/>
+        <org.eventb.core.guard name="internal5" org.eventb.core.label="grd0" org.eventb.core.predicate="tp ∈ RRealPlus ∧ t ↦ tp ∈ lt"/>
+        <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="e = ode(F,x_p(Rzero),Rzero)"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="s"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd3" org.eventb.core.predicate="s ⊆ STATES"/>
+        <org.eventb.core.guard name=")" org.eventb.core.label="grd4" org.eventb.core.predicate="x_s ∈ s"/>
+        <org.eventb.core.action name=")" org.eventb.core.assignment="t,x_p :∣ x_p' ∈ RReal ⇸ S ∧ t' = tp ∧ Closed2Closed(Rzero,t') ⊆ dom(x_p') ∧&#10;CBAPsolutionOf(t,t',x_p,x_p',ode(F,x_p(Rzero),Rzero),Closed2Closed(t,tp)×S) " org.eventb.core.comment="Der({t},S,x_p)=Der({t},S,x_p')" org.eventb.core.label="act1"/>
+        <org.eventb.core.guard name="internal1" org.eventb.core.label="grd2" org.eventb.core.predicate="Solvable(Closed2Closed(t,tp),ode(F,x_p(Rzero),Rzero))"/>
+        <org.eventb.core.guard name="internal7" org.eventb.core.label="grd6" org.eventb.core.predicate="(t↦x_p(t)) ∈ Closed2Closed(t,tp)×S"/>
+        <org.eventb.core.witness name="internal9" org.eventb.core.label="Inv" org.eventb.core.predicate="Inv = Closed2Closed(t,tp)×S"/>
+    </org.eventb.core.event>
+    <org.eventb.core.variable name="7" org.eventb.core.identifier="t"/>
+    <org.eventb.core.variable name="8" org.eventb.core.identifier="x_p"/>
+    <org.eventb.core.variable name="9" org.eventb.core.identifier="x_s"/>
+</org.eventb.core.machineFile>

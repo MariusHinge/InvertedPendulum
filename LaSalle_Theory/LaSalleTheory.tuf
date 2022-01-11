@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.configuration="org.eventb.theory.core.thy">
+    <org.eventb.theory.core.importTheoryProject name="'" org.eventb.theory.core.importTheoryProject="/LaSalle_Theory">
+        <org.eventb.theory.core.importTheory name="'" org.eventb.theory.core.importTheory="/LaSalle_Theory/Stability.dtf|org.eventb.theory.core.deployedTheoryRoot#Stability"/>
+        <org.eventb.theory.core.importTheory name="(" org.eventb.theory.core.importTheory="/LaSalle_Theory/Topologie.dtf|org.eventb.theory.core.deployedTheoryRoot#Topologie"/>
+    </org.eventb.theory.core.importTheoryProject>
+    <org.eventb.theory.core.typeParameter name="(" org.eventb.core.comment="Vector Space&#10;Must be R^n !!!" org.eventb.core.identifier="E"/>
+    <org.eventb.theory.core.newOperatorDefinition name="*" org.eventb.core.label="isInvariantSet" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+        <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(E)" org.eventb.core.identifier="K"/>
+        <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="RRealPlus×E→E" org.eventb.core.identifier="F"/>
+        <org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="∀ y · y∈RRealPlus→E ∧ solutionOf(RRealPlus,y,ode(F,y(Rzero),Rzero)) ⇒&#10;&#9;(y(Rzero)∈K ⇒ (∀ t · t∈RRealPlus ∧ y(t)∈K))"/>
+    </org.eventb.theory.core.newOperatorDefinition>
+    <org.eventb.theory.core.axiomaticDefinitionsBlock name="+" org.eventb.core.label="LaSalle Invariant Principle">
+        <org.eventb.theory.core.axiomaticOperatorDefinition name="'" org.eventb.core.comment="Cannot directly define V~&#10;Requires R^n, gradiant and vectoriel product" org.eventb.core.label="tilde" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(E×RReal)">
+            <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="E → RReal" org.eventb.core.identifier="V"/>
+            <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="RRealPlus×E → E" org.eventb.core.identifier="F"/>
+        </org.eventb.theory.core.axiomaticOperatorDefinition>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="(" org.eventb.core.label="type_tilde" org.eventb.core.predicate="∀ V,F · V ∈ E → RReal ∧ F∈RRealPlus×E→E ⇒&#10;&#9;tilde(V,F) ∈ E → RReal"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name=")" org.eventb.core.label="prop_Vtilde" org.eventb.core.predicate="∀ V,F,z · V ∈ E → RReal ∧ F∈RRealPlus×E→E ∧ z∈RRealPlus→E ∧ solutionOf(RRealPlus,z,ode(F,z(Rzero),Rzero)) ⇒&#10;&#9;(z;tilde(V,F)) = Der(RRealPlus,RReal,(z;V))"/>
+    </org.eventb.theory.core.axiomaticDefinitionsBlock>
+    <org.eventb.theory.core.axiomaticDefinitionsBlock name="." org.eventb.core.label="Gamma+">
+        <org.eventb.theory.core.axiomaticOperatorDefinition name="'" org.eventb.core.label="Gamma_plus" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(E)">
+            <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="RReal⇸E" org.eventb.core.identifier="z"/>
+        </org.eventb.theory.core.axiomaticOperatorDefinition>
+        <org.eventb.theory.core.axiomaticOperatorDefinition name="(" org.eventb.core.label="setConverge" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="">
+            <org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="RRealPlus→E" org.eventb.core.identifier="z"/>
+            <org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(E)" org.eventb.core.identifier="S"/>
+        </org.eventb.theory.core.axiomaticOperatorDefinition>
+    </org.eventb.theory.core.axiomaticDefinitionsBlock>
+    <org.eventb.theory.core.axiomaticDefinitionsBlock name="-" org.eventb.core.label="SIP and Convergence">
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="'" org.eventb.core.comment="Type and well defidness&#10;&#9;H1&#10;&#9;H2&#10;&#9;H3&#10;&#9;H4&#10;&#9;H5&#10;Result =&gt; Gamma^+(z)" org.eventb.core.label="SIP" org.eventb.core.predicate="∀ F,K,d,V · F∈RRealPlus×E→E ∧ K⊆E ∧ d∈E×E→RReal ∧ isDistance(d) ∧ V ∈ E → RReal ∧&#10;&#9;(∃ z · z∈RRealPlus→E ∧ Solvable(RRealPlus,ode(F,z(Rzero),Rzero))) ∧&#10;&#9;isCompact(K,d) ∧&#10;&#9;isInvariantSet(K,F) ∧&#10;&#9;(∀ z · z∈RRealPlus→E ∧ z(Rzero)∈K ∧ solutionOf(RRealPlus,z,ode(F,z(Rzero),Rzero)) ⇒ (z;V)∈D1(RRealPlus,RReal)) ∧&#10;&#9;(∀ z_t · z_t∈K ⇒ (tilde(V,F)(z_t)↦Rzero)∈leq) ⇒&#10; (∀ z · z∈RRealPlus→E ∧ solutionOf(RRealPlus,z,ode(F,z(Rzero),Rzero)) ∧ z(Rzero)∈K ⇒ setConverge(z,Gamma_plus(z)))"/>
+        <org.eventb.theory.core.axiomaticDefinitionAxiom name="(" org.eventb.core.label="PropLyapunovStable" org.eventb.core.predicate="∀ F,K,N,V,z,vec_plus,scal_times,vec_zero,vec_uminus,delta · F∈RRealPlus×E→E ∧ K⊆E ∧ N∈E→RReal ∧ delta∈RRealPlusStar ∧&#10;  vec_plus∈(E×E→E) ∧ scal_times∈RReal×E→E ∧ vec_zero∈E ∧ vec_uminus∈E→E ∧&#10;  (∀ x · x∈E ⇒ inverses(vec_plus,vec_zero,x,vec_uminus(x))) ∧&#10;  VectorSpace(vec_plus,scal_times,vec_zero,plus,times,Rzero,Rone) ∧&#10;  isNorm(N,vec_plus,scal_times,vec_zero) ∧ V ∈ E → RReal ∧&#10;  z ∈ RRealPlus → E ∧ solutionOf(RRealPlus,z,ode(F,z(Rzero),Rzero)) ∧&#10;  Gamma_plus(z) ⊆ {p ∣ p∈E ∧ (N(vec_plus(z(Rzero)↦vec_uminus(p)))↦delta)∈lt} ⇒ LyapunovStable(z,ode(F,z(Rzero),Rzero),N,vec_plus,scal_times,vec_zero,vec_uminus)"/>
+    </org.eventb.theory.core.axiomaticDefinitionsBlock>
+</org.eventb.theory.core.theoryRoot>
